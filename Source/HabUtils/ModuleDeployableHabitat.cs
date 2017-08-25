@@ -35,12 +35,18 @@ namespace HabUtils
     [KSPField(isPersistant = true)]
     public bool Deployed = false;
 
+    // Name of the deploy action
     [KSPField(isPersistant = false)]
     public string DeployActionName = "";
+
+    // Name of the retract action
     [KSPField(isPersistant = false)]
     public string RetractActionName = "";
+
+    // Name of the toggle action
     [KSPField(isPersistant = false)]
     public string ToggleActionName = "";
+
     /// GUI Fields
     // Current status of deploy
     [KSPField(isPersistant = false, guiActive = false, guiName = "Status")]
@@ -117,7 +123,7 @@ namespace HabUtils
     }
 
     /// Do localization of UI components
-    protected void SetupUI()
+    protected virtual void SetupUI()
     {
       Events["Deploy"].guiName = Localizer.Format(DeployActionName);
       Events["Retract"].guiName = Localizer.Format(RetractActionName);
@@ -142,7 +148,7 @@ namespace HabUtils
     }
 
     /// Handle updating the UI
-    protected void HandleUI()
+    protected virtual void HandleUI()
     {
       switch (deployState)
       {
