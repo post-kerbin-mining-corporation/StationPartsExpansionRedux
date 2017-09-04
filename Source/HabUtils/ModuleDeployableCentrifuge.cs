@@ -201,10 +201,18 @@ namespace HabUtils
         base.HandleUI();
         GravityStatus = Localizer.Format("#LOC_SSPX_ModuleDeployableCentrifuge_Field_GravityStatus_Normal", CalculateGravity(Radius, Period(Mathf.Abs(CurrentSpinRate))).ToString("F2"));
 
-        if (Events["EventStartSpin"].active == Rotating || Events["EventStopSpin"].active != Rotating)
+        if (base.deployState == DeployState.Retracted || base.deployState == DeployState.Retracting || base.deployState == DeployState.Deploying)
         {
-            Events["EventStopSpin"].active = Rotating;
-            Events["EventStartSpin"].active = !Rotating;
+            Events["EventStartSpin"].active = false;
+            Events["EventStopSpin"].active = false;
+        }
+        else
+        {
+            if (Events["EventStartSpin"].active == Rotating || Events["EventStopSpin"].active != Rotating)
+            {
+                Events["EventStopSpin"].active = Rotating;
+                Events["EventStartSpin"].active = !Rotating;
+            }
         }
     }
 
@@ -221,6 +229,9 @@ namespace HabUtils
     /// Starts the spin
     void StartSpin()
     {
+        if (base.deployState == DeployState.Retracted || base.deployState == DeployState.Retracting || base.deployState == DeployState.Deploying)
+            return;
+
         Utils.Log("[ModuleDeployableCentrifuge]: Initiating Spin");
         rotationRateGoal = 1.0f;
         Rotating = true;
