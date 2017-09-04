@@ -12,7 +12,7 @@ namespace HabUtils
   public static class Utils
   {
 
-    public static modName = "HabUtils";
+    public static string modName = "HabUtils";
 
     /// Sets up an animation for KSP purposes and returns it
     public static AnimationState SetUpAnimation(string animationName, Part part, int layer)
@@ -26,20 +26,20 @@ namespace HabUtils
 
         animation.Blend(animationName);
 
-        return state;
+        return animationState;
     }
 
     public static void Log(string str)
     {
-        Debug.Log(String.Format("[{0}]: {1}", str));
+        Debug.Log(String.Format("[{0}]: {1}", modName, str));
     }
     public static void LogError(string str)
     {
-        Debug.LogError(String.Format("[{0}]: {1}", str));
+        Debug.LogError(String.Format("[{0}]: {1}", modName, str));
     }
     public static void LogWarning(string str)
     {
-        Debug.LogWarning(String.Format("[{0}]: {1}", str));
+        Debug.LogWarning(String.Format("[{0}]: {1}", modName, str));
     }
   }
 }

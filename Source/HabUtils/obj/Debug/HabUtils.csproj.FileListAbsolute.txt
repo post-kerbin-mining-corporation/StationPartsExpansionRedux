@@ -1,0 +1,7 @@
+G:\KSP Modding\repositories\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.csprojResolveAssemblyReference.cache
+G:\KSP Modding\repositories\StationPartsExpansionRedux\GameData\GlowingReputation\Plugins\GlowingReputation.dll
+G:\KSP Modding\repositories\StationPartsExpansionRedux\GameData\GlowingReputation\Plugins\GlowingReputation.pdb
+G:\KSP Modding\repositories\StationPartsExpansionRedux\GameData\StationPartsExpansionRedux\Plugins\HabUtils.dll
+G:\KSP Modding\repositories\StationPartsExpansionRedux\GameData\StationPartsExpansionRedux\Plugins\HabUtils.pdb
+G:\KSP Modding\repositories\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.dll
+G:\KSP Modding\repositories\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.pdb

@@ -29,6 +29,10 @@ namespace HabUtils
 
     // Crew capacity when deployd
     [KSPField(isPersistant = false)]
+    public int RetractedCrewCapacity = 0;
+
+    // Crew capacity when deployd
+    [KSPField(isPersistant = false)]
     public int DeployedCrewCapacity = 2;
 
     // Is the module deployd
@@ -49,16 +53,16 @@ namespace HabUtils
 
     /// GUI Fields
     // Current status of deploy
-    [KSPField(isPersistant = false, guiActive = false, guiName = "Status")]
+    [KSPField(isPersistant = false, guiActiveEditor = true, guiActive = false, guiName = "Status")]
     public string DeployStatus = "N/A";
 
     // GUI Events
-    [KSPEvent(guiActive = false, guiName = "Deploy", active = true)]
+    [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Deploy", active = true)]
     public void Deploy()
     {
         TryDeploy();
     }
-    [KSPEvent(guiActive = false, guiName = "Retract", active = false)]
+    [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Retract", active = false)]
     public void Retract()
     {
         TryRetract();
@@ -117,7 +121,7 @@ namespace HabUtils
     protected void SetupAnimation()
     {
         if (DeployAnimationName != "")
-          deployAnimation = Utils.SetUpAnimation(this.part, DeployAnimationName, AnimationLayer);
+            deployAnimation = Utils.SetUpAnimation(DeployAnimationName, this.part, AnimationLayer);
         else
           Utils.LogError("[ModuleDeployableHabitat]: Could not find animation");
     }
@@ -185,22 +189,22 @@ namespace HabUtils
         case DeployState.Deployed:
             break;
         case DeployState.Deploying:
-          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 1.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
+          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 0.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
           break;
         case DeployState.Retracting:
-          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 0.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
+          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 1.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
           break;
       }
     }
 
     protected void EvaluateAnimation()
     {
-      if (deployState == DeployState.Deploying && deployAnimation.normalizedTime >= 1.0)
+      if (deployState == DeployState.Deploying && deployAnimation.normalizedTime <= 0.0)
       {
         FinishDeploy();
 
       }
-      if (deployState == DeployState.Retracting && deployAnimation.normalizedTime <= 0.0)
+      if (deployState == DeployState.Retracting && deployAnimation.normalizedTime >= 1.0)
       {
         FinishRetract();
 
@@ -264,12 +268,20 @@ namespace HabUtils
     {
         if (canUseCrew)
         {
-          part.crewCapacity = DeployedCrewCapacity;
+            part.crewTransferAvailable = true;
+            
+          part.CrewCapacity = DeployedCrewCapacity;
+            
         }
         else
         {
-          part.crewCapacity = RetractedCrewCapacity;
+      
+            part.crewTransferAvailable = false;
+            
+          part.CrewCapacity = RetractedCrewCapacity;
         }
+        part.CheckTransferDialog();
+        MonoUtilities.RefreshContextWindows(part);
     }
 
     /// Creates the IVA space
@@ -295,6 +307,13 @@ namespace HabUtils
     /// TODO: Disable deploy if crew are present
     protected bool CanRetract()
     {
+        if (part.protoModuleCrew.Count > 0)
+        {
+            var msg = string.Format("Unable to retract {0} while crew are present.",
+                        part.partInfo.title);
+            ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
+            return false;
+        }
       if (deployState == DeployState.Deployed || deployState == DeployState.Deploying)
         return true;
 

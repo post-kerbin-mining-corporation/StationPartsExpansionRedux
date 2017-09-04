@@ -65,16 +65,16 @@ namespace HabUtils
 
     /// GUI Fields
     // Current status of deploy
-    [KSPField(isPersistant = false, guiActive = true, guiName = "Spin Gravity")]
+    [KSPField(isPersistant = false, guiActive = true, guiActiveEditor = true, guiName = "Spin Gravity")]
     public string GravityStatus = "0g";
 
     // GUI Events
-    [KSPEvent(guiActive = false, guiName = "Start Spin", active = true)]
+    [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Start Spin", active = true)]
     public void EventStartSpin()
     {
         StartSpin();
     }
-    [KSPEvent(guiActive = false, guiName = "Stop Spin", active = false)]
+    [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Stop Spin", active = false)]
     public void EventStopSpin()
     {
         StopSpin();
@@ -89,7 +89,7 @@ namespace HabUtils
     public void StopAction(KSPActionParam param) { EventStopSpin(); }
 
     [KSPAction("Toggle Spin")]
-    public void ToggleAction(KSPActionParam param)
+    public void ToggleSpinAction(KSPActionParam param)
     {
         if (Rotating)
           EventStartSpin();
@@ -111,7 +111,7 @@ namespace HabUtils
     // Calculates the gravity in g
     protected float CalculateGravity(float radius, float period)
     {
-      return (radius * Mathf.Pow((2f* Mathf.Pi)/period, 2f)) / 9.81f;
+      return (radius * Mathf.Pow((2f* Mathf.PI)/period, 2f)) / 9.81f;
     }
 
     public override void Start()
@@ -141,7 +141,7 @@ namespace HabUtils
       base.Update();
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
-        UpdateUI();
+        HandleUI();
 
       }
     }
@@ -163,9 +163,9 @@ namespace HabUtils
       Events["EventStartSpin"].guiName = Localizer.Format(StartSpinActionName);
       Events["EventStopSpin"].guiName = Localizer.Format(StopSpinActionName);
 
-      Action["StartAction"].guiName = Localizer.Format(StartSpinActionName);
-      Action["StopAction"].guiName = Localizer.Format(StopSpinActionName);
-      Action["ToggleAction"].guiName = Localizer.Format(ToggleSpinActionName);
+      Actions["StartAction"].guiName = Localizer.Format(StartSpinActionName);
+      Actions["StopAction"].guiName = Localizer.Format(StopSpinActionName);
+      Actions["ToggleSpinAction"].guiName = Localizer.Format(ToggleSpinActionName);
     }
 
 
@@ -199,7 +199,13 @@ namespace HabUtils
     protected override void HandleUI()
     {
         base.HandleUI();
-        GravityStatus = Localizer.Format("#LOC_SSPX_ModuleDeployableCentrifuge_Field_GravityStatus_Normal", CalcualateGravity(Radius, Period(Mathf.Abs(CurrentSpinRate))).ToStrin("F2"));
+        GravityStatus = Localizer.Format("#LOC_SSPX_ModuleDeployableCentrifuge_Field_GravityStatus_Normal", CalculateGravity(Radius, Period(Mathf.Abs(CurrentSpinRate))).ToString("F2"));
+
+        if (Events["EventStartSpin"].active == Rotating || Events["EventStopSpin"].active != Rotating)
+        {
+            Events["EventStopSpin"].active = Rotating;
+            Events["EventStartSpin"].active = !Rotating;
+        }
     }
 
     // Does the spinning of the centrifuge
@@ -208,8 +214,8 @@ namespace HabUtils
         CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal*SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
         CurrentCounterweightSpinRate = Mathf.MoveTowards(CurrentCounterweightSpinRate, rotationRateGoal*CounterweightSpinRate, TimeWarp.fixedDeltaTime*CounterweightSpinAccelerationRate);
 
-        spinTransform.Rotate(Vector3.up * TimeWarp.fixedDeltaTime * CurrentSpinRate);
-        counterweightTransform.Rotate(Vector3.up * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
+        spinTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentSpinRate);
+        counterweightTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
     }
 
     /// Starts the spin
