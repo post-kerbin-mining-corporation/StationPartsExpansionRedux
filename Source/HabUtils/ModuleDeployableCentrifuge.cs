@@ -222,12 +222,12 @@ namespace HabUtils
         CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal*SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
         CurrentCounterweightSpinRate = Mathf.MoveTowards(CurrentCounterweightSpinRate, rotationRateGoal*CounterweightSpinRate, TimeWarp.fixedDeltaTime*CounterweightSpinAccelerationRate);
 
-        spinTransform.Rotate(Vector3.forward * Time.fixedDeltaTime * CurrentSpinRate);
-        counterweightTransform.Rotate(Vector3.forward * Time.fixedDeltaTime * CurrentCounterweightSpinRate);
+        spinTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentSpinRate);
+        counterweightTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
 
         if (part.internalModel != null)
         {
-            part.internalModel.transform.Rotate(Vector3.forward * Time.fixedDeltaTime * -CurrentSpinRate);
+            part.internalModel.transform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * -CurrentSpinRate);
         }
     }
 
