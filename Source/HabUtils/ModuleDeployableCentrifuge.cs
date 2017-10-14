@@ -224,6 +224,11 @@ namespace HabUtils
 
         spinTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentSpinRate);
         counterweightTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
+
+        if (part.internalModel != null)
+        {
+            part.internalModel.transform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * -CurrentSpinRate);
+        }
     }
 
     /// Starts the spin

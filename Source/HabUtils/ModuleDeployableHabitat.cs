@@ -236,6 +236,7 @@ namespace HabUtils
       deployState = DeployState.Retracting;
       SetCrewCapacity(false);
       DestroyIVA();
+      RefreshPartData();
     }
     /// Called to start deploy
     protected virtual void StartDeploy()
@@ -258,8 +259,16 @@ namespace HabUtils
       Utils.Log("[ModuleDeployableHabitat]: Deploy Finished");
       deployState = DeployState.Deployed;
       Deployed = true;
-      CreateIVA();
+      
       SetCrewCapacity(Deployed);
+      CreateIVA();
+      RefreshPartData();
+    }
+
+    protected void RefreshPartData()
+    {
+        part.CheckTransferDialog();
+        MonoUtilities.RefreshContextWindows(part);
     }
 
     /// Set the crew capacity of the part
@@ -280,19 +289,24 @@ namespace HabUtils
             
           part.CrewCapacity = RetractedCrewCapacity;
         }
-        part.CheckTransferDialog();
-        MonoUtilities.RefreshContextWindows(part);
+        
     }
 
     /// Creates the IVA space
     /// TODO: Implement me
     protected void CreateIVA()
-    {}
+    {
+        if (HighLogic.LoadedSceneIsFlight)
+            this.part.SpawnIVA();
+    }
 
     /// Destroys the IVA space
     /// TODO: Implement me
     protected void DestroyIVA()
-    {}
+    {
+        if (HighLogic.LoadedSceneIsFlight)
+            this.part.DespawnIVA();
+    }
 
     /// Checks to see if we can deploy
     protected bool CanDeploy()
