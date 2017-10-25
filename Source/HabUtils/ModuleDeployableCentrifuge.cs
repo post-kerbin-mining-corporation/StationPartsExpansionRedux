@@ -114,6 +114,26 @@ namespace HabUtils
       return (radius * Mathf.Pow((2f* Mathf.PI)/period, 2f)) / 9.81f;
     }
 
+    public override string GetInfo()
+    {
+        string baseInfo =  Localizer.Format("#LOC_SSPX_ModuleDeployableCentrifuge_PartInfo", DeployedCrewCapacity.ToString("F0"), CalculateGravity(Radius, Period(Mathf.Abs(SpinRate))).ToString("F2"));
+        if (!Retractable)
+          baseInfo += "\n\n" +  Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NoRetract");
+        if (DeployResource != "")
+          PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
+          baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+
+        return baseInfo;
+    }
+    public string GetModuleTitle()
+    {
+        return "Expandable Centrifuge";
+    }
+    public override string GetModuleDisplayName()
+    {
+        return Localizer.Format("#LOC_SSPX_ModuleDeployableCentrifuge_ModuleTitle");
+    }
+
     public override void Start()
     {
       base.Start();

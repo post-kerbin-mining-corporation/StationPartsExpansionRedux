@@ -35,6 +35,18 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public int DeployedCrewCapacity = 2;
 
+    // Is this a single-use module?
+    [KSPField(isPersistant = true)]
+    public bool Retractable = true;
+
+    // The resouce required to deploy
+    [KSPField(isPersistant = false)]
+    public string DeployResource = "";
+
+    // The amount required
+    [KSPField(isPersistant = false)]
+    public float DeployResourceAmount = "";
+
     // Is the module deployd
     [KSPField(isPersistant = true)]
     public bool Deployed = false;
@@ -90,6 +102,27 @@ namespace HabUtils
     protected DeployState deployState;
     protected AnimationState deployAnimation;
 
+
+    public override string GetInfo()
+    {
+        string baseInfo =  Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo", DeployedCrewCapacity.ToString("F0"));
+        if (!Retractable)
+          baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NoRetract");
+        if (DeployResource != "")
+          PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
+          baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+
+        return baseInfo;
+    }
+    public string GetModuleTitle()
+    {
+        return "Expandable Habitat";
+    }
+    public override string GetModuleDisplayName()
+    {
+        return Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_ModuleTitle");
+    }
+
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
@@ -142,10 +175,12 @@ namespace HabUtils
       if (Deployed)
       {
         deployState = DeployState.Deployed;
+        deployAnimation.normalizedTime = 0.0f;
       }
       else
       {
         deployState = DeployState.Retracted;
+        deployAnimation.normalizedTime = 1.0f;
         DestroyIVA();
       }
       SetCrewCapacity(Deployed);
@@ -164,8 +199,11 @@ namespace HabUtils
         case DeployState.Deployed:
           DeployStatus = "Deployed";
           Events["Deploy"].active = false;
-          Events["Retract"].active = true;
-            break;
+          if (Retractable)
+            Events["Retract"].active = true;
+          else
+            Events["Retract"].active = false;
+          break;
         case DeployState.Deploying:
           DeployStatus = "Deploying";
           Events["Deploy"].active = false;
@@ -257,9 +295,10 @@ namespace HabUtils
     protected virtual void FinishDeploy()
     {
       Utils.Log("[ModuleDeployableHabitat]: Deploy Finished");
+
       deployState = DeployState.Deployed;
       Deployed = true;
-      
+
       SetCrewCapacity(Deployed);
       CreateIVA();
       RefreshPartData();
@@ -267,8 +306,17 @@ namespace HabUtils
 
     protected void RefreshPartData()
     {
-        part.CheckTransferDialog();
-        MonoUtilities.RefreshContextWindows(part);
+      if (HighLogic.LoadedSceneIsEditor)
+      {
+          GameEvents.onEditorPartEvent.Fire(ConstructionEventType.PartTweaked, part);
+          GameEvents.onEditorShipModified.Fire(EditorLogic.fetch.ship);
+      }
+      else if (HighLogic.LoadedSceneIsFlight)
+      {
+          GameEvents.onVesselWasModified.Fire(this.vessel);
+      }
+      part.CheckTransferDialog();
+      MonoUtilities.RefreshContextWindows(part);
     }
 
     /// Set the crew capacity of the part
@@ -278,18 +326,14 @@ namespace HabUtils
         if (canUseCrew)
         {
             part.crewTransferAvailable = true;
-            
-          part.CrewCapacity = DeployedCrewCapacity;
-            
+            part.CrewCapacity = DeployedCrewCapacity;
         }
         else
         {
-      
             part.crewTransferAvailable = false;
-            
-          part.CrewCapacity = RetractedCrewCapacity;
+            part.CrewCapacity = RetractedCrewCapacity;
         }
-        
+
     }
 
     /// Creates the IVA space
@@ -311,6 +355,21 @@ namespace HabUtils
     /// Checks to see if we can deploy
     protected bool CanDeploy()
     {
+      // Cannot retract if deploy resource is not present
+      if (DeployResource != "")
+      {
+        PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
+        double res = 0d;
+        double outRes = 0d;
+        part.GetConnectedResourceTotals(defn.id, out res, out outRes, true);
+        if (res < DeployResourceAmount)
+        {
+          var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployResources",
+                      part.partInfo.title, defn.displayName, DeployResourceAmount.ToString("F2"));
+          ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
+          return false;
+        }
+      }
       if (deployState == DeployState.Retracted || deployState == DeployState.Retracting)
         return true;
 
@@ -318,16 +377,23 @@ namespace HabUtils
     }
 
     /// Checks to see if we can deflate or not
-    /// TODO: Disable deploy if crew are present
+
     protected bool CanRetract()
     {
+        // Cannot retract if that is disabled!
+        if (!Retractable)
+          return false;
+
+
+        // Cannot retract if crew are present
         if (part.protoModuleCrew.Count > 0)
         {
-            var msg = string.Format("Unable to retract {0} while crew are present.",
+            var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantRetractCrew",
                         part.partInfo.title);
             ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
             return false;
         }
+
       if (deployState == DeployState.Deployed || deployState == DeployState.Deploying)
         return true;
 
