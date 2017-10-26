@@ -120,8 +120,10 @@ namespace HabUtils
         if (!Retractable)
           baseInfo += "\n\n" +  Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NoRetract");
         if (DeployResource != "")
-          PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
-          baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+        {
+            PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
+            baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+        }
 
         return baseInfo;
     }

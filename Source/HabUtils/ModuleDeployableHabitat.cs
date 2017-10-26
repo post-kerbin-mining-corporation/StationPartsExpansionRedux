@@ -45,7 +45,7 @@ namespace HabUtils
 
     // The amount required
     [KSPField(isPersistant = false)]
-    public float DeployResourceAmount = "";
+    public float DeployResourceAmount = 0f;
 
     // Is the module deployd
     [KSPField(isPersistant = true)]
@@ -109,8 +109,10 @@ namespace HabUtils
         if (!Retractable)
           baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NoRetract");
         if (DeployResource != "")
-          PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
-          baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+        {
+            PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
+            baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
+        }
 
         return baseInfo;
     }
@@ -172,10 +174,12 @@ namespace HabUtils
     /// Sets up the first load of the module
     protected void SetupState()
     {
+       SetCrewCapacity(Deployed);
       if (Deployed)
       {
         deployState = DeployState.Deployed;
         deployAnimation.normalizedTime = 0.0f;
+        CreateIVA();
       }
       else
       {
@@ -183,7 +187,8 @@ namespace HabUtils
         deployAnimation.normalizedTime = 1.0f;
         DestroyIVA();
       }
-      SetCrewCapacity(Deployed);
+      
+      RefreshPartData();
     }
 
     /// Handle updating the UI
@@ -199,10 +204,10 @@ namespace HabUtils
         case DeployState.Deployed:
           DeployStatus = "Deployed";
           Events["Deploy"].active = false;
-          if (Retractable)
-            Events["Retract"].active = true;
-          else
+          if (HighLogic.LoadedSceneIsFlight && !Retractable)
             Events["Retract"].active = false;
+          else
+            Events["Retract"].active = true;
           break;
         case DeployState.Deploying:
           DeployStatus = "Deploying";
@@ -281,6 +286,10 @@ namespace HabUtils
     {
       Utils.Log("[ModuleDeployableHabitat]: Deploy Started");
       deployState = DeployState.Deploying;
+      if (HighLogic.LoadedSceneIsFlight && DeployResource != "")
+      {
+          part.RequestResource(DeployResource, (double)DeployResourceAmount);
+      }
     }
 
     /// Execute actions on deflation completion
@@ -356,7 +365,7 @@ namespace HabUtils
     protected bool CanDeploy()
     {
       // Cannot retract if deploy resource is not present
-      if (DeployResource != "")
+        if (HighLogic.LoadedSceneIsFlight && DeployResource != "")
       {
         PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
         double res = 0d;
@@ -365,7 +374,7 @@ namespace HabUtils
         if (res < DeployResourceAmount)
         {
           var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployResources",
-                      part.partInfo.title, defn.displayName, DeployResourceAmount.ToString("F2"));
+                      part.partInfo.title, DeployResourceAmount.ToString("F2"), defn.displayName);
           ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
           return false;
         }
@@ -381,7 +390,7 @@ namespace HabUtils
     protected bool CanRetract()
     {
         // Cannot retract if that is disabled!
-        if (!Retractable)
+        if (HighLogic.LoadedSceneIsFlight && !Retractable)
           return false;
 
 
