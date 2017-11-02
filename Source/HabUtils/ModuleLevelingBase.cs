@@ -31,7 +31,7 @@ namespace HabUtils
     }
 
     // Associated legs on the part
-    private List<ModuleAdjustableLeg> legs = new List<ModuleAdjustableLeg>();
+    private ModuleAdjustableLeg[] legs;
     private Transform levelingTransform;
     private Transform rotatingTransform;
 
@@ -54,7 +54,7 @@ namespace HabUtils
 
     public virtual void FixedUpdate()
     {
-      if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
+      if (HighLogic.LoadedSceneIsFlight)
       {
         ComputeLeveling();
       }
@@ -85,13 +85,13 @@ namespace HabUtils
       Vector3 downVector = vessel.mainBody.bodyTransform.position - levelingTransform.position;
 
       // Get rotation required to level the base
-      Quaternion startRotation = levelingTransform.rotation;
-      Quaternion endRotation = Quaternion.LookRotation(downVector);
+      //Quaternion startRotation = levelingTransform.rotation;
+      //Quaternion endRotation = Quaternion.LookRotation(downVector);
       // Get rotation delta to get to that lvel
-      Quaterion diffRotation = Quaterion.FromToRotation(startRotation, endRotation);
+      Quaternion diffRotation = Quaternion.FromToRotation(levelingTransform.up, downVector);
 
       List<float> distanceDeltas = new List<float>();
-      for (int i = 0; i < legs.Count ;i++)
+      for (int i = 0; i < legs.Length ;i++)
       {
         // Rotate the leg transforms around the pivot by the rotation delta
         Vector3 newPos = RotatePointAroundPivot(legs[i].BaseTransform.position, levelingTransform.position, diffRotation);
@@ -101,6 +101,7 @@ namespace HabUtils
         if (RaycastSurface(newPos, downVector, out hit))
         {
           distanceDeltas.Add(hit.distance);
+          Utils.Log(String.Format("Hit found for leg {0}, distance {1}, normal vector {2}", legs[i].LegDisplayName, hit.distance, hit.normal));
           legs[i].SetSurfaceNormal(hit.normal);
         }
         else
@@ -112,9 +113,11 @@ namespace HabUtils
 
       // Determine the lowest extension
       float min = distanceDeltas.Min();
-      for (int i = 0; i < legs.Count ;i++)
+      Utils.Log(String.Format("Minimum distance is {0}",min));
+      for (int i = 0; i < legs.Length ;i++)
       {
-        legs[i].SetExtensionDistance(min + distanceDeltas[i]);
+          Utils.Log(String.Format("Setting extension of leg {0} to {1}", legs[i].LegDisplayName, distanceDeltas[i]));
+          legs[i].SetExtensionDistance(distanceDeltas[i]);
       }
     }
     // Rotates a position around a pivot point given a rotation
@@ -123,7 +126,7 @@ namespace HabUtils
     }
 
     // Raycasts against the KSP surface
-    protected RaycastHit RaycastSurface(Vector3 position, Vector3 down, out RaycastHit outHit)
+    protected bool RaycastSurface(Vector3 position, Vector3 down, out RaycastHit outHit)
     {
       // Only cast against terrain
       LayerMask surfaceLayerMask;
@@ -131,7 +134,7 @@ namespace HabUtils
       LayerMask maskS = 1 << LayerMask.NameToLayer("Local Scenery");
       surfaceLayerMask = maskT | maskS;
 
-      return Physics.Raycast(position, down, out outHit, 50f, surfaceLayerMask, false);
+      return Physics.Raycast(position, down, out outHit, 50f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
     }
 
     protected void ComputeLeveling()
@@ -139,7 +142,7 @@ namespace HabUtils
       // Only level if landed
       if (part.vessel.LandedOrSplashed)
       {
-        float angle = Vector3.Angle(levelingTransform.up, vessel.mainBody.bodyTransform.position - levelingTransform.position);
+          float angle = Vector3.Angle(levelingTransform.up,levelingTransform.position - vessel.mainBody.bodyTransform.position);
         AbsoluteAngle = String.Format("{0} deg", angle);
 
       }

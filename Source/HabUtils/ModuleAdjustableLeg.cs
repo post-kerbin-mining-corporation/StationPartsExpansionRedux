@@ -50,12 +50,12 @@ namespace HabUtils
     private Vector3 legZeroPosition;
     private Vector3 relativePosition;
 
-    private float LegExtensionGoal = 0f;
+    private float legExtensionGoal = 0f;
     private Transform extenderTransform;
     private Transform baseTransform;
     private Transform footTransform;
 
-    public Vector3 BaseTransform {
+    public Transform BaseTransform {
       get {return baseTransform;}
     }
 
@@ -88,6 +88,10 @@ namespace HabUtils
     {
       string legName = Localizer.Format(LegDisplayName);
       Fields["LegExtension"].guiName = Localizer.Format("#LOC_SSPX_ModuleAdjustableLeg_BaseName", legName);
+      UI_FloatRange slider = (UI_FloatRange)Fields["LegExtension"].uiControlEditor;
+      slider.onFieldChanged = OnChangeExtension;
+      slider = (UI_FloatRange)Fields["LegExtension"].uiControlFlight;
+      slider.onFieldChanged = OnChangeExtension;
     }
 
     // Sets up the model transform
@@ -113,12 +117,16 @@ namespace HabUtils
       SetExtension(LegExtension);
       extenderTransform.localPosition = legZeroPosition + Vector3.up * LegExtension;
     }
-
+    protected void OnChangeExtension(BaseField field, object what)
+    {
+        SetExtension(LegExtension);
+    }
     // Does the actual leg movement
     protected void HandleLegMovement()
     {
+        
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
-        legZeroPosition + Vector3.up * legExtensionGoal,
+        legZeroPosition - Vector3.up * legExtensionGoal,
         ExtensionRate * TimeWarp.fixedDeltaTime);
     }
 
@@ -131,16 +139,16 @@ namespace HabUtils
     // Sets the leg extension by fraction
     public void SetExtension(float extension)
     {
-      dist = Mathf.Clamp(dist, 0f, 100f);
+        extension = Mathf.Clamp(extension, 0f, 100f);
       LegExtension = extension;
       legExtensionGoal = (ExtenderMax - ExtenderMin) * (extension/100f) + ExtenderMin;
     }
     // Sets the leg extension by distance
     public void SetExtensionDistance(float dist)
     {
-      extension = Mathf.Clamp(extension, 0f, ExtenderMax - ExtenderMin);
-      float fraction = extension/(ExtenderMax - ExtenderMin)
-      SetExtension(fraction);
+      dist = Mathf.Clamp(dist, 0f, ExtenderMax - ExtenderMin);
+      float fraction = dist / (ExtenderMax - ExtenderMin);
+      SetExtension(fraction*100f);
     }
 
     // Sets the relative position, which is the difference between the base transform position and the current position
