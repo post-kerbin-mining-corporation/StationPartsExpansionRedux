@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using KSP.Localization;
-
+using VisualDebugUtils;
 
 namespace HabUtils
 {
@@ -55,6 +55,12 @@ namespace HabUtils
     private Transform baseTransform;
     private Transform footTransform;
 
+    public DebugAxisTripod D_extenderXform;
+    public DebugAxisTripod D_autoXform;
+    public DebugAxisTripod D_baseXform;
+    public DebugAxisTripod D_footXform;
+
+
     public Transform BaseTransform {
       get {return baseTransform;}
     }
@@ -66,6 +72,7 @@ namespace HabUtils
         SetupTransform();
         SetupExtension();
         SetupUI();
+        SetupDebug();
       }
     }
 
@@ -117,6 +124,20 @@ namespace HabUtils
       SetExtension(LegExtension);
       extenderTransform.localPosition = legZeroPosition + Vector3.up * LegExtension;
     }
+
+    // Sets up the model extension from startup
+    protected void SetupDebug()
+    {
+      D_extenderXform = new DebugAxisTripod(1f);
+      D_extenderXform.XForm.SetParent(extenderTransform, false);
+      D_footXform = new DebugAxisTripod(1f);
+      D_footXform.XForm.SetParent(extenderTransform, false);
+      D_baseXform = new DebugAxisTripod(1f);
+      D_baseXform.XForm.SetParent(extenderTransform, false);
+      D_autoXform = new DebugAxisTripod(1f);
+      D_autoXform.XForm.SetParent(part.transform, false);
+    }
+
     protected void OnChangeExtension(BaseField field, object what)
     {
         SetExtension(LegExtension);
@@ -124,7 +145,7 @@ namespace HabUtils
     // Does the actual leg movement
     protected void HandleLegMovement()
     {
-        
+
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
         legZeroPosition - Vector3.up * legExtensionGoal,
         ExtensionRate * TimeWarp.fixedDeltaTime);

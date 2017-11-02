@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using KSP.Localization;
-
+using VisualDebugUtils;
 
 namespace HabUtils
 {
@@ -35,6 +35,8 @@ namespace HabUtils
     private Transform levelingTransform;
     private Transform rotatingTransform;
 
+    private DebugPoint D_pivotPoint;
+
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
@@ -42,6 +44,7 @@ namespace HabUtils
 
         SetupTransforms();
         SetupLegs();
+        SetupDebug();
       }
     }
 
@@ -78,7 +81,11 @@ namespace HabUtils
 
       }
     }
-
+    protected void SetupDebug()
+    {
+      D_pivotPoint = new DebugPoint(0.25f, Color.green);
+      D_pivotPoint.XForm.SetParent(levelingTransform);
+    }
     protected void DoAutoLevel()
     {
 
@@ -95,8 +102,10 @@ namespace HabUtils
       {
         // Rotate the leg transforms around the pivot by the rotation delta
         Vector3 newPos = RotatePointAroundPivot(legs[i].BaseTransform.position, levelingTransform.position, diffRotation);
-        // Get distance of this new position to the surface
 
+        legs[i].D_autoXform.XForm.position = newPos;
+
+        // Get distance of this new position to the surface
         RaycastHit hit;
         if (RaycastSurface(newPos, downVector, out hit))
         {
@@ -148,5 +157,8 @@ namespace HabUtils
       }
     }
 
+
+
   }
+
 }
