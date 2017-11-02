@@ -47,7 +47,9 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float ExtensionRate = 1.0f;
 
+    private Vector3 legZeroPosition;
     private Vector3 relativePosition;
+
     private float LegExtensionGoal = 0f;
     private Transform extenderTransform;
     private Transform baseTransform;
@@ -63,6 +65,7 @@ namespace HabUtils
       {
         SetupTransform();
         SetupExtension();
+        SetupUI();
       }
     }
 
@@ -100,27 +103,29 @@ namespace HabUtils
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find BaseTransformName {0}", BaseTransformName));
       if (footTransform == null)
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find FootTransformName {0}", FootTransformName));
+
+        legZeroPosition = extenderTransform.localPosition;
     }
 
     // Sets up the model extension from startup
     protected void SetupExtension()
     {
       SetExtension(LegExtension);
-      extenderTransform.localPosition = extenderTransform.localPosition + Vector3.up * LegExtension;
+      extenderTransform.localPosition = legZeroPosition + Vector3.up * LegExtension;
     }
 
     // Does the actual leg movement
     protected void HandleLegMovement()
     {
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
-        extenderTransform.localPosition + Vector3.up * legExtensionGoal,
-        ExtensionRate*TimeWarp.fixedDeltaTime);
+        legZeroPosition + Vector3.up * legExtensionGoal,
+        ExtensionRate * TimeWarp.fixedDeltaTime);
     }
 
     // Sets the surface normal for the foot
     public void SetSurfaceNormal(Vector3 norm)
     {
-        
+
     }
 
     // Sets the leg extension by fraction
