@@ -47,6 +47,9 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float ExtensionRate = 1.0f;
 
+    [KSPField(isPersistant = false)]
+    public bool EnableDebug = false;
+
     private Vector3 legZeroPosition;
     private Vector3 relativePosition;
 
@@ -72,7 +75,8 @@ namespace HabUtils
         SetupTransform();
         SetupExtension();
         SetupUI();
-        SetupDebug();
+        if (EnableDebug)
+            SetupDebug();
       }
     }
 
@@ -129,13 +133,17 @@ namespace HabUtils
     protected void SetupDebug()
     {
       D_extenderXform = new DebugAxisTripod(1f);
-      D_extenderXform.XForm.SetParent(extenderTransform, false);
-      D_footXform = new DebugAxisTripod(1f);
-      D_footXform.XForm.SetParent(extenderTransform, false);
-      D_baseXform = new DebugAxisTripod(1f);
-      D_baseXform.XForm.SetParent(extenderTransform, false);
+      D_extenderXform.AssignTransform(extenderTransform);
+      
+
+      D_footXform = new DebugAxisTripod(0.05f);
+      D_footXform.AssignTransform(footTransform);
+
+      D_baseXform = new DebugAxisTripod(0.2f);
+      D_baseXform.AssignTransform(baseTransform);
+
       D_autoXform = new DebugAxisTripod(1f);
-      D_autoXform.XForm.SetParent(part.transform, false);
+      D_autoXform.AssignTransform(baseTransform);
     }
 
     protected void OnChangeExtension(BaseField field, object what)
@@ -147,7 +155,7 @@ namespace HabUtils
     {
 
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
-        legZeroPosition - Vector3.up * legExtensionGoal,
+        legZeroPosition - Vector3.forward * legExtensionGoal,
         ExtensionRate * TimeWarp.fixedDeltaTime);
     }
 

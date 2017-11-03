@@ -13,8 +13,8 @@ namespace VisualDebugUtils
   {
     protected Transform xFormHost;
     protected string debugShader = "GUI/Text Shader";
-    protected int debugQueue = 1000;
-    protected int debugLayer = 1000;
+    protected int debugQueue = 4000;
+    protected int debugLayer = 0;
 
     public Transform XForm {
       get {return xFormHost;}
@@ -36,26 +36,32 @@ namespace VisualDebugUtils
     {
       GameObject hostGO = new GameObject("Debug_AxisTripod");
       xFormHost = hostGO.transform;
-      zAxis = CreateBasicRenderer("ZAxis", xFormHost, new Vector3[Vector3.zero, Vector3.forward*size], Color.blue);
-      yAxis = CreateBasicRenderer("YAxis", xFormHost, new Vector3[Vector3.zero, Vector3.up*size], Color.green);
-      xAxis = CreateBasicRenderer("XAxis", xFormHost, new Vector3[Vector3.zero, Vector3.left*size], Color.red);
+      zAxis = CreateBasicRenderer("ZAxis", xFormHost, new Vector3[] {Vector3.zero, Vector3.forward*size}, Color.blue);
+      yAxis = CreateBasicRenderer("YAxis", xFormHost, new Vector3[] {Vector3.zero, Vector3.up*size}, Color.green);
+      xAxis = CreateBasicRenderer("XAxis", xFormHost, new Vector3[] {Vector3.zero, Vector3.left*size}, Color.red);
     }
-
+    public void AssignTransform(Transform t)
+    {
+        xFormHost.SetParent(t, false);
+        xFormHost.localPosition = Vector3.zero;
+        xFormHost.localRotation = Quaternion.identity;
+    }
     protected LineRenderer CreateBasicRenderer(string lineName, Transform parent, Vector3[] points, Color color)
     {
         GameObject child = new GameObject(lineName);
-        child.transform.SetParent(parent, true);
+        child.transform.SetParent(parent, false);
         child.transform.localRotation = Quaternion.identity;
         child.transform.localPosition = Vector3.zero;
 
         LineRenderer lr = child.AddComponent<LineRenderer>();
         // Set up the material
-        lr.material = new Material(Shader.Find(debugShader);
+        lr.useWorldSpace = false;
+        lr.material = new Material(Shader.Find(debugShader));
         lr.material.color = color;
         lr.material.renderQueue = debugQueue;
         lr.gameObject.layer = debugLayer;
         lr.SetVertexCount(2);
-
+        lr.SetWidth(0.05f, 0.05f);
         lr.SetPosition(0, points[0]);
         lr.SetPosition(1, points[1]);
 
@@ -74,9 +80,9 @@ namespace VisualDebugUtils
 
     protected void CreateBasicRenderer(string objName, Transform parent, float size, Color color)
     {
-      GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+      GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
-      Destroy(go.GetComponent<Collider>());
+      GameObject.Destroy(go.GetComponent<Collider>());
       go.transform.parent = parent;
       go.transform.localPosition = Vector3.zero;
       go.transform.localScale = Vector3.one*size;
@@ -98,24 +104,24 @@ namespace VisualDebugUtils
       {
         GameObject hostGO = new GameObject("Debug_Dot");
         xFormHost = hostGO.transform;
-        axis = CreateBasicRenderer("Axis", xFormHost, new Vector3[Vector3.zero, Vector3.forward*size], color);
+        axis = CreateBasicRenderer("Axis", xFormHost, new Vector3[] {Vector3.zero, Vector3.forward*size}, color);
       }
 
       protected LineRenderer CreateBasicRenderer(string lineName, Transform parent, Vector3[] points, Color color)
       {
           GameObject child = new GameObject(lineName);
-          child.transform.SetParent(parent, true);
+          child.transform.SetParent(parent, false);
           child.transform.localRotation = Quaternion.identity;
           child.transform.localPosition = Vector3.zero;
 
           LineRenderer lr = child.AddComponent<LineRenderer>();
           // Set up the material
-          lr.material = new Material(Shader.Find(debugShader);
+          lr.material = new Material(Shader.Find(debugShader));
           lr.material.color = color;
           lr.material.renderQueue = debugQueue;
           lr.gameObject.layer = debugLayer;
           lr.SetVertexCount(2);
-
+          lr.useWorldSpace = false;
           lr.SetPosition(0, points[0]);
           lr.SetPosition(1, points[1]);
 

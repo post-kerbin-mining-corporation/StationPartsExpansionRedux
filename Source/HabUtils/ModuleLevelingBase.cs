@@ -12,8 +12,9 @@ namespace HabUtils
   public class ModuleLevelingBase: PartModule
   {
     // What level of automation is desired?
-    [KSPField(isPersistant = true)]
-    public bool Automated = true;
+    [KSPField(guiActive = true, guiActiveEditor = true, guiName = "Leveling Mode")]
+    [UI_ChooseOption(affectSymCounterparts = UI_Scene.None, scene = UI_Scene.All, suppressEditorShipModified = true)]
+    public int currentModeIndex = 0;
 
     // Angular delta display
     [KSPField(isPersistant = false, guiActive = true, guiName = "Abs. Level angle")]
@@ -23,11 +24,18 @@ namespace HabUtils
     [KSPField(isPersistant = true)]
     public string LevelingTransformName;
 
+    [KSPField(isPersistant = false)]
+    public bool CanAutoLevel = true;
+
+    [KSPField(isPersistant = false)]
+    public bool EnableDebug = false;
+
     // Fire the auto-level event
     [KSPEvent(guiActive = true, guiName = "Auto-Level")]
     public void AutoLevel()
     {
-        DoAutoLevel();
+        if (CanAutoLevel)
+            DoAutoLevel();
     }
 
     // Associated legs on the part
@@ -44,7 +52,9 @@ namespace HabUtils
 
         SetupTransforms();
         SetupLegs();
-        SetupDebug();
+        if (EnableDebug)
+            SetupDebug();
+        SetupUI();
       }
     }
 
@@ -83,8 +93,40 @@ namespace HabUtils
     }
     protected void SetupDebug()
     {
-      D_pivotPoint = new DebugPoint(0.25f, Color.green);
+      D_pivotPoint = new DebugPoint(0.15f, Color.green);
       D_pivotPoint.XForm.SetParent(levelingTransform);
+      D_pivotPoint.XForm.localPosition = Vector3.zero;
+      D_pivotPoint.XForm.localRotation = Quaternion.identity;
+    }
+    protected void SetupUI()
+    {
+        Events["AutoLevel"].guiActive = CanAutoLevel;
+
+        var chooseField = Fields["currentModeIndex"];
+        var chooseOption = (UI_ChooseOption)chooseField.uiControlEditor;
+        chooseOption.options = new string[] {"Linked", "Manual"};
+        chooseOption.onFieldChanged = HandleModeChange;
+        chooseOption = (UI_ChooseOption)chooseField.uiControlFlight;
+        chooseOption.options = new string[] { "Linked", "Manual" };
+        chooseOption.onFieldChanged = HandleModeChange;
+    }
+    protected void HandleModeChange(BaseField field, object what)
+    {
+        if (currentModeIndex == 0)
+        {
+            foreach (ModuleAdjustableLeg leg in legs)
+            {
+                leg.SetUIVisibility(false);
+            }
+        }
+        else if (currentModeIndex == 1)
+        {
+            foreach (ModuleAdjustableLeg leg in legs)
+            {
+                leg.SetUIVisibility(true);
+            }
+        }
+
     }
     protected void DoAutoLevel()
     {
@@ -102,8 +144,8 @@ namespace HabUtils
       {
         // Rotate the leg transforms around the pivot by the rotation delta
         Vector3 newPos = RotatePointAroundPivot(legs[i].BaseTransform.position, levelingTransform.position, diffRotation);
-
-        legs[i].D_autoXform.XForm.position = newPos;
+        if (legs[i].EnableDebug)
+            legs[i].D_autoXform.XForm.position = newPos;
 
         // Get distance of this new position to the surface
         RaycastHit hit;
@@ -125,8 +167,8 @@ namespace HabUtils
       Utils.Log(String.Format("Minimum distance is {0}",min));
       for (int i = 0; i < legs.Length ;i++)
       {
-          Utils.Log(String.Format("Setting extension of leg {0} to {1}", legs[i].LegDisplayName, distanceDeltas[i]));
-          legs[i].SetExtensionDistance(distanceDeltas[i]);
+          Utils.Log(String.Format("Setting extension of leg {0} to {1}", legs[i].LegDisplayName, distanceDeltas[i] - min));
+          legs[i].SetExtensionDistance(distanceDeltas[i]-min);
       }
     }
     // Rotates a position around a pivot point given a rotation
@@ -151,7 +193,7 @@ namespace HabUtils
       // Only level if landed
       if (part.vessel.LandedOrSplashed)
       {
-          float angle = Vector3.Angle(levelingTransform.up,levelingTransform.position - vessel.mainBody.bodyTransform.position);
+          float angle = Vector3.Angle(levelingTransform.up, vessel.mainBody.bodyTransform.position - levelingTransform.position);
         AbsoluteAngle = String.Format("{0} deg", angle);
 
       }
