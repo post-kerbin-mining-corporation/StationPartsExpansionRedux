@@ -16,19 +16,31 @@ namespace HabUtils
     [UI_ChooseOption(affectSymCounterparts = UI_Scene.None, scene = UI_Scene.All, suppressEditorShipModified = true)]
     public int currentModeIndex = 0;
 
-    // Angular delta display
-    [KSPField(isPersistant = false, guiActive = true, guiName = "Abs. Level angle")]
+    // Display base angle
+    [KSPField(isPersistant = false, guiActive = true, guiName = "Levelling Angle")]
     public string AbsoluteAngle;
 
-    // The transform to use for leveling
+    // The transform to use for leveling. Should be positioned at a similar height to the leg baseTransforms
     [KSPField(isPersistant = true)]
     public string LevelingTransformName;
 
+    // Whether to allow auto-levelling or not
     [KSPField(isPersistant = false)]
     public bool CanAutoLevel = true;
 
+    // Current linked offset
+    [KSPField(isPersistant = true, guiActive = true, guiName = "Leg Extension"), UI_FloatRange(minValue = 0f, maxValue = 100f, stepIncrement = 1f)]
+    public float LinkedExtension = 0f;
+
+    // Maximum linked offset
+    [KSPField(isPersistant = false)]
+    public float LinkedExtensionMax = 1.0f;
+
     [KSPField(isPersistant = false)]
     public bool EnableDebug = false;
+
+    [KSPField(isPersistant = true)]
+    public float previousOffset = 0f;
 
     // Fire the auto-level event
     [KSPEvent(guiActive = true, guiName = "Auto-Level")]
@@ -38,11 +50,13 @@ namespace HabUtils
             DoAutoLevel();
     }
 
+    private float currentOffset = 0f;
+
     // Associated legs on the part
     private ModuleAdjustableLeg[] legs;
     private Transform levelingTransform;
-    private Transform rotatingTransform;
 
+    // Visual Debug Objects
     private DebugPoint D_pivotPoint;
 
     public virtual void Start()
@@ -79,7 +93,6 @@ namespace HabUtils
       levelingTransform = part.FindModelTransform(LevelingTransformName);
       if (levelingTransform == null)
         Utils.LogError(String.Format("[ModuleLevelingBase]: Could not find LevelingTransformName {0}", LevelingTransformName));
-
     }
 
     // Sets up the ModuleAdjustableLeg components
@@ -101,19 +114,33 @@ namespace HabUtils
     protected void SetupUI()
     {
         Events["AutoLevel"].guiActive = CanAutoLevel;
+        Events["AutoLevel"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_Auto-Level");
+
+        HandleModeChange(null, null);
 
         var chooseField = Fields["currentModeIndex"];
+        chooseField.guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode");
         var chooseOption = (UI_ChooseOption)chooseField.uiControlEditor;
-        chooseOption.options = new string[] {"Linked", "Manual"};
+        chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
+            Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
         chooseOption.onFieldChanged = HandleModeChange;
         chooseOption = (UI_ChooseOption)chooseField.uiControlFlight;
-        chooseOption.options = new string[] { "Linked", "Manual" };
+        chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
+            Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
         chooseOption.onFieldChanged = HandleModeChange;
+
+        Fields["LinkedExtension"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LinkedExtension");
+        UI_FloatRange slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlEditor;
+        slider.onFieldChanged = OnChangeExtension;
+        slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlFlight;
+        slider.onFieldChanged = OnChangeExtension;
+
     }
     protected void HandleModeChange(BaseField field, object what)
     {
         if (currentModeIndex == 0)
         {
+          Fields["LinkedExtension"].guiActive = true;
             foreach (ModuleAdjustableLeg leg in legs)
             {
                 leg.SetUIVisibility(false);
@@ -121,11 +148,25 @@ namespace HabUtils
         }
         else if (currentModeIndex == 1)
         {
+          Fields["LinkedExtension"].guiActive = false;
             foreach (ModuleAdjustableLeg leg in legs)
             {
                 leg.SetUIVisibility(true);
             }
         }
+
+    }
+
+    protected void OnChangeExtension(BaseField field, object what)
+    {
+      currentOffset = LinkedExtension/100f * LinkedExtensionMax;
+      for (int i = 0; i < legs.Length ;i++)
+      {
+        // Get the current distance, subtract the old offset, add the current offset
+        float realDist = legs[i].GetExtensionDistance() - previousOffset;
+        legs[i].SetExtensionDistance(realDist+currentOffset);
+      }
+      previousOffset = currentOffset;
 
     }
     protected void DoAutoLevel()
@@ -167,8 +208,8 @@ namespace HabUtils
       Utils.Log(String.Format("Minimum distance is {0}",min));
       for (int i = 0; i < legs.Length ;i++)
       {
-          Utils.Log(String.Format("Setting extension of leg {0} to {1}", legs[i].LegDisplayName, distanceDeltas[i] - min));
-          legs[i].SetExtensionDistance(distanceDeltas[i]-min);
+          Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min + currentOffset));
+          legs[i].SetExtensionDistance(distanceDeltas[i]-min + currentOffset);
       }
     }
     // Rotates a position around a pivot point given a rotation
@@ -185,7 +226,7 @@ namespace HabUtils
       LayerMask maskS = 1 << LayerMask.NameToLayer("Local Scenery");
       surfaceLayerMask = maskT | maskS;
 
-      return Physics.Raycast(position, down, out outHit, 50f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
+      return Physics.Raycast(position, down, out outHit, 5f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
     }
 
     protected void ComputeLeveling()
@@ -194,8 +235,11 @@ namespace HabUtils
       if (part.vessel.LandedOrSplashed)
       {
           float angle = Vector3.Angle(levelingTransform.up, vessel.mainBody.bodyTransform.position - levelingTransform.position);
-        AbsoluteAngle = String.Format("{0} deg", angle);
+          AbsoluteAngle = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_AbsoluteAngle_Normal", angle.ToString("F1"));
 
+      } else
+      {
+          AbsoluteAngle = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_AbsoluteAngle_None");
       }
     }
 

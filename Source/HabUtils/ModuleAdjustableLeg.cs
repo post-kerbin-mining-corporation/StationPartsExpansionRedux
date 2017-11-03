@@ -63,6 +63,7 @@ namespace HabUtils
     public DebugAxisTripod D_baseXform;
     public DebugAxisTripod D_footXform;
 
+    Quaterion footRotationGoal;
 
     public Transform BaseTransform {
       get {return baseTransform;}
@@ -91,6 +92,10 @@ namespace HabUtils
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
         HandleLegMovement();
+      }
+      if (HighLogic.LoadedSceneIsFlight)
+      {
+        HandleFootMovement();
       }
     }
 
@@ -134,7 +139,7 @@ namespace HabUtils
     {
       D_extenderXform = new DebugAxisTripod(1f);
       D_extenderXform.AssignTransform(extenderTransform);
-      
+
 
       D_footXform = new DebugAxisTripod(0.05f);
       D_footXform.AssignTransform(footTransform);
@@ -157,18 +162,55 @@ namespace HabUtils
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
         legZeroPosition - Vector3.forward * legExtensionGoal,
         ExtensionRate * TimeWarp.fixedDeltaTime);
+
+
+    }
+    protected void HandleFootMovement()
+    {
+      footTransform.rotation = Quaterion.RotateTowards(footTransform.rotation, footRotationGoal, TimeWarp.FixedDeltaTime);
+    }
+
+    protected void CalculateFootAngle()
+    {
+      if (part.CheckLanded())
+      {
+        RaycastHit hit;
+        if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
+        {
+            footRotationGoal = Quaternion.LookRotation(hit.normal);
+        }
+        else
+        {
+          footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+        }
+      } else
+      {
+        footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+      }
+    }
+
+    // Raycasts against the KSP surface
+    protected bool RaycastSurface(Vector3 position, Vector3 down, out RaycastHit outHit)
+    {
+      // Only cast against terrain
+      LayerMask surfaceLayerMask;
+      LayerMask maskT = 1 << LayerMask.NameToLayer("TerrainColliders");
+      LayerMask maskS = 1 << LayerMask.NameToLayer("Local Scenery");
+      surfaceLayerMask = maskT | maskS;
+
+      return Physics.Raycast(position, down, out outHit, 1f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
     }
 
     // Sets the surface normal for the foot
     public void SetSurfaceNormal(Vector3 norm)
     {
-
+      //footRotationGoal = Quaternion.LookRotation(norm);
     }
 
     // Sets the leg extension by fraction
     public void SetExtension(float extension)
     {
-        extension = Mathf.Clamp(extension, 0f, 100f);
+      extension = Mathf.Clamp(extension, 0f, 100f);
       LegExtension = extension;
       legExtensionGoal = (ExtenderMax - ExtenderMin) * (extension/100f) + ExtenderMin;
     }
@@ -178,6 +220,10 @@ namespace HabUtils
       dist = Mathf.Clamp(dist, 0f, ExtenderMax - ExtenderMin);
       float fraction = dist / (ExtenderMax - ExtenderMin);
       SetExtension(fraction*100f);
+    }
+    public void GetExtensionDistance()
+    {
+      return legExtensionGoal;
     }
 
     // Sets the relative position, which is the difference between the base transform position and the current position
