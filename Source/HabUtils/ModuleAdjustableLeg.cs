@@ -47,6 +47,10 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float ExtensionRate = 1.0f;
 
+    // Extension Rate
+    [KSPField(isPersistant = false)]
+    public float FootRotationRate = 10.0f;
+
     [KSPField(isPersistant = false)]
     public bool EnableDebug = false;
 
@@ -63,18 +67,19 @@ namespace HabUtils
     public DebugAxisTripod D_baseXform;
     public DebugAxisTripod D_footXform;
 
-    Quaterion footRotationGoal;
+    Quaternion footRotationGoal;
 
     public Transform BaseTransform {
       get {return baseTransform;}
     }
 
+   
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
-        SetupTransform();
-        SetupExtension();
+          SetupTransform();
+          SetupExtension();
         SetupUI();
         if (EnableDebug)
             SetupDebug();
@@ -95,6 +100,7 @@ namespace HabUtils
       }
       if (HighLogic.LoadedSceneIsFlight)
       {
+          CalculateFootAngle();
         HandleFootMovement();
       }
     }
@@ -124,14 +130,14 @@ namespace HabUtils
       if (footTransform == null)
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find FootTransformName {0}", FootTransformName));
 
-        legZeroPosition = extenderTransform.localPosition;
+        legZeroPosition = baseTransform.localPosition;
     }
 
     // Sets up the model extension from startup
     protected void SetupExtension()
     {
       SetExtension(LegExtension);
-      extenderTransform.localPosition = legZeroPosition + Vector3.up * LegExtension;
+      extenderTransform.localPosition = legZeroPosition - Vector3.forward * legExtensionGoal;
     }
 
     // Sets up the model extension from startup
@@ -167,22 +173,27 @@ namespace HabUtils
     }
     protected void HandleFootMovement()
     {
-      footTransform.rotation = Quaterion.RotateTowards(footTransform.rotation, footRotationGoal, TimeWarp.FixedDeltaTime);
+      footTransform.rotation = Quaternion.RotateTowards(footTransform.rotation, footRotationGoal, FootRotationRate * TimeWarp.fixedDeltaTime);
     }
-
+    protected int ticker = 0;
     protected void CalculateFootAngle()
     {
-      if (part.CheckLanded())
+      if (part.checkLanded())
       {
-        RaycastHit hit;
-        if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
-        {
-            footRotationGoal = Quaternion.LookRotation(hit.normal);
-        }
-        else
-        {
-          footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
-        }
+          if (ticker > 10)
+          {
+              RaycastHit hit;
+              if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
+              {
+                  footRotationGoal = Quaternion.LookRotation(hit.normal, footTransform.up);
+              }
+              else
+              {
+                  footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+              }
+              ticker = 0;
+          }
+          ticker++;
       } else
       {
         footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
@@ -198,7 +209,7 @@ namespace HabUtils
       LayerMask maskS = 1 << LayerMask.NameToLayer("Local Scenery");
       surfaceLayerMask = maskT | maskS;
 
-      return Physics.Raycast(position, down, out outHit, 1f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
+      return Physics.Raycast(position, down, out outHit, 0.25f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
     }
 
     // Sets the surface normal for the foot
@@ -221,7 +232,7 @@ namespace HabUtils
       float fraction = dist / (ExtenderMax - ExtenderMin);
       SetExtension(fraction*100f);
     }
-    public void GetExtensionDistance()
+    public float GetExtensionDistance()
     {
       return legExtensionGoal;
     }

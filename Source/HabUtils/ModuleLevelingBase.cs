@@ -208,7 +208,7 @@ namespace HabUtils
       Utils.Log(String.Format("Minimum distance is {0}",min));
       for (int i = 0; i < legs.Length ;i++)
       {
-          Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min + currentOffset));
+          Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
           legs[i].SetExtensionDistance(distanceDeltas[i]-min + currentOffset);
       }
     }
