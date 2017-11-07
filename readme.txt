@@ -2,7 +2,8 @@
 STATION PARTS EXPANSION REDUX v1.0.0
 ====================================
 
-SSPX Redux
+This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
+In addition this pack reskins the Hitchiker, Cupola and Mobile Lab to improve their quality and match the new parts.
 
 ============
 DEPENDENCIES
@@ -10,6 +11,7 @@ DEPENDENCIES
 
 Required:
 - ModuleManager (2.8.1)
+- B9PartSwitch (1.10.0)
 
 Optional
 - Community Tech Tree (v2.2+)
