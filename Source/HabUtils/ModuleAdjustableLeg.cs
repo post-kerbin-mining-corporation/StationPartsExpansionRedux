@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using KSP.Localization;
-
+using VisualDebugUtils;
 
 namespace HabUtils
 {
@@ -47,22 +47,42 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float ExtensionRate = 1.0f;
 
+    // Extension Rate
+    [KSPField(isPersistant = false)]
+    public float FootRotationRate = 10.0f;
+
+    [KSPField(isPersistant = false)]
+    public bool EnableDebug = false;
+
+    private Vector3 legZeroPosition;
     private Vector3 relativePosition;
-    private float LegExtensionGoal = 0f;
+
+    private float legExtensionGoal = 0f;
     private Transform extenderTransform;
     private Transform baseTransform;
     private Transform footTransform;
 
-    public Vector3 BaseTransform {
+    public DebugAxisTripod D_extenderXform;
+    public DebugAxisTripod D_autoXform;
+    public DebugAxisTripod D_baseXform;
+    public DebugAxisTripod D_footXform;
+
+    Quaternion footRotationGoal;
+
+    public Transform BaseTransform {
       get {return baseTransform;}
     }
 
+   
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
-        SetupTransform();
-        SetupExtension();
+          SetupTransform();
+          SetupExtension();
+        SetupUI();
+        if (EnableDebug)
+            SetupDebug();
       }
     }
 
@@ -78,6 +98,11 @@ namespace HabUtils
       {
         HandleLegMovement();
       }
+      if (HighLogic.LoadedSceneIsFlight)
+      {
+          CalculateFootAngle();
+        HandleFootMovement();
+      }
     }
 
     // Sets up the ui/localizations
@@ -85,6 +110,10 @@ namespace HabUtils
     {
       string legName = Localizer.Format(LegDisplayName);
       Fields["LegExtension"].guiName = Localizer.Format("#LOC_SSPX_ModuleAdjustableLeg_BaseName", legName);
+      UI_FloatRange slider = (UI_FloatRange)Fields["LegExtension"].uiControlEditor;
+      slider.onFieldChanged = OnChangeExtension;
+      slider = (UI_FloatRange)Fields["LegExtension"].uiControlFlight;
+      slider.onFieldChanged = OnChangeExtension;
     }
 
     // Sets up the model transform
@@ -100,42 +129,112 @@ namespace HabUtils
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find BaseTransformName {0}", BaseTransformName));
       if (footTransform == null)
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find FootTransformName {0}", FootTransformName));
+
+        legZeroPosition = baseTransform.localPosition;
     }
 
     // Sets up the model extension from startup
     protected void SetupExtension()
     {
       SetExtension(LegExtension);
-      extenderTransform.localPosition = extenderTransform.localPosition + Vector3.up * LegExtension;
+      extenderTransform.localPosition = legZeroPosition - Vector3.forward * legExtensionGoal;
     }
 
+    // Sets up the model extension from startup
+    protected void SetupDebug()
+    {
+      D_extenderXform = new DebugAxisTripod(1f);
+      D_extenderXform.AssignTransform(extenderTransform);
+
+
+      D_footXform = new DebugAxisTripod(0.05f);
+      D_footXform.AssignTransform(footTransform);
+
+      D_baseXform = new DebugAxisTripod(0.2f);
+      D_baseXform.AssignTransform(baseTransform);
+
+      D_autoXform = new DebugAxisTripod(1f);
+      D_autoXform.AssignTransform(baseTransform);
+    }
+
+    protected void OnChangeExtension(BaseField field, object what)
+    {
+        SetExtension(LegExtension);
+    }
     // Does the actual leg movement
     protected void HandleLegMovement()
     {
+
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
-        extenderTransform.localPosition + Vector3.up * legExtensionGoal,
-        ExtensionRate*TimeWarp.fixedDeltaTime);
+        legZeroPosition - Vector3.forward * legExtensionGoal,
+        ExtensionRate * TimeWarp.fixedDeltaTime);
+
+
+    }
+    protected void HandleFootMovement()
+    {
+      footTransform.rotation = Quaternion.RotateTowards(footTransform.rotation, footRotationGoal, FootRotationRate * TimeWarp.fixedDeltaTime);
+    }
+    protected int ticker = 0;
+    protected void CalculateFootAngle()
+    {
+      if (part.checkLanded())
+      {
+          if (ticker > 10)
+          {
+              RaycastHit hit;
+              if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
+              {
+                  footRotationGoal = Quaternion.LookRotation(hit.normal, footTransform.up);
+              }
+              else
+              {
+                  footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+              }
+              ticker = 0;
+          }
+          ticker++;
+      } else
+      {
+        footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+      }
+    }
+
+    // Raycasts against the KSP surface
+    protected bool RaycastSurface(Vector3 position, Vector3 down, out RaycastHit outHit)
+    {
+      // Only cast against terrain
+      LayerMask surfaceLayerMask;
+      LayerMask maskT = 1 << LayerMask.NameToLayer("TerrainColliders");
+      LayerMask maskS = 1 << LayerMask.NameToLayer("Local Scenery");
+      surfaceLayerMask = maskT | maskS;
+
+      return Physics.Raycast(position, down, out outHit, 0.25f, surfaceLayerMask, QueryTriggerInteraction.Ignore);
     }
 
     // Sets the surface normal for the foot
     public void SetSurfaceNormal(Vector3 norm)
     {
-        
+      //footRotationGoal = Quaternion.LookRotation(norm);
     }
 
     // Sets the leg extension by fraction
     public void SetExtension(float extension)
     {
-      dist = Mathf.Clamp(dist, 0f, 100f);
+      extension = Mathf.Clamp(extension, 0f, 100f);
       LegExtension = extension;
       legExtensionGoal = (ExtenderMax - ExtenderMin) * (extension/100f) + ExtenderMin;
     }
     // Sets the leg extension by distance
     public void SetExtensionDistance(float dist)
     {
-      extension = Mathf.Clamp(extension, 0f, ExtenderMax - ExtenderMin);
-      float fraction = extension/(ExtenderMax - ExtenderMin)
-      SetExtension(fraction);
+      dist = Mathf.Clamp(dist, 0f, ExtenderMax - ExtenderMin);
+      float fraction = dist / (ExtenderMax - ExtenderMin);
+      SetExtension(fraction*100f);
+    }
+    public float GetExtensionDistance()
+    {
+      return legExtensionGoal;
     }
 
     // Sets the relative position, which is the difference between the base transform position and the current position
