@@ -13,7 +13,7 @@ namespace HabUtils
     Retracted, Deploying, Deployed, Retracting
   }
 
-  public class ModuleDeployableHabitat: PartModule
+  public class ModuleDeployableHabitat: PartModule, IPartMassModifier
   {
     // Name of the deploy Animation
     [KSPField(isPersistant = false)]
@@ -47,7 +47,11 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float DeployResourceAmount = 0f;
 
-    // Is the module deployd
+    // The number of crew needed to deploy
+    [KSPField(isPersistant = false)]
+    public int CrewToDeploy = 0;
+
+    // Is the module deployed
     [KSPField(isPersistant = true)]
     public bool Deployed = false;
 
@@ -62,6 +66,10 @@ namespace HabUtils
     // Name of the toggle action
     [KSPField(isPersistant = false)]
     public string ToggleActionName = "";
+
+    // Name of the toggle action
+    [KSPField(isPersistant = false)]
+    public float DeployedMassModifier = 0.0f;
 
     /// GUI Fields
     // Current status of deploy
@@ -125,6 +133,14 @@ namespace HabUtils
         return Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_ModuleTitle");
     }
 
+    public float GetModuleMass()
+    {
+      if (Deployed)
+        return DeployedMassModifier;
+      else
+        return 0f;
+    }
+    
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
@@ -187,7 +203,7 @@ namespace HabUtils
         deployAnimation.normalizedTime = 1.0f;
         DestroyIVA();
       }
-      
+
       RefreshPartData();
     }
 
@@ -364,8 +380,32 @@ namespace HabUtils
     /// Checks to see if we can deploy
     protected bool CanDeploy()
     {
-      // Cannot retract if deploy resource is not present
-        if (HighLogic.LoadedSceneIsFlight && DeployResource != "")
+      // Cannot deploy if enough engineers are not present
+      if ((HighLogic.LoadedSceneIsFlight && CrewToDeploy > 0)
+      {
+          List<ProtoCrewMember> crew = part.vessel.GetVesselCrew();
+
+          int numEngineers = 0;
+          foreach (ProtoCrewMember crewman in crew)
+          {
+              if (crewman.experienceTrait.TypeName == "Engineer")
+              {
+                  numEngineers++;
+              }
+          }
+
+          if (numEngineers < CrewToDeploy)
+          {
+            var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrew",
+                        part.partInfo.title, CrewToDeploy);
+            ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
+            return false;
+          }
+        }
+      }
+
+      // Cannot deploy if deploy resource is not present
+      if (HighLogic.LoadedSceneIsFlight && DeployResource != "")
       {
         PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
         double res = 0d;
@@ -385,8 +425,8 @@ namespace HabUtils
       return false;
     }
 
-    /// Checks to see if we can deflate or not
 
+    /// Checks to see if we can deflate or not
     protected bool CanRetract()
     {
         // Cannot retract if that is disabled!
