@@ -133,14 +133,18 @@ namespace HabUtils
         return Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_ModuleTitle");
     }
 
-    public float GetModuleMass()
+    public float GetModuleMass(float baseMass, ModifierStagingSituation situation)
     {
       if (Deployed)
         return DeployedMassModifier;
       else
         return 0f;
     }
-    
+    public ModifierChangeWhen GetModuleMassChangeWhen() 
+    {
+        return ModifierChangeWhen.FIXED;
+    }
+
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
@@ -381,7 +385,7 @@ namespace HabUtils
     protected bool CanDeploy()
     {
       // Cannot deploy if enough engineers are not present
-      if ((HighLogic.LoadedSceneIsFlight && CrewToDeploy > 0)
+      if (HighLogic.LoadedSceneIsFlight && CrewToDeploy > 0)
       {
           List<ProtoCrewMember> crew = part.vessel.GetVesselCrew();
 
@@ -401,7 +405,7 @@ namespace HabUtils
             ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
             return false;
           }
-        }
+        
       }
 
       // Cannot deploy if deploy resource is not present
