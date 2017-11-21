@@ -51,6 +51,14 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public int CrewToDeploy = 0;
 
+    // The skill the crew needs
+    [KSPField(isPersistant = false)]
+    public string CrewSkillNeeded = "Engineer";
+
+    // The skill the crew needs, localized
+    [KSPField(isPersistant = false)]
+    public string CrewSkillNeededName = "Engineer";
+
     // Is the module deployed
     [KSPField(isPersistant = true)]
     public bool Deployed = false;
@@ -121,6 +129,16 @@ namespace HabUtils
             PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
             baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
         }
+        if (CrewToDeploy > 0)
+        {
+          if (CrewSkillNeeded == "")
+          {
+              baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrewUnskilled", CrewToDeploy.ToString("F0"));
+          } else
+          {
+              baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrew", CrewToDeploy.ToString("F0"), Localizer.Format(CrewSkillNeededName));
+          }
+        }
 
         return baseInfo;
     }
@@ -140,7 +158,7 @@ namespace HabUtils
       else
         return 0f;
     }
-    public ModifierChangeWhen GetModuleMassChangeWhen() 
+    public ModifierChangeWhen GetModuleMassChangeWhen()
     {
         return ModifierChangeWhen.FIXED;
     }
@@ -389,23 +407,38 @@ namespace HabUtils
       {
           List<ProtoCrewMember> crew = part.vessel.GetVesselCrew();
 
-          int numEngineers = 0;
-          foreach (ProtoCrewMember crewman in crew)
+          int numCrew = 0;
+          if (CrewSkillNeeded != "")
           {
-              if (crewman.experienceTrait.TypeName == "Engineer")
-              {
-                  numEngineers++;
-              }
+            foreach (ProtoCrewMember crewman in crew)
+            {
+
+                if (crewman.experienceTrait.TypeName == CrewSkillNeeded)
+                {
+                    numCrew++;
+                }
+            }
+          } else
+          {
+            numCrew = crew.Count;
           }
 
-          if (numEngineers < CrewToDeploy)
+          if (numCrew < CrewToDeploy)
           {
-            var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrew",
-                        part.partInfo.title, CrewToDeploy);
+            string msg;
+            if (CrewSkillNeeded == "")
+            {
+              msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrewUnskilled",
+                          part.partInfo.title, CrewToDeploy);
+            } else
+            {
+              msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrew",
+                          part.partInfo.title, CrewToDeploy, Localizer.Format(CrewSkillNeededName));
+            }
             ScreenMessages.PostScreenMessage(msg, 5f, ScreenMessageStyle.UPPER_CENTER);
             return false;
           }
-        
+
       }
 
       // Cannot deploy if deploy resource is not present
