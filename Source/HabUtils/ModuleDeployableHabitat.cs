@@ -53,7 +53,7 @@ namespace HabUtils
 
     // The skill the crew needs
     [KSPField(isPersistant = false)]
-    public string CrewSkillNeeded = "Engineer";
+    public string CrewSkillNeeded = "";
 
     // The skill the crew needs, localized
     [KSPField(isPersistant = false)]
