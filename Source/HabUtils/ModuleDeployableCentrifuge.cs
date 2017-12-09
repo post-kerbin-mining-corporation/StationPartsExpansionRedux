@@ -124,6 +124,16 @@ namespace HabUtils
             PartResourceDefinition defn = PartResourceLibrary.Instance.GetDefinition(DeployResource);
             baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources", defn.displayName, DeployResourceAmount.ToString("F2"));
         }
+        if (CrewToDeploy > 0)
+        {
+          if (CrewSkillNeeded == "")
+          {
+              baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrewUnskilled", CrewToDeploy.ToString("F0"));
+          } else
+          {
+              baseInfo += "\n\n" + Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrew", CrewToDeploy.ToString("F0"), Localizer.Format(CrewSkillNeededName));
+          }
+        }
 
         return baseInfo;
     }

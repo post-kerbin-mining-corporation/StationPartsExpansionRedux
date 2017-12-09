@@ -73,7 +73,7 @@ namespace HabUtils
       get {return baseTransform;}
     }
 
-   
+
     public virtual void Start()
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
@@ -247,6 +247,7 @@ namespace HabUtils
     public void SetUIVisibility(bool enabled)
     {
       Fields["LegExtension"].guiActive = enabled;
+      Fields["LegExtension"].guiActiveEditor = enabled;
     }
 
   }
