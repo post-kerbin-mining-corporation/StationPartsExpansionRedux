@@ -62,6 +62,9 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public string ToggleSpinActionName = "";
 
+    // The maximum rate of spinning
+    [KSPField(isPersistant = false)]
+    public float MaxTimewarpSpinRate = 10f;
 
     /// GUI Fields
     // Current status of deploy
@@ -98,6 +101,7 @@ namespace HabUtils
     }
 
     // private
+    private Quaternion baseAngles;
     private float rotationRateGoal = 0f;
     private Transform spinTransform;
     private Transform counterweightTransform;
@@ -152,6 +156,7 @@ namespace HabUtils
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
         spinTransform = part.FindModelTransform(SpinTransformName);
+        baseAngles = spinTransform.localRotation;
         counterweightTransform = part.FindModelTransform(CounterweightTransformName);
 
         if (Rotating)
@@ -251,10 +256,25 @@ namespace HabUtils
     // Does the spinning of the centrifuge
     void DoSpin()
     {
+      // If headed to zero
+      if (rotationRateGoal == 0.0)
+      {
+        CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal * SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
+        // If we are not right on target, don't let spin rate fall below 5f
+        if (Quaternion.Angle(baseAngles, spinTransform.localRotation) > 5f)
+        {
+            CurrentSpinRate = Mathf.Clamp(CurrentSpinRate, 5f, 100f);
+        }
+      } else
+      {
         CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal*SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
+      }
+
         CurrentCounterweightSpinRate = Mathf.MoveTowards(CurrentCounterweightSpinRate, rotationRateGoal*CounterweightSpinRate, TimeWarp.fixedDeltaTime*CounterweightSpinAccelerationRate);
 
-        spinTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentSpinRate);
+        float spin = Mathf.Clamp(TimeWarp.fixedDeltaTime * CurrentSpinRate, -MaxTimewarpSpinRate, MaxTimewarpSpinRate);
+
+        spinTransform.Rotate(Vector3.forward * spin);
         counterweightTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
 
         if (part.internalModel != null)
