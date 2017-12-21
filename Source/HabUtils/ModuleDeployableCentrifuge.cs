@@ -256,18 +256,31 @@ namespace HabUtils
     // Does the spinning of the centrifuge
     void DoSpin()
     {
+        float spinAccel = SpinAccelerationRate;
+        if (HighLogic.LoadedSceneIsEditor)
+            spinAccel = spinAccel * 10f;
+
       // If headed to zero
       if (rotationRateGoal == 0.0)
       {
-        CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal * SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
+          float returnSpin = 10f;
+          if (HighLogic.LoadedSceneIsEditor)
+              returnSpin = returnSpin * 10f;
         // If we are not right on target, don't let spin rate fall below 5f
-        if (Quaternion.Angle(baseAngles, spinTransform.localRotation) > 5f)
+          if (CurrentSpinRate > returnSpin)
         {
-            CurrentSpinRate = Mathf.Clamp(CurrentSpinRate, 5f, 100f);
+            CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal * returnSpin, TimeWarp.fixedDeltaTime * spinAccel);
+        } else
+        {
+            if (Quaternion.Angle(baseAngles, spinTransform.localRotation) <= 2f)
+            {
+                CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, 0f, TimeWarp.fixedDeltaTime * spinAccel * 20f);
+            } 
+            
         }
       } else
       {
-        CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal*SpinRate, TimeWarp.fixedDeltaTime*SpinAccelerationRate);
+          CurrentSpinRate = Mathf.MoveTowards(CurrentSpinRate, rotationRateGoal * SpinRate, TimeWarp.fixedDeltaTime * spinAccel);
       }
 
         CurrentCounterweightSpinRate = Mathf.MoveTowards(CurrentCounterweightSpinRate, rotationRateGoal*CounterweightSpinRate, TimeWarp.fixedDeltaTime*CounterweightSpinAccelerationRate);
