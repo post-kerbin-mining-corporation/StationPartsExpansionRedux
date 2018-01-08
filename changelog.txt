@@ -22,8 +22,7 @@ v1.0.0.b
 -- Completed prop layout, seat layout for 3.75m control room
 -- Completed prop layout for 3.75m compact centrifuge
 -- Completed prop layout for 1.25m compact inflatable hab (Stone Blue)
--- Completed prop layout for 1.25m small inflatable hab (Stone Blue)
--- Completed prop layout for 1.25m large inflatable hab (ISE)
+
 -- Completed prop layout for 1.25m compact centrifuge (Stone Blue)
 -- Completed prop layout for 1.25m airlock (Stone Blue)
 -- Completed prop layout for 1.25m utility module (Stone Blue)
