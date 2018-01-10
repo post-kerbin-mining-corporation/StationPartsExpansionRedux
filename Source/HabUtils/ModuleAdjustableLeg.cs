@@ -52,6 +52,15 @@ namespace HabUtils
     public float FootRotationRate = 10.0f;
 
     [KSPField(isPersistant = false)]
+    public float PhysicsBounce = 0.0f;
+
+    [KSPField(isPersistant = false)]
+    public float PhysicsStaticFriction = 0.5f;
+
+    [KSPField(isPersistant = false)]
+    public float PhysicsDynamicFriction = 0.5f;
+
+    [KSPField(isPersistant = false)]
     public bool EnableDebug = false;
 
     private Vector3 legZeroPosition;
@@ -61,6 +70,8 @@ namespace HabUtils
     private Transform extenderTransform;
     private Transform baseTransform;
     private Transform footTransform;
+
+    private PhysicMaterial phys;
 
     public DebugAxisTripod D_extenderXform;
     public DebugAxisTripod D_autoXform;
@@ -129,6 +140,18 @@ namespace HabUtils
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find BaseTransformName {0}", BaseTransformName));
       if (footTransform == null)
         Utils.LogError(String.Format("[ModuleAdjustableLeg]: Could not find FootTransformName {0}", FootTransformName));
+
+        Collider legCollider = extenderTransform.GetComponentInChildren<Collider>();
+        phys = legCollider.material;
+        if (phys == null)
+        {
+          phys = new PhysicMaterial();
+          legCollider.material = phys
+        }
+
+        phys.bounciness = PhysicsBounce
+        phys.staticFriction = PhysicsStaticFriction
+        phys.dynamicFriction = PhysicsDynamicFriction
 
         legZeroPosition = baseTransform.localPosition;
     }
