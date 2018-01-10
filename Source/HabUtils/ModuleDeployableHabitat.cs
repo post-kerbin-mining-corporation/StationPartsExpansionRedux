@@ -263,6 +263,10 @@ namespace HabUtils
     /// Handle updating the animation
     protected void HandleAnimation()
     {
+        float realSpeed = AnimationSpeed;
+        if (HighLogic.LoadedSceneIsEditor)
+            realSpeed = realSpeed * 10f;
+
       switch (deployState)
       {
         case DeployState.Retracted:
@@ -270,10 +274,10 @@ namespace HabUtils
         case DeployState.Deployed:
             break;
         case DeployState.Deploying:
-          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 0.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
+            deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 0.0f, realSpeed * TimeWarp.fixedDeltaTime);
           break;
         case DeployState.Retracting:
-          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 1.0f, AnimationSpeed*TimeWarp.fixedDeltaTime);
+          deployAnimation.normalizedTime = Mathf.MoveTowards(deployAnimation.normalizedTime, 1.0f, realSpeed * TimeWarp.fixedDeltaTime);
           break;
       }
     }
