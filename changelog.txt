@@ -1,5 +1,6 @@
-v1.0.0.b
-------
+v1.0.0.A2
+---------
+- Updated B9PartSwitch, ModuleManager to latest versions
 - Converted all external textures to dds, some internal textures
 - Corrected weight of PXL-10
 - Added compatibility with Simple Construction (Thanks JadeOfMaar)

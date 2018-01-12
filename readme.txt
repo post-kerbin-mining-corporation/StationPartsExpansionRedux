@@ -10,17 +10,36 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (2.8.1)
-- B9PartSwitch (1.10.0)
+- ModuleManager (3.0.1)
+- B9PartSwitch (2.1.0)
 
 Optional
 - Community Tech Tree (v2.2+)
+
+=============
+EXTRA CREDITS
+=============
+
+Huge thanks to JadeofMaar, Stone Blue, fraz86, Pulsar of the KSP forums for contributing compatibility patches and help with filling out some of the IVAs
 
 ============
 INSTALLATION
 ============
 
 To install, place the GameData folder inside your Kerbal Space Program folder. If asked to overwrite files, do so.
+
+=============
+COMPATIBILITY
+=============
+
+This mod contains explicit compatibility patches for the following mods:
+- TAC-LS
+- USI-LS
+- MKS
+- KerbalHealth
+- KIS
+- CLS
+- Snacks!
 
 ============
 KSP-MINI-AVC
