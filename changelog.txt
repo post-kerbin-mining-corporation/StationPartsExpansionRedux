@@ -1,20 +1,24 @@
 v1.0.0.b
 ------
+- Converted all external textures to dds, some internal textures
 - Corrected weight of PXL-10
-- Added compatibility with Simple Construction
-- Added compatibility with TAC-LS
-- Added compatibility with KerbalHealth
+- Added compatibility with Simple Construction (Thanks JadeOfMaar)
+- Added compatibility with TAC-LS (Thanks JadeOfMaar)
+- Added compatibility with KerbalHealth (Thanks Fraz86)
+- Added compatibility and credits list to readme
 - A few fixes to part descriptions and names
 - Fixed object name of large 1.25m crew tube
 - Some mesh adjustments and refinements to the 2.5m crew tube set
 - Fixed ladder/airlocks on Shanty, Cupola, MPL
-- Increased extension distance of 2.5m airlock
+- Increased extension distance of 2.5m airlock's extendy bit
+- Fixed science collection of 2.5m greenhouse
+- Fixed a few localization issues
 - IVA improvements
--- Now targeting dev version of NFProps 0.3
+-- Now targeting dev version of NFProps 0.3 (included)
 -- Completed prop layout, seat layout and blocking mesh for 2.5m greenhouse
 -- Completed prop layout, seat layout and blocking mesh for 2.5m control core
 -- Completed prop layout, seat layout and blocking mesh for 2.5m airlock
--- Repaired issues with props and mesh for legacy-based 2.5m observation module and habitation module
+-- Repaired issues with props, seats and mesh for legacy-based 2.5m observation module and habitation module
 -- Completed prop layout, seat layout and blocking mesh for 2.5m small inflatable
 -- Completed prop layout, seat layout and blocking mesh for 2.5m large inflatable
 -- Completed prop layout, seat layout for 3.75m Cupola
@@ -26,7 +30,7 @@ v1.0.0.b
 -- Completed prop layout, seat layout for 3.75m control room
 -- Completed prop layout for 3.75m compact centrifuge
 -- Completed prop layout for 1.25m large inflatable hab (ISE)
--- Completed prop layout for 1.25m compact centrifuge 
+-- Completed prop layout for 1.25m compact centrifuge
 -- Completed prop layout for 1.25m centrifuge (Stone Blue)
 -- Completed prop layout for 1.25m airlock (Stone Blue), fixed blocking mesh location
 -- Completed prop layout for 1.25m utility module (Stone Blue), fixed blocking mesh location
