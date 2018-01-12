@@ -15,7 +15,8 @@ v1.0.0.b
 -- Completed prop layout, seat layout and blocking mesh for 2.5m control core
 -- Completed prop layout, seat layout and blocking mesh for 2.5m airlock
 -- Repaired issues with props and mesh for legacy-based 2.5m observation module and habitation module
--- Completed prop layout, seat layout for 2.5m small inflatable
+-- Completed prop layout, seat layout and blocking mesh for 2.5m small inflatable
+-- Completed prop layout, seat layout and blocking mesh for 2.5m large inflatable
 -- Completed prop layout, seat layout for 3.75m Cupola
 -- Completed prop layout, seat layout for 3.75m large hab
 -- Completed prop layout, seat layout for 3.75m small hab
@@ -24,12 +25,14 @@ v1.0.0.b
 -- Completed prop layout, seat layout for 3.75m greenhouse
 -- Completed prop layout, seat layout for 3.75m control room
 -- Completed prop layout for 3.75m compact centrifuge
--- Completed prop layout for 1.25m compact inflatable hab (Stone Blue)
--- Completed prop layout for 1.25m compact centrifuge (Stone Blue)
--- Completed prop layout for 1.25m airlock (Stone Blue)
--- Completed prop layout for 1.25m utility module (Stone Blue)
+-- Completed prop layout for 1.25m large inflatable hab (ISE)
+-- Completed prop layout for 1.25m compact centrifuge 
+-- Completed prop layout for 1.25m centrifuge (Stone Blue)
+-- Completed prop layout for 1.25m airlock (Stone Blue), fixed blocking mesh location
+-- Completed prop layout for 1.25m utility module (Stone Blue), fixed blocking mesh location
+-- Completed prop layout for 1.25m hab module (Stone Blue), fixed blocking mesh location
 -- Completed prop layout for 1.25m cupola (Stone Blue)
--- Completed prop layout for 1.25m control room (Stone Blue)
+-- Completed prop layout for 1.25m control room (Stone Blue), fixed blocking mesh location
 
 v1.0.0
 ------
