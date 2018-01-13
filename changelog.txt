@@ -1,3 +1,7 @@
+v1.0.0.A3
+---------
+- Added science blurbs for the fish experiment
+
 v1.0.0.A2
 ---------
 - Updated B9PartSwitch, ModuleManager to latest versions
