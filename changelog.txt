@@ -1,6 +1,9 @@
 v1.0.0.A3
 ---------
+- Fixed 3.75m cupola specular windows
 - Added science blurbs for the fish experiment
+- Fixed centrifuge internal model rotation resetting when crew are transferred into the part
+- Added plugin component to handle friction for adjusting base legs
 
 v1.0.0.A2
 ---------

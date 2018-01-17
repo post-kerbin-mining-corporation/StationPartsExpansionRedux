@@ -146,12 +146,12 @@ namespace HabUtils
         if (phys == null)
         {
           phys = new PhysicMaterial();
-          legCollider.material = phys
+          legCollider.material = phys;
         }
 
-        phys.bounciness = PhysicsBounce
-        phys.staticFriction = PhysicsStaticFriction
-        phys.dynamicFriction = PhysicsDynamicFriction
+        phys.bounciness = PhysicsBounce;
+        phys.staticFriction = PhysicsStaticFriction;
+        phys.dynamicFriction = PhysicsDynamicFriction;
 
         legZeroPosition = baseTransform.localPosition;
     }
