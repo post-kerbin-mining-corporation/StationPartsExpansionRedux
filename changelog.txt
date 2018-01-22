@@ -1,9 +1,20 @@
 v1.0.0.A3
 ---------
+- Remaining textures converted to dds
 - Fixed 3.75m cupola specular windows
 - Added science blurbs for the fish experiment
 - Fixed centrifuge internal model rotation resetting when crew are transferred into the part
 - Added plugin component to handle friction for adjusting base legs
+- Updates to USI patch (Pulsar)
+- IVA improvements
+-- Completed internal mesh, seat locations, prop layout, blckoing mesh for aquaculture module
+-- Completed prop layout, seat layout for 3.75m large centrifuge
+-- Fixed seat locations, improved blocking mesh for 3.75m compact centrifuge
+-- Completed prop layout, seat layout and blocking mesh for 2.5m centrifuge
+-- Completed prop layout, seat layout and blocking meshes for 1.25m compact habs (Thanks Stone Blue)
+-- Completed prop layout, seat layout and blocking meshes for 1.25m large hab 
+-- Tweaked blocking meshes and prop layout on 1.25m centrifuges
+-- Fixed a seat location on the 2.5m station core
 
 v1.0.0.A2
 ---------
