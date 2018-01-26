@@ -20,7 +20,11 @@ Optional
 EXTRA CREDITS
 =============
 
-Huge thanks to JadeofMaar, Stone Blue, fraz86, Pulsar of the KSP forums for contributing compatibility patches and help with filling out some of the IVAs
+Huge thanks to the following forum users:
+- JadeofMaar (MKS, TAC-LS, Snacks! and multi-container patches),
+- Stone Blue (IVA prop layouts in several parts)
+- fraz86 (KerbalHealth patch)
+- Pulsar (USI-LS patch)
 
 ============
 INSTALLATION
