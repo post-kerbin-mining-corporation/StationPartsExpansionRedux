@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -65,6 +65,10 @@ namespace HabUtils
     // The maximum rate of spinning
     [KSPField(isPersistant = false)]
     public float MaxTimewarpSpinRate = 10f;
+
+    // The spi
+    [KSPField(isPersistant = false)]
+    public int InternalSpinMapping = 2;
 
     /// GUI Fields
     // Current status of deploy
@@ -171,8 +175,31 @@ namespace HabUtils
           CurrentCounterweightSpinRate = 0f;
         }
       }
+      if (HighLogic.LoadedSceneIsFlight)
+      {
+          GameEvents.onCrewTransferred.Add(new EventData<GameEvents.HostedFromToAction<ProtoCrewMember,Part>>.OnEvent(ResetIVATransform));
+          if (part.internalModel != null)
+          {
+          }
+      }
     }
-
+    public void ResetIVATransform(GameEvents.HostedFromToAction<ProtoCrewMember, Part> dat)
+    {
+        
+        
+        if (part.internalModel != null)
+        {
+           // StartCoroutine(WaitRotate());
+            
+        }
+    }
+    public IEnumerator WaitRotate()
+    {
+        yield return new WaitForSeconds(2.0f);
+        float angle = Quaternion.Angle(baseAngles, spinTransform.localRotation);
+        Utils.Log(angle.ToString());
+        part.internalModel.transform.Rotate(Vector3.forward * (angle +90f));
+    }
     public override void Update()
     {
       base.Update();
@@ -292,7 +319,15 @@ namespace HabUtils
 
         if (part.internalModel != null)
         {
-            part.internalModel.transform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * -CurrentSpinRate);
+            Vector3 spinCorrection = Vector3.zero;
+            if (InternalSpinMapping == 2)
+                spinCorrection = new Vector3(90f, spinTransform.localEulerAngles.z + 180f, 0f);
+            if (InternalSpinMapping == 1)
+                spinCorrection = new Vector3(90f, spinTransform.localEulerAngles.y + 180f, 0f);
+            if (InternalSpinMapping == 0)
+                spinCorrection = new Vector3(90f, spinTransform.localEulerAngles.x + 180f, 0f);
+            part.internalModel.transform.localEulerAngles = spinCorrection;
+            //part.internalModel.transform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * -CurrentSpinRate);
         }
     }
 
