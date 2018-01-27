@@ -21,10 +21,10 @@ EXTRA CREDITS
 =============
 
 Huge thanks to the following forum users:
-- JadeofMaar (MKS, TAC-LS, Snacks! and multi-container patches),
+- JadeofMaar (KIS, EPL, TAC-LS, Snacks! and multi-container patches),
 - Stone Blue (IVA prop layouts in several parts)
 - fraz86 (KerbalHealth patch)
-- Pulsar (USI-LS patch)
+- Pulsar (USI-LS/MKS patches)
 
 ============
 INSTALLATION
