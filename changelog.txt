@@ -1,3 +1,11 @@
+v1.0.1
+------
+- Fixed USI/EPL resource
+- Added part nicknames to tag lists (Kerbas-ad-astra)
+- Added KeepFit patch (Kerbas-ad-astra)
+- Fix to CLS patch for 3.75m lab (Kerbas-ad-astra)
+- Increased base leg friction coefficients from 0.5 to 0.9
+
 v1.0.0
 ------
 - Initial release
