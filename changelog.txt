@@ -1,10 +1,12 @@
 v1.0.1
 ------
-- Fixed USI/EPL resource
+- Fixed USI/EPL resource containers
 - Added part nicknames to tag lists (Kerbas-ad-astra)
 - Added KeepFit patch (Kerbas-ad-astra)
 - Fix to CLS patch for 3.75m lab (Kerbas-ad-astra)
+- Removed a hanging techRequired block in the CLS patch
 - Increased base leg friction coefficients from 0.5 to 0.9
+- Porthole now has basic command module functions (control) but no reaction wheels
 
 v1.0.0
 ------
