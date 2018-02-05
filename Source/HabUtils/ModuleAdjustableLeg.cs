@@ -143,6 +143,7 @@ namespace HabUtils
 
         Collider legCollider = extenderTransform.GetComponentInChildren<Collider>();
         phys = legCollider.material;
+        legCollider.enabled = false;
         if (phys == null)
         {
           phys = new PhysicMaterial();
@@ -161,6 +162,8 @@ namespace HabUtils
     {
       SetExtension(LegExtension);
       extenderTransform.localPosition = legZeroPosition - Vector3.forward * legExtensionGoal;
+      Collider legCollider = extenderTransform.GetComponentInChildren<Collider>();
+      legCollider.enabled = true;
     }
 
     // Sets up the model extension from startup
