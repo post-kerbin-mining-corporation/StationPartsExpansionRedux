@@ -362,15 +362,15 @@ namespace HabUtils
             
             Vector3 spinCorrection = Vector3.zero;
             if (InternalSpinMapping == 2)
-                spinCorrection = new Vector3(orig.x, spinTransform.localEulerAngles.z + 180f, orig.z);
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.x, spinTransform.localEulerAngles.y, -spinTransform.localEulerAngles.z);
             if (InternalSpinMapping == 1)
-                spinCorrection = new Vector3(spinTransform.localEulerAngles.x, spinTransform.localEulerAngles.y + 180f, spinTransform.localEulerAngles.z);
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.x-270f, spinTransform.localEulerAngles.z, -spinTransform.localEulerAngles.y);
             if (InternalSpinMapping == 0)
-                spinCorrection = new Vector3(270f, spinTransform.localEulerAngles.x + 180f, spinTransform.localEulerAngles.z);
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.y, spinTransform.localEulerAngles.z, spinTransform.localEulerAngles.x);
             
             if (IVARotationRoot)
             {
-                IVARotationRoot.localEulerAngles = new Vector3(spinTransform.localEulerAngles.x, spinTransform.localEulerAngles.y, -spinTransform.localEulerAngles.z);
+                IVARotationRoot.localEulerAngles = spinCorrection;
                 foreach (System.Collections.Generic.KeyValuePair<Transform, Transform> entry in propDict)
                 {
                     entry.Value.position = entry.Key.position;

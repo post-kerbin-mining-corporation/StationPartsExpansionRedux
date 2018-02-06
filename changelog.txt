@@ -1,18 +1,20 @@
 v1.0.1
 ------
-- Fixed USI/EPL resource container contents problem
-- Container contents can be switched in flight
+- Fixed USI/EPL cargo container contents problem
+- Cargo container contents can now be switched in flight
 - Added a top attach node to the 3.75m cupola
 - Added part nicknames to tag lists (Kerbas-ad-astra)
 - Added KeepFit patch (Kerbas-ad-astra)
 - Fix to CLS patch for 3.75m lab (Kerbas-ad-astra)
+- Fixed rotation of 2.5m airlock, observation module IVAs
 - Fixed a misaligned kerbal transform in the Mercury IVA
 - Removed a hanging techRequired block in the CLS patch
 - Increased base leg friction coefficients from 0.5 to 0.9
 - Porthole now has basic command module functions (control) but no reaction wheels
-- Fixed attach node coordinate reversal on 45 degree 1.25m hub
-- Fixed endcap misalignment on 2.5m multihub
-
+- Fixed attach node coordinate reversal on 45 degree version of 1.25m multihub
+- Fixed endcap misalignment on 4-way Planar version of 2.5m multihub 
+- Fixed inconsistent foil shader between variants of 2.5m multihub
+- Fixed export issues with alpha channels of a few parts
 v1.0.0
 ------
 - Initial release
