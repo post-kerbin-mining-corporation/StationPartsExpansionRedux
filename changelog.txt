@@ -7,6 +7,7 @@ v1.0.1
 - Added a top attach node to the 3.75m cupola
 - Added part nicknames to tag lists (Kerbas-ad-astra)
 - Added KeepFit patch (Kerbas-ad-astra)
+- Improvements to many LS compatability patches (TAC, MKS)
 - Fix to CLS patch for 3.75m lab (Kerbas-ad-astra)
 - Fixed rotation of 2.5m airlock, observation module IVAs
 - Fixed a misaligned kerbal transform in the Mercury IVA
