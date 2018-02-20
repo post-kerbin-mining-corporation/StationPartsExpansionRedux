@@ -1,5 +1,7 @@
 v1.0.1
 ------
+- Updated ModuleManger to 3.0.4
+- Updated B9B9PartSwitch to 2.1.1
 - Fixed USI/EPL cargo container contents problem
 - Cargo container contents can now be switched in flight
 - Added a top attach node to the 3.75m cupola
@@ -11,10 +13,12 @@ v1.0.1
 - Removed a hanging techRequired block in the CLS patch
 - Increased base leg friction coefficients from 0.5 to 0.9
 - Porthole now has basic command module functions (control) but no reaction wheels
+- Fixed engineer requirement under localized versions
 - Fixed attach node coordinate reversal on 45 degree version of 1.25m multihub
-- Fixed endcap misalignment on 4-way Planar version of 2.5m multihub 
+- Fixed endcap misalignment on 4-way Planar version of 2.5m multihub
 - Fixed inconsistent foil shader between variants of 2.5m multihub
 - Fixed export issues with alpha channels of a few parts
+
 v1.0.0
 ------
 - Initial release
