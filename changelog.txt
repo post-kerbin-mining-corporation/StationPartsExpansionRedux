@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 v1.0.2
 ------
 - Fixed duplicate zipfile inside archive
 
-=======
->>>>>>> master
 v1.0.1
 ------
 - Updated ModuleManger to 3.0.4
