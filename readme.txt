@@ -14,6 +14,7 @@ Required:
 - B9PartSwitch (2.1.1)
 
 Optional
+- RescuePodValidator
 - Community Tech Tree (v2.2+)
 
 =============
