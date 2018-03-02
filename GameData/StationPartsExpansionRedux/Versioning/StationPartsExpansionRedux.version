@@ -6,7 +6,11 @@
     {
         "MAJOR":1,
         "MINOR":0,
+<<<<<<< HEAD
         "PATCH":2,
+=======
+        "PATCH":1,
+>>>>>>> master
         "BUILD":0
     },
     "KSP_VERSION":
