@@ -1,8 +1,13 @@
 v1.0.3
 ------
-- KSP 1.4.1
+- KSP 1.4.2
+- Updated ModuleManger to x.x.x
+- Updated B9PartSwitch to x.x.x
+- Updated NFProps to 0.3.2
+- Added replacement model for Clamp-o-tron docking port
+-- 2 alternate versions available
 - Disabled drag cube recalculation for cargo containers (fixes inflight switching explosion)
-
+- Fixed KerbalHealth patch applying all the time
 
 v1.0.2
 ------
