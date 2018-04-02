@@ -1,33 +1,28 @@
-v1.0.0.b
+v1.0.2
 ------
-- Corrected weight of PXL-10
-- Improved compatibility with Simple Construction
-- A few fixes to part descriptions and names
-- Fixed object name of large 1.25m crew tube
-- Some mesh adjustments and refinements to the 2.5m crew tube set
-- Fixed ladder/airlocks on Shanty, Cupola, MPL
-- Increased extension distance of 2.5m airlock
-- IVA improvements
--- Now targeting dev version of NFProps 0.3
--- Completed prop layout, seat layout and blocking mesh for 2.5m greenhouse
--- Completed prop layout, seat layout and blocking mesh for 2.5m control core
--- Completed prop layout, seat layout and blocking mesh for 2.5m airlock
--- Repaired issues with props and mesh for legacy-based 2.5m observation module and habitation module
--- Completed prop layout, seat layout for 3.75m Cupola
--- Completed prop layout, seat layout for 3.75m large hab
--- Completed prop layout, seat layout for 3.75m small hab
--- Completed prop layout, seat layout for 3.75m shelter hab
--- Completed prop layout, seat layout for 3.75m science lab
--- Completed prop layout, seat layout for 3.75m greenhouse
--- Completed prop layout, seat layout for 3.75m control room
--- Completed prop layout for 3.75m compact centrifuge
--- Completed prop layout for 1.25m compact inflatable hab (Stone Blue)
+- Fixed duplicate zipfile inside archive
 
--- Completed prop layout for 1.25m compact centrifuge (Stone Blue)
--- Completed prop layout for 1.25m airlock (Stone Blue)
--- Completed prop layout for 1.25m utility module (Stone Blue)
--- Completed prop layout for 1.25m cupola (Stone Blue)
--- Completed prop layout for 1.25m control room (Stone Blue)
+v1.0.1
+------
+- Updated ModuleManger to 3.0.4
+- Updated B9B9PartSwitch to 2.1.1
+- Fixed USI/EPL cargo container contents problem
+- Cargo container contents can now be switched in flight
+- Added a top attach node to the 3.75m cupola
+- Added part nicknames to tag lists (Kerbas-ad-astra)
+- Added KeepFit patch (Kerbas-ad-astra)
+- Improvements to many LS compatability patches (TAC, MKS)
+- Fix to CLS patch for 3.75m lab (Kerbas-ad-astra)
+- Fixed rotation of 2.5m airlock, observation module IVAs
+- Fixed a misaligned kerbal transform in the Mercury IVA
+- Removed a hanging techRequired block in the CLS patch
+- Increased base leg friction coefficients from 0.5 to 0.9
+- Porthole now has basic command module functions (control) but no reaction wheels
+- Fixed engineer requirement under localized versions
+- Fixed attach node coordinate reversal on 45 degree version of 1.25m multihub
+- Fixed endcap misalignment on 4-way Planar version of 2.5m multihub
+- Fixed inconsistent foil shader between variants of 2.5m multihub
+- Fixed export issues with alpha channels of a few parts
 
 v1.0.0
 ------

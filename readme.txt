@@ -1,5 +1,5 @@
 ====================================
-STATION PARTS EXPANSION REDUX v1.0.0
+STATION PARTS EXPANSION REDUX v1.0.2
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
@@ -10,17 +10,43 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (2.8.1)
-- B9PartSwitch (1.10.0)
+- ModuleManager (3.0.4)
+- B9PartSwitch (2.1.1)
+- NearFutureProps (0.3.0)
 
 Optional
+- RescuePodValidator
 - Community Tech Tree (v2.2+)
+
+=============
+EXTRA CREDITS
+=============
+
+Huge thanks to the following forum users:
+- JadeofMaar (KIS, EPL, TAC-LS, Snacks! and multi-container patches),
+- Stone Blue (IVA prop layouts in several parts)
+- fraz86 (KerbalHealth patch)
+- Pulsar (USI-LS/MKS patches)
 
 ============
 INSTALLATION
 ============
 
 To install, place the GameData folder inside your Kerbal Space Program folder. If asked to overwrite files, do so.
+
+=============
+COMPATIBILITY
+=============
+
+This mod contains explicit compatibility patches for the following mods:
+- TAC-LS
+- USI-LS
+- MKS
+- KerbalHealth
+- KIS
+- CLS
+- Snacks!
+- KeepFit
 
 ============
 KSP-MINI-AVC

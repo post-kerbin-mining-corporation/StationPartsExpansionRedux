@@ -1,10 +1,11 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
+
 using System.Linq;
 using System.Text;
 using UnityEngine;
 using KSP.Localization;
-
+using VisualDebugUtils;
 
 namespace HabUtils
 {
@@ -66,6 +67,10 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public float MaxTimewarpSpinRate = 10f;
 
+    // The spi
+    [KSPField(isPersistant = false)]
+    public int InternalSpinMapping = 2;
+
     /// GUI Fields
     // Current status of deploy
     [KSPField(isPersistant = false, guiActive = true, guiActiveEditor = true, guiName = "Spin Gravity")]
@@ -102,9 +107,13 @@ namespace HabUtils
 
     // private
     private Quaternion baseAngles;
+    private Vector3 baseAnglesEuler;
     private float rotationRateGoal = 0f;
     private Transform spinTransform;
     private Transform counterweightTransform;
+    Vector3 orig;
+    private Transform IVARotationRoot;
+    private System.Collections.Generic.Dictionary<Transform, Transform> propDict;
 
     // Calculates the period in s given the spin rate
     protected float Period(float spinRate)
@@ -157,6 +166,7 @@ namespace HabUtils
       {
         spinTransform = part.FindModelTransform(SpinTransformName);
         baseAngles = spinTransform.localRotation;
+        baseAnglesEuler = spinTransform.localEulerAngles;
         counterweightTransform = part.FindModelTransform(CounterweightTransformName);
 
         if (Rotating)
@@ -171,8 +181,61 @@ namespace HabUtils
           CurrentCounterweightSpinRate = 0f;
         }
       }
+      if (HighLogic.LoadedSceneIsFlight)
+      {
+          GameEvents.onCrewTransferred.Add(new EventData<GameEvents.HostedFromToAction<ProtoCrewMember,Part>>.OnEvent(ResetIVATransform));
+          
+          if (part.internalModel != null)
+          {
+               //DebugAxisTripod exter = new DebugAxisTripod(3f);
+              //exter.AssignTransform(spinTransform);
+              //DebugAxisTripod inter = new DebugAxisTripod(5f);
+              
+               orig = part.internalModel.transform.localEulerAngles;
+               DoIVASetup();
+              //inter.AssignTransform(transformer);
+          }
+      }
     }
+    public void ResetIVATransform(GameEvents.HostedFromToAction<ProtoCrewMember, Part> dat)
+    {
+        DoIVASetup();
+        
+        
+    }
+    private void DoIVASetup()
+    {
+        if (part.internalModel != null)
+        {
+            IVARotationRoot = new GameObject("IVA Rotator").transform;
+            IVARotationRoot.SetParent(part.internalModel.transform);
+            IVARotationRoot.gameObject.layer = 16;
+            IVARotationRoot.localPosition = Vector3.zero;
+            IVARotationRoot.localRotation = Quaternion.identity;
+            Transform themodel = part.internalModel.FindModelTransform("model");
+            IVARotationRoot.localRotation = themodel.localRotation;
 
+            propDict = new System.Collections.Generic.Dictionary<Transform, Transform>();
+            foreach (Transform child in part.internalModel.transform)
+            {
+                Transform proxy = new GameObject("IVA Proxy").transform;
+                proxy.gameObject.layer = 16;
+                proxy.SetParent(IVARotationRoot);
+                proxy.position = child.position;
+                proxy.rotation = child.rotation;
+                propDict.Add(proxy, child);
+
+            }
+
+        }
+    }
+    public IEnumerator WaitRotate()
+    {
+        yield return new WaitForSeconds(2.0f);
+        float angle = Quaternion.Angle(baseAngles, spinTransform.localRotation);
+        Utils.Log(angle.ToString());
+        part.internalModel.transform.Rotate(Vector3.forward * (angle +90f));
+    }
     public override void Update()
     {
       base.Update();
@@ -289,10 +352,35 @@ namespace HabUtils
 
         spinTransform.Rotate(Vector3.forward * spin);
         counterweightTransform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * CurrentCounterweightSpinRate);
-
+        
+        
         if (part.internalModel != null)
         {
-            part.internalModel.transform.Rotate(Vector3.forward * TimeWarp.fixedDeltaTime * -CurrentSpinRate);
+            
+            //part.internalModel.transform.up = part.transform.up;
+
+            
+            Vector3 spinCorrection = Vector3.zero;
+            if (InternalSpinMapping == 2)
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.x, spinTransform.localEulerAngles.y, -spinTransform.localEulerAngles.z);
+            if (InternalSpinMapping == 1)
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.x-270f, spinTransform.localEulerAngles.z, -spinTransform.localEulerAngles.y);
+            if (InternalSpinMapping == 0)
+                spinCorrection = new Vector3(spinTransform.localEulerAngles.y, spinTransform.localEulerAngles.z, spinTransform.localEulerAngles.x);
+            
+            if (IVARotationRoot)
+            {
+                IVARotationRoot.localEulerAngles = spinCorrection;
+                foreach (System.Collections.Generic.KeyValuePair<Transform, Transform> entry in propDict)
+                {
+                    entry.Value.position = entry.Key.position;
+                    entry.Value.rotation = entry.Key.rotation;
+                }
+            }
+            else
+            {
+                DoIVASetup();
+            }
         }
     }
 
