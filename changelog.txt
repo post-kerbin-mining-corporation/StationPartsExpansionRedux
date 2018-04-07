@@ -1,13 +1,15 @@
 v1.0.3
 ------
 - KSP 1.4.2
-- Updated ModuleManger to x.x.x
-- Updated B9PartSwitch to x.x.x
+- Updated ModuleManger to 3.0.6
+- Updated B9PartSwitch to 2.2.1
+- Updated MiniAVC to 1.2.0.1
 - Updated NFProps to 0.3.2
 - Added replacement model for Clamp-o-tron docking port
 -- 2 alternate versions available
 - Disabled drag cube recalculation for cargo containers (fixes inflight switching explosion)
 - Fixed KerbalHealth patch applying all the time
+- Fish study and plant growth experiments now no longer differentiate between biomes
 
 v1.0.2
 ------
