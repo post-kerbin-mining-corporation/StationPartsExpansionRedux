@@ -1,3 +1,8 @@
+v1.0.5
+------
+- Fixed issue with short huge container collider
+- Added control nodes to extensible tubes so they control-from-here the right way
+
 v1.0.4
 ------
 - Fixed missing docking transform on new docking port
