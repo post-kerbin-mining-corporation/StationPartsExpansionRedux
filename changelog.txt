@@ -1,5 +1,6 @@
 v1.0.5
 ------
+- Fixed a mesh hole on 2.5m centrifuge
 - Fixed issue with short huge container collider
 - Added control nodes to extensible tubes so they control-from-here the right way
 
