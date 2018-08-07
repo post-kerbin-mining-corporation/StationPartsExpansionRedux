@@ -3,6 +3,7 @@ v1.0.5
 - KSP 1.4.5
 - Updated ModuleManger to 3.0.7
 - Updated B9PartSwitch to 2.3.3
+- Added Italian localization (Carlo Rossi (CRL42))
 - Widened versioning to allow anything up to 1.4.9999
 - Fixed a mesh hole on 2.5m centrifuge
 - Fixed issue with short huge container collider
