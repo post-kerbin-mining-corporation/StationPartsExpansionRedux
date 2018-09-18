@@ -1,3 +1,9 @@
+v1.0.6
+------
+- Removed KerbalHealth patch, it's now in KerbalHealth
+- Centrifuges and habitats now adjust their drag cubes when deploying and retracting
+- 
+
 v1.0.5
 ------
 - KSP 1.4.5
