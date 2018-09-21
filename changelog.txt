@@ -1,8 +1,9 @@
 v1.0.6
 ------
-- Removed KerbalHealth patch, it's now in KerbalHealth
+- Removed KerbalHealth patch, it's now in KerbalHealth (> 3.0)
 - Centrifuges and habitats now adjust their drag cubes when deploying and retracting
-- 
+- Replacement patch for docking port now handles VSR correctly
+- Fixed misconfigured collider on 2.5m airlock/docking port
 
 v1.0.5
 ------
