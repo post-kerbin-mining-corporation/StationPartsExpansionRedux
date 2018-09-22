@@ -349,6 +349,7 @@ namespace HabUtils
         {
             Utils.Log("[ModuleDeployableHabitat]: Retract Finished");
             deployState = DeployState.Retracted;
+            SetDragCubeState(1.0f);
             Deployed = false;
         }
 
@@ -359,6 +360,7 @@ namespace HabUtils
 
             deployState = DeployState.Deployed;
             Deployed = true;
+            SetDragCubeState(0.0f);
 
             SetCrewCapacity(Deployed);
             CreateIVA();

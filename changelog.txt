@@ -1,3 +1,8 @@
+v1.0.7
+------
+- Fix .version file
+- Disable re-rendering of drag cubes when the part variant is changed for expandable parts
+
 v1.0.6
 ------
 - Removed KerbalHealth patch, it's now in KerbalHealth (> 3.0)
