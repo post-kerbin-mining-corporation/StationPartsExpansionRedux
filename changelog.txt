@@ -1,7 +1,12 @@
 v1.0.7
 ------
-- Fix .version file
-- Disable re-rendering of drag cubes when the part variant is changed for expandable parts
+- Fixed .version file
+- Fixed an issue that caused inflatable parts to lose their crew transfer boxes
+- Disabled re-rendering of drag cubes when the part variant is changed for expandable parts
+- Added ModuleExperienceManagement to many parts that were missing it (fixes kerbals leveling up)
+- Moved small cupola to Command category
+- Updated NF Props to 0.3.3
+-- Minor fix to an RPM screen
 
 v1.0.6
 ------

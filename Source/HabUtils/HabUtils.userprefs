@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ModuleAdjustableLeg.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ModuleDeployableHabitat.cs">
     <Files>
-      <File FileName="ModuleDeployableHabitat.cs" Line="185" Column="42" />
-      <File FileName="ModuleAdjustableLeg.cs" Line="5" Column="7" />
+      <File FileName="ModuleDeployableHabitat.cs" Line="362" Column="29" />
+      <File FileName="ModuleAdjustableLeg.cs" Line="33" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

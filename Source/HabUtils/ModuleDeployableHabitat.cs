@@ -332,6 +332,7 @@ namespace HabUtils
             SetCrewCapacity(false);
             DestroyIVA();
             RefreshPartData();
+
         }
         /// Called to start deploy
         protected virtual void StartDeploy()
@@ -351,6 +352,7 @@ namespace HabUtils
             deployState = DeployState.Retracted;
             SetDragCubeState(1.0f);
             Deployed = false;
+            RefreshPartData();
         }
 
         /// Execute actions on deploy completion
@@ -377,6 +379,7 @@ namespace HabUtils
             else if (HighLogic.LoadedSceneIsFlight)
             {
                 GameEvents.onVesselWasModified.Fire(this.vessel);
+                part.CheckTransferDialog();
             }
             MonoUtilities.RefreshContextWindows(part);
         }
