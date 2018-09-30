@@ -1,3 +1,7 @@
+v1.0.8
+------
+- Hotfix small cupola command
+
 v1.0.7
 ------
 - Fixed .version file
