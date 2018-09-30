@@ -6,6 +6,7 @@ v1.0.7
 - Disabled re-rendering of drag cubes when the part variant is changed for expandable parts
 - Added science storage to most parts; allows kerbals to keep experience properly
 - Moved small cupola to Command category
+- Added Spanish translation (SergiRuizZarzuelo)
 - Updated NF Props to 0.3.3
 -- Minor fix to an RPM screen
 

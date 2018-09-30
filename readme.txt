@@ -63,6 +63,7 @@ LOCALIZATION
 This mod includes localization support, and includes translations for
 - Italian, courtesy of Carlo Rossi (CRL42)
 - Russian, courtesy of Dr. Jet
+- Spanish, courtesy of SergiRuizZarzuelo
 
 =========
 LICENSING
