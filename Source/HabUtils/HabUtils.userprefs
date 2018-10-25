@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="ModuleDeployableCentrifuge.cs">
     <Files>
-      <File FileName="ModuleDeployableHabitat.cs" Line="362" Column="1" />
+      <File FileName="ModuleDeployableHabitat.cs" Line="486" Column="9" />
       <File FileName="ModuleAdjustableLeg.cs" Line="33" Column="9" />
-      <File FileName="ModuleDeployableCentrifuge.cs" Line="1" Column="1" />
+      <File FileName="ModuleDeployableCentrifuge.cs" Line="288" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
