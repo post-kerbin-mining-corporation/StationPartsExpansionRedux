@@ -4,6 +4,7 @@ v1.0.9
 - Updated NFProps to 0.3.5
 - Updated MM to 3.1.0
 - Updated B9PS to 2.4.4
+- Updated MiniAVC to 1.2.0.6
 - Contract improvements:
 -- Observation modules, 1.25m/3.75m cupolas will now fullfill cupola contracts
 -- Large lab will now fullfill lab contracts
