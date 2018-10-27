@@ -16,6 +16,8 @@ v1.0.9
 - Added missing vesselType to vessels that didn't have it
 -- Fixes experience gain
 -- Fixes issues where if there is no VesselType specifying crewed module on the vessel, science experiments will fail
+- Fixed flag for lab replacement
+- Changed rotation of replacement docking port and extensibledocking port to be consistent with the original part
 - Small fix to deployable module resource costs: will now round resources, so you are less likely to get issues where you have 1999.999993 resources when you think you have the 2000 needed to deploy
 - Added optional SpinResource and SpinResourceRate to ModuleDeployableCentrifuge - allows specification of a resource and a rate needed to rotate the thing
 
