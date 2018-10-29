@@ -3,7 +3,7 @@ v1.0.9
 - KSP 1.5
 - Updated NFProps to 0.3.5
 - Updated MM to 3.1.0
-- Updated B9PS to 2.4.4
+- Updated B9PS to 2.4.5
 - Updated MiniAVC to 1.2.0.6
 - Contract improvements:
 -- Observation modules, 1.25m/3.75m cupolas will now fullfill cupola contracts
@@ -12,6 +12,7 @@ v1.0.9
 -- Station/Base contracts that require an aquaponics module will now generate
 -- Station/Base contracts that require a hab module will now generate
 -- Station contracts that require a centrifuge will now generate
+- Increased base science for visual observation experiment, all science should now be sent with one transmission
 - Fixed compatibility of revised stock docking port with IndicatorLights
 - Added missing vesselType to vessels that didn't have it
 -- Fixes experience gain

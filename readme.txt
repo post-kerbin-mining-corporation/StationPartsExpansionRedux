@@ -11,7 +11,7 @@ DEPENDENCIES
 
 Required:
 - ModuleManager (3.1.0)
-- B9PartSwitch (2.4.4)
+- B9PartSwitch (2.4.5)
 - NearFutureProps (0.3.5)
 
 Optional
