@@ -6,8 +6,8 @@ v1.0.9
 - Updated B9PS to 2.4.5
 - Removed MiniAVC distribution, version file remains
 - Contract improvements:
--- Observation modules, 1.25m/3.75m cupolas will now fullfill cupola contracts
--- Large lab will now fullfill lab contracts
+-- Observation modules, 1.25m/3.75m cupolas will now fulfill cupola contracts
+-- Large lab will now fulfill lab contracts
 -- Station/Base contracts that require a greenhouse will now generate
 -- Station/Base contracts that require an aquaponics module will now generate
 -- Station/Base contracts that require a hab module will now generate
@@ -18,7 +18,7 @@ v1.0.9
 -- Fixes experience gain
 -- Fixes issues where if there is no VesselType specifying crewed module on the vessel, science experiments will fail
 - Fixed flag for lab replacement
-- Changed rotation of replacement docking port and extensibledocking port to be consistent with the original part
+- Changed rotation of replacement docking port and extensible docking port to be consistent with the original part
 - Small fix to deployable module resource costs: will now round resources, so you are less likely to get issues where you have 1999.999993 resources when you think you have the 2000 needed to deploy
 - Added optional SpinResource and SpinResourceRate to ModuleDeployableCentrifuge - allows specification of a resource and a rate needed to rotate the thing
 
