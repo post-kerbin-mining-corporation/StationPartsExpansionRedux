@@ -468,6 +468,7 @@ namespace HabUtils
                 double res = 0d;
                 double outRes = 0d;
                 part.GetConnectedResourceTotals(defn.id, out res, out outRes, true);
+                res = Math.Round(res);
                 if (res < DeployResourceAmount)
                 {
                     var msg = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployResources",

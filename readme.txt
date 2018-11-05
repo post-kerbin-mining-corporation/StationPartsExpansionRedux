@@ -1,5 +1,5 @@
 ====================================
-STATION PARTS EXPANSION REDUX v1.0.8
+STATION PARTS EXPANSION REDUX v1.0.9
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
@@ -10,9 +10,9 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (3.0.7)
-- B9PartSwitch (2.3.3)
-- NearFutureProps (0.3.3)
+- ModuleManager (3.1.0)
+- B9PartSwitch (2.4.5)
+- NearFutureProps (0.3.5)
 
 Optional
 - RescuePodValidator
@@ -48,13 +48,11 @@ This mod contains explicit compatibility patches for the following mods:
 - Snacks!
 - KeepFit
 
-============
-KSP-MINI-AVC
-============
+=======
+KSP-AVC
+=======
 
-This mod includes version checking using MiniAVC (http://forum.kerbalspaceprogram.com/threads/79745).
-If you opt-in, it will use the internet to check whether there is a new version available. Data is only read from the internet and no personal information is sent.
-For a more comprehensive version checking experience, please download the KSP-AVC Plugin (http://forum.kerbalspaceprogram.com/threads/79745).
+This mod is compatible with KSP-AVC version checking. For a comprehensive version checking experience, please download the appropriate plugin (http://forum.kerbalspaceprogram.com/threads/79745).
 
 ============
 LOCALIZATION

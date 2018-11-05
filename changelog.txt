@@ -1,3 +1,27 @@
+v1.0.9
+------
+- KSP 1.5
+- Updated NFProps to 0.3.5
+- Updated MM to 3.1.0
+- Updated B9PS to 2.4.5
+- Removed MiniAVC distribution, version file remains
+- Contract improvements:
+-- Observation modules, 1.25m/3.75m cupolas will now fulfill cupola contracts
+-- Large lab will now fulfill lab contracts
+-- Station/Base contracts that require a greenhouse will now generate
+-- Station/Base contracts that require an aquaponics module will now generate
+-- Station/Base contracts that require a hab module will now generate
+-- Station contracts that require a centrifuge will now generate
+- Increased base science for visual observation experiment, all science should now be sent with one transmission
+- Fixed compatibility of revised stock docking port with IndicatorLights
+- Added missing vesselType to vessels that didn't have it
+-- Fixes experience gain
+-- Fixes issues where if there is no VesselType specifying crewed module on the vessel, science experiments will fail
+- Fixed flag for lab replacement
+- Changed rotation of replacement docking port and extensible docking port to be consistent with the original part
+- Small fix to deployable module resource costs: will now round resources, so you are less likely to get issues where you have 1999.999993 resources when you think you have the 2000 needed to deploy
+- Added optional SpinResource and SpinResourceRate to ModuleDeployableCentrifuge - allows specification of a resource and a rate needed to rotate the thing
+
 v1.0.8
 ------
 - Hotfix small cupola command
