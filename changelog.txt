@@ -1,3 +1,9 @@
+v1.0.11
+-------
+- Updated B9PS to 2.5.0
+- Fixed an issue with the 2.5m extendo tube that caused it not to dock
+- Reduced mass of 2.5 m cargo bays to 0.6 and 1.2 t from 1.5 and 3t
+
 v1.0.10
 -------
 - Fixed build issue
