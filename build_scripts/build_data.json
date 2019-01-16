@@ -1,0 +1,31 @@
+{
+  "mod_name": "StationPartsExpansionRedux",
+  "dependencies":
+  {
+    "B9PartSwitch":
+    {
+      "version": "2.6.0",
+      "location": "s3"
+    },
+    "ModuleManager":
+    {
+      "version": "3.1.3",
+      "location": "s3"
+    },
+    "NearFutureProps":
+    {
+      "location": "github",
+      "repository": "ChrisAdderley/NearFutureProps",
+      "tag": "0.5.0"
+    }
+  },
+  "spacedock":
+  {
+    "mod-id": 1682
+  },
+  "curseforge":
+  {
+    "mod-id": 289367
+  }
+
+}
