@@ -52,9 +52,10 @@ def build_extras(version_data, build_packages=False):
         version_data (dict): Contents of the .version file
         build_packages (bool): whether to create an individual zipfile for each package
     """
-    for root, dirs, files in os.walk("Extras"):
-        for name in dirs:
-            build_extra(name, version_data, build_packages)
+    dirs = [name for name in os.listdir("Extras") if os.path.isdir(os.path.join("Extras", name))]
+
+    for name in dirs:
+        build_extra(name, version_data, build_packages)
 
 def build_extra(name, version_data, build_package):
     """
