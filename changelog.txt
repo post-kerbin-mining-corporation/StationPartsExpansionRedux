@@ -1,3 +1,17 @@
+v1.1.0
+-------
+- KSP 1.6.x
+- Updated ModuleManager to 3.1.3
+- Updated B9PartSwitch to 2.6.0
+- Updated NearFutureProps to 0.5.0
+- Minor change to licensing of code/configs (MIT now)
+
+v1.0.11
+-------
+- Updated B9PS to 2.5.0
+- Fixed an issue with the 2.5m extendo tube that caused it not to dock
+- Reduced mass of 2.5 m cargo bays to 0.6 and 1.2 t from 1.5 and 3t
+
 v1.0.10
 -------
 - Fixed build issue
