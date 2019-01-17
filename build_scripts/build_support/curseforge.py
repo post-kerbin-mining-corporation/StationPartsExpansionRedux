@@ -1,6 +1,5 @@
 import requests
 from contextlib import closing
-from requests_toolbelt.multipart.encoder import MultipartEncoder
 import json
 
 class CurseForgeAPI(object):
