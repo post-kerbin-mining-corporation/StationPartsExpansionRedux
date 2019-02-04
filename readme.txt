@@ -10,7 +10,7 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (3.1.3)
+- ModuleManager (4.0.2)
 - B9PartSwitch (2.6.0)
 - NearFutureProps (0.5.0)
 
