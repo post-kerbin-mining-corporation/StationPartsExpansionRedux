@@ -1,8 +1,14 @@
-v1.1.1
+v1.2.0
 -------
 - Updated ModuleManager to 4.0.2
 - Change to EPL productivity of habitats (thanks Starstrider42)
 - Updates to USI compatibility (thanks Dan-Shields and Boamere)
+- Removed accidentally included spin resources on small 1.25m centrifuge
+- Propagated new-style foil endcaps from Restock to all 2.5m parts
+- Propagated new-style hatches and airlocks from Restock to parts where appropriate
+- Propagated improvements to replacement docking port from Restock to replacement docking port (note, Metal/Insulated variants are still here!)
+- Propagated improvements to replacement Hitchhiker, Lab and Cupola from Restock (note, endcap variants are still here!)
+
 
 v1.1.0
 -------
