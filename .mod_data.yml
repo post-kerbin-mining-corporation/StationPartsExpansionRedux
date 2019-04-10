@@ -14,7 +14,7 @@ dependencies:  # Configure dependencies
     version: 2.6.0
     location: s3
   NearFutureProps:
-    tag: 0.5.0
+    tag: 0.5.1
     location: github
     repository: ChrisAdderley/NearFutureProps
 deploy:

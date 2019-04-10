@@ -2,6 +2,7 @@ v1.2.0
 -------
 - KSP 1.7.x
 - Updated ModuleManager to 4.0.2
+- Updated NearFutureProps to 0.5.1
 - Update to Snacks compatibility (LouisCyfer)
 - Change to EPL productivity of habitats (thanks Starstrider42)
 - Updates to USI compatibility (thanks Dan-Shields and Boamere)
