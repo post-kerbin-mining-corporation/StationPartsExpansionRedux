@@ -1,3 +1,94 @@
+v1.2.0
+-------
+- KSP 1.7.x
+- Updated ModuleManager to 4.0.2
+- Updated NearFutureProps to 0.5.1
+- Update to Snacks compatibility (LouisCyfer)
+- Change to EPL productivity of habitats (thanks Starstrider42)
+- Updates to USI compatibility (thanks Dan-Shields and Boamere)
+- Removed accidentally included spin resources on small 1.25m centrifuge
+- Propagated new-style foil endcaps from Restock to all 2.5m parts
+- Propagated new-style hatches and airlocks from Restock to parts where appropriate
+- Propagated improvements to replacement docking port from Restock to replacement docking port (note, Metal/Insulated variants are still here!)
+- Propagated improvements to replacement Hitchhiker, Lab and Cupola from Restock (note, endcap variants are still here!)
+
+v1.1.0
+-------
+- KSP 1.6.x
+- Updated ModuleManager to 3.1.3
+- Updated B9PartSwitch to 2.6.0
+- Updated NearFutureProps to 0.5.0
+- Minor change to licensing of code/configs (MIT now)
+
+v1.0.11
+-------
+- Updated B9PS to 2.5.0
+- Fixed an issue with the 2.5m extendo tube that caused it not to dock
+- Reduced mass of 2.5 m cargo bays to 0.6 and 1.2 t from 1.5 and 3t
+
+v1.0.10
+-------
+- Fixed build issue
+
+v1.0.9
+------
+- KSP 1.5
+- Updated NFProps to 0.3.5
+- Updated MM to 3.1.0
+- Updated B9PS to 2.4.5
+- Removed MiniAVC distribution, version file remains
+- Contract improvements:
+-- Observation modules, 1.25m/3.75m cupolas will now fulfill cupola contracts
+-- Large lab will now fulfill lab contracts
+-- Station/Base contracts that require a greenhouse will now generate
+-- Station/Base contracts that require an aquaponics module will now generate
+-- Station/Base contracts that require a hab module will now generate
+-- Station contracts that require a centrifuge will now generate
+- Increased base science for visual observation experiment, all science should now be sent with one transmission
+- Fixed compatibility of revised stock docking port with IndicatorLights
+- Added missing vesselType to vessels that didn't have it
+-- Fixes experience gain
+-- Fixes issues where if there is no VesselType specifying crewed module on the vessel, science experiments will fail
+- Fixed flag for lab replacement
+- Changed rotation of replacement docking port and extensible docking port to be consistent with the original part
+- Small fix to deployable module resource costs: will now round resources, so you are less likely to get issues where you have 1999.999993 resources when you think you have the 2000 needed to deploy
+- Added optional SpinResource and SpinResourceRate to ModuleDeployableCentrifuge - allows specification of a resource and a rate needed to rotate the thing
+
+v1.0.8
+------
+- Hotfix small cupola command
+
+v1.0.7
+------
+- Fixed .version file
+- Fixed an issue that caused inflatable parts to lose their crew transfer dialogs
+- Revised which parts are allowed to level up kerbals
+- Disabled re-rendering of drag cubes when the part variant is changed for expandable parts
+- Added science storage to most parts; allows kerbals to keep experience properly
+- Moved small cupola to Command category
+- Added Spanish translation (SergiRuizZarzuelo)
+- Updated NF Props to 0.3.3
+-- Minor fix to an RPM screen
+
+v1.0.6
+------
+- Removed KerbalHealth patch, it's now in KerbalHealth (> 3.0)
+- Centrifuges and habitats now adjust their drag cubes when deploying and retracting
+- Replacement patch for docking port now handles VSR correctly
+- Fixed misconfigured collider on 2.5m airlock/docking port
+
+v1.0.5
+------
+- KSP 1.4.5
+- Updated ModuleManger to 3.0.7
+- Updated B9PartSwitch to 2.3.3
+- Added Italian localization (Carlo Rossi (CRL42))
+- Widened versioning to allow anything up to 1.4.9999
+- Fixed a mesh hole on 2.5m centrifuge
+- Fixed issue with short huge container collider
+- Added control nodes to extensible tubes so they control-from-here the right way
+- Moved PPD-MULT﻿ to Meta-Materials node
+
 v1.0.4
 ------
 - Fixed missing docking transform on new docking port

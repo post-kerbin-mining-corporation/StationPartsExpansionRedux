@@ -1,0 +1,28 @@
+mod-name: StationPartsExpansionRedux
+package:
+  include-dependencies: true  # Include dependencies in the package
+  included-gamedata:
+    - StationPartsExpansionRedux
+  included-support:  # Include these root-level files in packages
+    - readme.txt
+    - changelog.txt
+dependencies:  # Configure dependencies
+  ModuleManager:
+    version: 4.0.2
+    location: s3
+  B9PartSwitch:
+    version: 2.6.0
+    location: s3
+  NearFutureProps:
+    tag: 0.5.1
+    location: github
+    repository: ChrisAdderley/NearFutureProps
+deploy:
+  SpaceDock:
+    enabled: true  # activate/deactivate this deployment script
+    mod-id: 1682  # The Spacedock mod ID for deployment
+  CurseForge:
+    enabled: true  # activate/deactivate this deployment script
+    mod-id: 289367  # The CurseForge mod ID for deployment
+  GitHub:
+    enabled: true  # activate/deactivate this deployment script
