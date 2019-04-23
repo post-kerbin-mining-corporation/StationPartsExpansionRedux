@@ -4,6 +4,8 @@
     "name":         "Stockalike Station Parts Expansion Redux",
     "$kref":        "#/ckan/spacedock/1682",
     "$vref":        "#/ckan/ksp-avc",
+    "abstract": "A plethora of new station parts in several size classes.",
+    "author": "Nertea",
     "license":      "restricted",
     "resources": {
         "homepage":   "https://forum.kerbalspaceprogram.com/index.php?/topic/170211-*",
