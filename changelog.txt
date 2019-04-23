@@ -1,3 +1,19 @@
+﻿v1.2.0
+-------
+- KSP 1.7.x
+- Updated ModuleManager to 4.0.2
+- Updated NearFutureProps to 0.5.1
+- Update to Snacks compatibility (LouisCyfer)
+- Change to EPL productivity of habitats (thanks Starstrider42)
+- Updates to USI compatibility (thanks Dan-Shields and Boamere)
+- Removed accidentally included spin resources on small 1.25m centrifuge
+- Fixed collider inconsistency on 1.25m Utility module
+- Propagated new-style foil endcaps from Restock to all 2.5m parts
+- Propagated new-style hatches and airlocks from Restock to parts where appropriate
+- Propagated improvements to replacement docking port from Restock to replacement docking port (note, Metal/Insulated variants are still here!)
+- Propagated improvements to replacement Hitchhiker, Lab and Cupola from Restock (note, endcap variants are still here!)
+- Recompressed all external textures using higher quality compressor
+
 v1.1.0
 -------
 - KSP 1.6.x

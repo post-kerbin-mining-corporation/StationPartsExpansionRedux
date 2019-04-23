@@ -1,0 +1,30 @@
+{
+    "spec_version": "v1.4",
+    "identifier":   "StationPartsExpansionRedux",
+    "name":         "Stockalike Station Parts Expansion Redux",
+    "$kref":        "#/ckan/spacedock/1682",
+    "$vref":        "#/ckan/ksp-avc",
+    "abstract": "A plethora of new station parts in several size classes.",
+    "author": "Nertea",
+    "license":      "restricted",
+    "resources": {
+        "homepage":   "https://forum.kerbalspaceprogram.com/index.php?/topic/170211-*",
+        "repository": "https://github.com/ChrisAdderley/StationPartsExpansionRedux"
+    },
+    "depends": [
+        { "name": "ModuleManager"   },
+        { "name": "B9PartSwitch"    },
+        { "name": "NearFutureProps" }
+    ],
+    "suggests" : [
+        { "name" : "CommunityTechTree" }
+    ],
+    "supports" : [
+        { "name" : "RasterPropMonitor-Core" },
+        { "name" : "ConnectedLivingSpace" }
+    ],
+    "install": [ {
+        "find":       "StationPartsExpansionRedux",
+        "install_to": "GameData"
+    } ]
+}

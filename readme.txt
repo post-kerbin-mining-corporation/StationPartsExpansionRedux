@@ -1,5 +1,5 @@
 ====================================
-STATION PARTS EXPANSION REDUX v1.1.0
+STATION PARTS EXPANSION REDUX v1.2.0
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
@@ -10,9 +10,9 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (3.1.3)
+- ModuleManager (4.0.2)
 - B9PartSwitch (2.6.0)
-- NearFutureProps (0.5.0)
+- NearFutureProps (0.5.1)
 
 Optional
 - RescuePodValidator
