@@ -1,3 +1,8 @@
+v1.2.1
+------
+- Fixed a small B9PartSwitch warning
+- Updated B9PartSwitch to 2.7.1
+
 ﻿v1.2.0
 -------
 - KSP 1.7.x
