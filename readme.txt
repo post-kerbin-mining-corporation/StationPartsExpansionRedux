@@ -1,5 +1,5 @@
 ====================================
-STATION PARTS EXPANSION REDUX v1.2.0
+STATION PARTS EXPANSION REDUX v1.2.1
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
@@ -11,7 +11,7 @@ DEPENDENCIES
 
 Required:
 - ModuleManager (4.0.2)
-- B9PartSwitch (2.6.0)
+- B9PartSwitch (2.7.1)
 - NearFutureProps (0.5.1)
 
 Optional
@@ -60,7 +60,7 @@ LOCALIZATION
 
 This mod includes localization support, and includes translations for
 - Italian, courtesy of Carlo Rossi (CRL42)
-- Russian, courtesy of Dr. Jet
+- Russian, courtesy of Dr. Jet and Sool3
 - Spanish, courtesy of SergiRuizZarzuelo
 
 =========

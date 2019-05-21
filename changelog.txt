@@ -1,3 +1,10 @@
+v1.2.1
+------
+- Updated B9PartSwitch to 2.7.1
+- Fixed a harmless B9PartSwitch warning that bothered people
+- Updates to Russian localization (Sool3)
+- Updates to localized strings in general (Sool3)
+
 ﻿v1.2.0
 -------
 - KSP 1.7.x
