@@ -60,7 +60,7 @@ LOCALIZATION
 
 This mod includes localization support, and includes translations for
 - Italian, courtesy of Carlo Rossi (CRL42)
-- Russian, courtesy of Dr. Jet
+- Russian, courtesy of Dr. Jet and Sool3
 - Spanish, courtesy of SergiRuizZarzuelo
 
 =========
