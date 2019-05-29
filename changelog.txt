@@ -1,3 +1,7 @@
+v1.2.2
+------
+- Fixed a bug that caused station contracts to accept the 3.75m cupola rather than the 3.75m science lab as fulfilling a Science Lab requirement (hanks HSJasperism)
+
 v1.2.1
 ------
 - Updated B9PartSwitch to 2.7.1
