@@ -1,3 +1,14 @@
+v1.3.0
+------
+- Updated B9PartSwitch to 2.9.0
+- Took advantage of new B9PS features (UI, type descriptions) for most mesh switch options
+- Fixed Telescopic Clamp-O-Tron initial rotation being incorrect
+- New Extras package: StationPartsExpansionMetal
+  - Adds a new bare metal variant to most parts
+  - Flexible sections of inflatable modules remain the same
+  - Insulated cargo modules remain the same
+  - Adds two new metal-oriented endcap options
+
 v1.2.2
 ------
 - Fixed a bug that caused station contracts to accept the 3.75m cupola rather than the 3.75m science lab as fulfilling a Science Lab requirement (hanks HSJasperism)
