@@ -28,6 +28,10 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public bool CanAutoLevel = true;
 
+    // Maximum linked offset
+    [KSPField(isPersistant = false)]
+    public float MinimumAutoLevelDistance = 0.1f;
+
     // Current linked offset
     [KSPField(isPersistant = true, guiActive = true, guiName = "Leg Extension"), UI_FloatRange(minValue = 0f, maxValue = 100f, stepIncrement = 1f)]
     public float LinkedExtension = 0f;
@@ -49,6 +53,23 @@ namespace HabUtils
         if (CanAutoLevel)
             DoAutoLevel();
     }
+
+    /// GUI Actions
+    // ACTIONS
+    [KSPAction("Auto-Level")]
+    public void StartAction(KSPActionParam param) { AutoLevel(); }
+
+    /// GUI Actions
+    // ACTIONS
+    //[KSPAction("Enable Continuous Leveling")]
+    //public void StartLeveling(KSPActionParam param) {}
+
+    //[KSPAction("Disable Continuous Leveling")]
+    //public void StopLeveling(KSPActionParam param) { }
+
+    //[KSPAction("Toggle  Continuous Leveling")]
+    //public void ToggleSpinAction(KSPActionParam param)
+    //{}
 
     private float currentOffset = 0f;
 
@@ -193,23 +214,25 @@ namespace HabUtils
         if (RaycastSurface(newPos, downVector, out hit))
         {
           distanceDeltas.Add(hit.distance);
-          Utils.Log(String.Format("Hit found for leg {0}, distance {1}, normal vector {2}", legs[i].LegDisplayName, hit.distance, hit.normal));
+          //Utils.Log(String.Format("Hit found for leg {0}, distance {1}, normal vector {2}", legs[i].LegDisplayName, hit.distance, hit.normal));
           legs[i].SetSurfaceNormal(hit.normal);
         }
         else
         {
+          // If no hit
           distanceDeltas.Add(1000f);
           legs[i].SetSurfaceNormal(Vector3.up);
         }
       }
 
       // Determine the lowest extension
-      float min = distanceDeltas.Min();
-      Utils.Log(String.Format("Minimum distance is {0}",min));
+      float min = Mathf.Max(MinimumAutoLevelDistance, distanceDeltas.Min());
+     // Utils.Log(String.Format("Minimum distance is {0}, offset is {1}",min, currentOffset));
+      currentOffset = 0f;
       for (int i = 0; i < legs.Length ;i++)
       {
-          Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
-          legs[i].SetExtensionDistance(distanceDeltas[i]-min + currentOffset);
+        //Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
+        legs[i].SetExtensionDistance(distanceDeltas[i]-min + currentOffset);
       }
     }
     // Rotates a position around a pivot point given a rotation
