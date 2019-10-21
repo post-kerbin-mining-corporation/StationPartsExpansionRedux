@@ -232,7 +232,7 @@ namespace HabUtils
       for (int i = 0; i < legs.Length ;i++)
       {
         //Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
-        legs[i].SetExtensionDistance(distanceDeltas[i]-min + currentOffset);
+        legs[i].SetExtensionDistance(Mathf.Max(MinimumAutoLevelDistance, distanceDeltas[i]-min + currentOffset));
       }
     }
     // Rotates a position around a pivot point given a rotation
