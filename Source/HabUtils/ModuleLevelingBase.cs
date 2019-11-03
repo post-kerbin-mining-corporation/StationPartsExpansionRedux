@@ -226,13 +226,13 @@ namespace HabUtils
       }
 
       // Determine the lowest extension
-      float min = Mathf.Max(MinimumAutoLevelDistance, distanceDeltas.Min());
+      float min = distanceDeltas.Min();
      // Utils.Log(String.Format("Minimum distance is {0}, offset is {1}",min, currentOffset));
       currentOffset = 0f;
       for (int i = 0; i < legs.Length ;i++)
       {
         //Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
-        legs[i].SetExtensionDistance(Mathf.Max(MinimumAutoLevelDistance, distanceDeltas[i]-min + currentOffset));
+        legs[i].SetExtensionDistance(MinimumAutoLevelDistance + distanceDeltas[i]-min);
       }
     }
     // Rotates a position around a pivot point given a rotation

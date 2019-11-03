@@ -8,7 +8,6 @@ using KSP.Localization;
 
 namespace HabUtils
 {
-  using KIS;
   public enum DeployState
     {
         Retracted, Deploying, Deployed, Retracting
@@ -170,10 +169,7 @@ namespace HabUtils
       
       if (HighLogic.LoadedScene == GameScenes.LOADING)
       {
-        if (KISWrapper.Initialize())
-        {
-          KISWrapper.AddPodInventories(part, DeployedCrewCapacity);
-        }
+        
       }
     }
     public virtual void Start()

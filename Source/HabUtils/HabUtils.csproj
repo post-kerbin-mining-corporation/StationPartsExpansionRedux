@@ -71,7 +71,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KISWrapper.cs" />
     <Compile Include="ModuleAdjustableLeg.cs" />
     <Compile Include="ModuleDependantAnimation.cs" />
     <Compile Include="ModuleDeployableCentrifuge.cs" />
