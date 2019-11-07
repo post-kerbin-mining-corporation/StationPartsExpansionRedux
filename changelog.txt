@@ -1,9 +1,9 @@
 v1.3.0
 ------
 - KSP 1.8
-- Updated B9PartSwitch to 2.
+- Updated B9PartSwitch to 2.12.1
 - Updated ModuleManager to 4.1.0
-- Updated NearFutureProps to 0.6.0
+- Updated NearFutureProps to 0.6.1
 - Recompiled plugin to target .NET 4.5
 - Took advantage of new B9PS features (UI, type descriptions) for most mesh switch options
 - Fixed Telescopic Clamp-O-Tron initial rotation being incorrect
@@ -19,7 +19,6 @@ v1.3.0
   - Flexible sections of inflatable modules remain the same
   - Insulated cargo modules remain the same
   - Adds two new metal-oriented endcap options (Bare and Handles (yellow))
-
 
 v1.2.2
 ------
