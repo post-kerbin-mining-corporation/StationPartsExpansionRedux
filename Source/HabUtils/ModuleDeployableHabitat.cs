@@ -8,7 +8,7 @@ using KSP.Localization;
 
 namespace HabUtils
 {
-    public enum DeployState
+  public enum DeployState
     {
         Retracted, Deploying, Deployed, Retracting
     }
@@ -164,7 +164,15 @@ namespace HabUtils
             return ModifierChangeWhen.FIXED;
         }
 
-        public virtual void Start()
+    public override void OnLoad(ConfigNode node)
+    {
+      
+      if (HighLogic.LoadedScene == GameScenes.LOADING)
+      {
+        
+      }
+    }
+    public virtual void Start()
         {
             if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
             {

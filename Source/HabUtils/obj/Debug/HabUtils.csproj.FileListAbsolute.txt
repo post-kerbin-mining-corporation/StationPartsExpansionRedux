@@ -11,3 +11,10 @@ G:/KSP Modding/repositories/StationPartsExpansionRedux/Source/HabUtils/obj/Debug
 /github/StationPartsExpansionRedux/Source/HabUtils/obj/Debug/HabUtils.pdb
 /github/StationPartsExpansionRedux/GameData/StationPartsExpansionRedux/Plugins/HabUtils.dll
 /github/StationPartsExpansionRedux/GameData/StationPartsExpansionRedux/Plugins/HabUtils.pdb
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.csprojAssemblyReference.cache
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.csproj.CoreCompileInputs.cache
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.dll
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.pdb
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\GameData\StationPartsExpansionRedux\Plugins\HabUtils.dll
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\GameData\StationPartsExpansionRedux\Plugins\HabUtils.pdb
+C:\Users\Chris\KSP\Repos\StationPartsExpansionRedux\Source\HabUtils\obj\Debug\HabUtils.csproj.CopyComplete

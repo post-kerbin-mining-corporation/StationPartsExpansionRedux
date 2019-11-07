@@ -63,6 +63,9 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public bool EnableDebug = false;
 
+    [KSPField(isPersistant = false)]
+    public bool FeetPointOutwards = false;
+
     private Vector3 legZeroPosition;
     private Vector3 relativePosition;
 
@@ -206,23 +209,44 @@ namespace HabUtils
     {
       if (part.checkLanded())
       {
-          if (ticker > 10)
+        if (ticker > 10)
+        {
+          RaycastHit hit;
+          if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
           {
-              RaycastHit hit;
-              if (RaycastSurface(footTransform.position, vessel.mainBody.bodyTransform.position - footTransform.position, out hit))
-              {
-                  footRotationGoal = Quaternion.LookRotation(hit.normal, footTransform.up);
-              }
-              else
-              {
-                  footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
-              }
-              ticker = 0;
+            if (FeetPointOutwards)
+            {
+              footRotationGoal = Quaternion.LookRotation(hit.normal, footTransform.position - part.partTransform.position);
+            }
+            else
+            {
+              footRotationGoal = Quaternion.LookRotation(hit.normal, footTransform.up);
+            }
           }
-          ticker++;
+          else
+          {
+            if (FeetPointOutwards)
+            {
+              footRotationGoal = Quaternion.LookRotation(part.partTransform.up, footTransform.position - part.partTransform.position);
+            }
+            else
+            {
+              footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+            }
+          }
+          ticker = 0;
+        }
+        ticker++;
       } else
       {
-        footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+        if (FeetPointOutwards)
+        {
+          footRotationGoal = Quaternion.LookRotation(part.partTransform.up, footTransform.position - part.partTransform.position);
+        }
+        else
+        {
+          footRotationGoal = Quaternion.LookRotation(part.partTransform.up);
+        }
       }
     }
 

@@ -1,3 +1,29 @@
+v1.3.0
+------
+- KSP 1.8
+- Updated B9PartSwitch to 2.12.1
+- Updated ModuleManager to 4.1.0
+- Updated NearFutureProps to 0.6.1
+- Recompiled plugin to target .NET 4.5
+- Took advantage of new B9PS features (UI, type descriptions) for most mesh switch options
+- Fixed Telescopic Clamp-O-Tron initial rotation being incorrect
+- Fixed missing brace in Coriolis config which broken centrifuge options
+- General UV tweaks and fixes to a lot of parts
+- Added new features to auto levelling bases
+  - Some bugs with Auto-Level have been corected
+  - Auto-Level can now be bound to an action group
+  - Legs can now have FeetPointOutwards specified which constrains the feet to point out of the base
+  - Base can now have MinimumAutoLevelDistance specified, which sets the miniumum extension when the autolevel button is pressed
+- New Extras package: StationPartsExpansionMetal
+  - Adds a new bare metal variant surface to most parts
+  - Flexible sections of inflatable modules remain the same
+  - Insulated cargo modules remain the same
+  - Adds two new metal-oriented endcap options (Bare and Handles (yellow))
+
+v1.2.2
+------
+- Fixed a bug that caused station contracts to accept the 3.75m cupola rather than the 3.75m science lab as fulfilling a Science Lab requirement (hanks HSJasperism)
+
 v1.2.1
 ------
 - Updated B9PartSwitch to 2.7.1
