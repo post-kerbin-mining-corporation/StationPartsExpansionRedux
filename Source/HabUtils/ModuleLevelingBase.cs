@@ -28,9 +28,21 @@ namespace HabUtils
     [KSPField(isPersistant = false)]
     public bool CanAutoLevel = true;
 
-    // Maximum linked offset
+    // Whether to allow the autolevel tweaker or not
     [KSPField(isPersistant = false)]
-    public float MinimumAutoLevelDistance = 0.1f;
+    public bool CanTweakAutoLevel = false;
+
+    // Whether to show deploy/retract in the UI or not
+    [KSPField(isPersistant = false)]
+    public bool ShowDeployRetract = false;
+
+    // Maximum linked offset
+    [KSPField(isPersistant = true)]
+    public float MaxLegDistance = 0.0f;
+
+    // Current linked offset
+    [KSPField(isPersistant = true, guiActive = true, advancedTweakable = true, guiName = "Auto-Level Minimum"), UI_FloatRange(minValue = 0f, maxValue = 100f, stepIncrement = 1f)]
+    public float MinimumAutoLevelFraction = 10f;
 
     // Current linked offset
     [KSPField(isPersistant = true, guiActive = true, guiName = "Leg Extension"), UI_FloatRange(minValue = 0f, maxValue = 100f, stepIncrement = 1f)]
@@ -57,19 +69,45 @@ namespace HabUtils
     /// GUI Actions
     // ACTIONS
     [KSPAction("Auto-Level")]
-    public void StartAction(KSPActionParam param) { AutoLevel(); }
+    public void AutoLevelAction(KSPActionParam param) { AutoLevel(); }
+    
+    [KSPAction("Deploy")]
+    public void DeployAction(KSPActionParam param)
+    {
+      Deploy();
+    }
 
-    /// GUI Actions
-    // ACTIONS
-    //[KSPAction("Enable Continuous Leveling")]
-    //public void StartLeveling(KSPActionParam param) {}
+    [KSPAction("Retract")]
+    public void RetractAction(KSPActionParam param)
+    {
+      Retract();
+    }
 
-    //[KSPAction("Disable Continuous Leveling")]
-    //public void StopLeveling(KSPActionParam param) { }
+    [KSPAction("Toggle Retraction", actionGroup=KSPActionGroup.Gear)]
+    public void ToggleAction(KSPActionParam param)
+    {
+      
+      if (IsExtended())
+        Retract();
+      else
+        Deploy();
+    }
 
-    //[KSPAction("Toggle  Continuous Leveling")]
-    //public void ToggleSpinAction(KSPActionParam param)
-    //{}
+    // 'Retracts' the legs
+    [KSPEvent(guiActive = true, guiActiveEditor = false, guiName = "Deploy")]
+    public void Retract()
+    {
+      for (int i = 0; i < legs.Length; i++)
+      {
+        legs[i].SetExtension(0f);
+      }
+    }
+    // 'Deploys' the legs
+    [KSPEvent(guiActive = true, guiActiveEditor = false, guiName = "Deploy")]
+    public void Deploy()
+    {
+      AutoLevel();
+     }
 
     private float currentOffset = 0f;
 
@@ -97,6 +135,12 @@ namespace HabUtils
     {
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
+        if (ShowDeployRetract)
+        {
+          bool extended = IsExtended();
+          Events["Deploy"].active = !extended;
+          Events["Retract"].active = extended;
+        }
       }
     }
 
@@ -105,9 +149,22 @@ namespace HabUtils
       if (HighLogic.LoadedSceneIsFlight)
       {
         ComputeLeveling();
+
       }
     }
 
+    protected bool IsExtended()
+    {
+      bool anyExtended = false;
+      for (int i = 0; i < legs.Length; i++)
+      {
+        if (legs[i].LegExtension > 0f)
+        {
+          anyExtended = true;
+        }
+      }
+      return anyExtended;
+    }
     // Sets up the transforms
     protected void SetupTransforms()
     {
@@ -120,9 +177,13 @@ namespace HabUtils
     protected void SetupLegs()
     {
       legs = part.GetComponents<ModuleAdjustableLeg>();
+      
       foreach (ModuleAdjustableLeg leg in legs)
       {
-
+        if (leg.ExtenderMax > MaxLegDistance)
+        {
+          MaxLegDistance = leg.ExtenderMax;
+        }
       }
     }
     protected void SetupDebug()
@@ -134,47 +195,65 @@ namespace HabUtils
     }
     protected void SetupUI()
     {
-        Events["AutoLevel"].guiActive = CanAutoLevel;
-        Events["AutoLevel"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_Auto-Level");
+      Fields["MinimumAutoLevelFraction"].guiActive = CanTweakAutoLevel;
+      if (ShowDeployRetract)
+      {
+        bool extended = IsExtended();
+        Events["Deploy"].active = !extended;
+        Events["Retract"].active = extended;
+      }
 
-        HandleModeChange(null, null);
+      Events["AutoLevel"].guiActive = CanAutoLevel;
+      Events["AutoLevel"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_Auto-Level");
 
-        var chooseField = Fields["currentModeIndex"];
-        chooseField.guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode");
-        var chooseOption = (UI_ChooseOption)chooseField.uiControlEditor;
-        chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
-            Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
-        chooseOption.onFieldChanged = HandleModeChange;
-        chooseOption = (UI_ChooseOption)chooseField.uiControlFlight;
-        chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
-            Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
-        chooseOption.onFieldChanged = HandleModeChange;
+      Events["Deploy"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_Deploy");
+      Fields["MinimumAutoLevelFraction"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_TweakLevel");
+      Events["Retract"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Event_Retract");
 
-        Fields["LinkedExtension"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LinkedExtension");
-        UI_FloatRange slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlEditor;
-        slider.onFieldChanged = OnChangeExtension;
-        slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlFlight;
-        slider.onFieldChanged = OnChangeExtension;
+      Actions["DeployAction"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Action_Deploy");
+      Actions["RetractAction"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Action_Retract");
+      Actions["ToggleAction"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Action_Toggle");
+      Actions["AutoLevelAction"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Action_Auto-Level");
+      
+
+      HandleModeChange(null, null);
+
+      var chooseField = Fields["currentModeIndex"];
+      chooseField.guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode");
+      var chooseOption = (UI_ChooseOption)chooseField.uiControlEditor;
+      chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
+          Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
+      chooseOption.onFieldChanged = HandleModeChange;
+      chooseOption = (UI_ChooseOption)chooseField.uiControlFlight;
+      chooseOption.options = new string[] {Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked"),
+          Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual")};
+      chooseOption.onFieldChanged = HandleModeChange;
+
+      Fields["LinkedExtension"].guiName = Localizer.Format("#LOC_SSPX_ModuleLevelingBase_Field_LinkedExtension");
+      UI_FloatRange slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlEditor;
+      slider.onFieldChanged = OnChangeExtension;
+      slider = (UI_FloatRange)Fields["LinkedExtension"].uiControlFlight;
+      slider.onFieldChanged = OnChangeExtension;
 
     }
     protected void HandleModeChange(BaseField field, object what)
     {
-        if (currentModeIndex == 0)
+      if (currentModeIndex == 0)
+      {
+        Fields["LinkedExtension"].guiActive = true;
+        foreach (ModuleAdjustableLeg leg in legs)
         {
-          Fields["LinkedExtension"].guiActive = true;
-            foreach (ModuleAdjustableLeg leg in legs)
-            {
-                leg.SetUIVisibility(false);
-            }
+            leg.SetUIVisibility(false);
         }
-        else if (currentModeIndex == 1)
+      }
+      else if (currentModeIndex == 1)
+      {
+        Fields["LinkedExtension"].guiActive = false;
+        foreach (ModuleAdjustableLeg leg in legs)
         {
-          Fields["LinkedExtension"].guiActive = false;
-            foreach (ModuleAdjustableLeg leg in legs)
-            {
-                leg.SetUIVisibility(true);
-            }
+            leg.SetUIVisibility(true);
         }
+      }
 
     }
 
@@ -188,7 +267,7 @@ namespace HabUtils
         legs[i].SetExtensionDistance(realDist+currentOffset);
       }
       previousOffset = currentOffset;
-
+     
     }
     protected void DoAutoLevel()
     {
@@ -232,8 +311,11 @@ namespace HabUtils
       for (int i = 0; i < legs.Length ;i++)
       {
         //Utils.Log(String.Format("Setting extension of leg {0} to {1}, plus {2}", legs[i].LegDisplayName, distanceDeltas[i] - min, currentOffset));
-        legs[i].SetExtensionDistance(MinimumAutoLevelDistance + distanceDeltas[i]-min);
+        legs[i].SetExtensionDistance(MinimumAutoLevelFraction/100f*MaxLegDistance+ distanceDeltas[i]-min);
       }
+      LinkedExtension = MinimumAutoLevelFraction;
+
+      
     }
     // Rotates a position around a pivot point given a rotation
     public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation) {
