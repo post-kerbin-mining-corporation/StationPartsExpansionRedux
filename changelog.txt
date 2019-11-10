@@ -1,3 +1,8 @@
+v1.3.1
+------
+- Fixed a missing bracket
+- Updated Russian translation (Zool3)
+
 v1.3.0
 ------
 - KSP 1.8
@@ -11,9 +16,16 @@ v1.3.0
 - General UV tweaks and fixes to a lot of parts
 - Added new features to auto levelling bases
   - Some bugs with Auto-Level have been corected
-  - Auto-Level can now be bound to an action group
-  - Legs can now have FeetPointOutwards specified which constrains the feet to point out of the base
-  - Base can now have MinimumAutoLevelDistance specified, which sets the miniumum extension when the autolevel button is pressed
+  - ModuleAdjustableLeg can now have FeetPointOutwards specified which constrains the feet to point out of the base
+  - ModuleLevelingBase
+    - Has new Toggle, Deploy, Retract action groups
+      - Toggle is automatically bound to Gear action group
+      - Deploy automatically extends the legs and auto-levels
+      - Retract resets all legs to zero
+      - UI fields for Deploy, Retract can be enabled/disabled with ShowDeployRetract field in the config
+    - Auto-Level can now be bound to an action group
+    - Can now have MinimumAutoLevelFraction specified, which sets the miniumum extension when the autolevel button is pressed
+    - Can now have CanTweakAutoLevel specified, which lets minimum extension be modifiable when Adv Tweakables is on
 - New Extras package: StationPartsExpansionMetal
   - Adds a new bare metal variant surface to most parts
   - Flexible sections of inflatable modules remain the same
