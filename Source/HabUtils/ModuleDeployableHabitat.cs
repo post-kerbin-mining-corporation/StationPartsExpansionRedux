@@ -386,7 +386,7 @@ namespace HabUtils
             }
             else if (HighLogic.LoadedSceneIsFlight)
             {
-                GameEvents.onVesselWasModified.Fire(this.vessel);
+                //GameEvents.onVesselWasModified.Fire(this.vessel);
                 part.CheckTransferDialog();
             }
             MonoUtilities.RefreshContextWindows(part);

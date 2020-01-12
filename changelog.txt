@@ -1,6 +1,7 @@
 v1.3.1
 ------
-- Fixed a missing bracket
+- Updated ModuleManager to 4.1.3
+- Fixed a Breaking-Ground related issue which could cause autostruts to break under certain conditions (lolsquad)
 - Updated Russian translation (Zool3)
 
 v1.3.0
