@@ -1,5 +1,5 @@
 ====================================
-STATION PARTS EXPANSION REDUX v1.3.01
+STATION PARTS EXPANSION REDUX v1.3.1
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 3.75m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
