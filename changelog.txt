@@ -1,3 +1,11 @@
+v1.3.3
+------
+- KSP 1.9
+- Updated B9PartSwitch to 2.13.0
+- Updated NearFutureProps to 0.6.2
+- Added Chinese translation (tinygrox)
+- Fixed Kerbal positioning issues with the Bagel and Blimp IVAs. 
+
 v1.3.2
 ------
 - Fixed problematic 1.3.1 versioning
