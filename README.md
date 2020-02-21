@@ -30,8 +30,8 @@ A complete and total rebuild of my old Stockalike Station Parts Expansion projec
 ### Required
 These components are required for the mod to function and are bundled as part of any download:
 * [ModuleManager (4.1.3)](https://github.com/sarbian/ModuleManager)
-* [B9PartSwitch (2.12.1)](https://github.com/blowfishpro/B9PartSwitch)
-* [Near Future Props (0.6.1)](https://github.com/ChrisAdderley/NearFutureProps)
+* [B9PartSwitch (2.13.0)](https://github.com/blowfishpro/B9PartSwitch)
+* [Near Future Props (0.6.2)](https://github.com/ChrisAdderley/NearFutureProps)
 
 ## Installation
 
