@@ -1,6 +1,6 @@
 v1.3.4
 ------
-- Updated B9PartSwitch to 2.15.2
+- Updated B9PartSwitch to 2.16.0
 - Fuel tanks in the Asylum radiation shelter can now switch between various liquid options (LouisB)
 - Increased 1.25m cupola mass to 0.45
 - Improvements to SSPXMetal extras

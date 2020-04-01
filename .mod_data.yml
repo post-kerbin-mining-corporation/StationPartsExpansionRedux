@@ -11,7 +11,7 @@ dependencies:  # Configure dependencies
     version: 4.1.3
     location: s3
   B9PartSwitch:
-    version: 2.15.2
+    version: 2.16.0
     location: s3
   NearFutureProps:
     tag: 0.6.2
