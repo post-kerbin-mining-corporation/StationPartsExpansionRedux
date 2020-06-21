@@ -1,0 +1,821 @@
+Localization
+{
+ja
+{
+	//製造会社など
+	#LOC_SSPX_manufacturer_kerbalmax_title = カーバルマックス工業
+	#LOC_SSPX_manufacturer_pkmc_title = ポスト・カービン 採掘事業所
+	#LOC_SSPX_manufacturer_krda_title = カービン供給開発管理会社
+
+	//パーツ
+
+	//5m 固定型パーツ
+	#LOC_SSPX_sspx-habitation-5-1_title = SDV-2 'アトラス' 深宇宙探査用乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-5-1_description = 近未来的です。
+	#LOC_SSPX_sspx-habitation-5-1_tags = ベース 基地 キャビン ステーション 旅客 深宇宙 乗員 収容 コンテナ アトラス
+
+	#LOC_SSPX_sspx-core-5-1_title = SDV-3 'ミネルバ' 深宇宙探査用操縦モジュール
+	#LOC_SSPX_sspx-core-5-1_description = 近未来的です。
+	#LOC_SSPX_sspx-core-5-1_tags = ベース 基地 キャビン ステーション 旅客 深宇宙 探査 操縦モジュール センター 接続 構造 居住  ミネルバ
+
+	#LOC_SSPX_sspx-logistics-5-1_title = SDV-1 'リト' 深宇宙探査用貯蔵タンク
+	#LOC_SSPX_sspx-logistics-5-1_description = 近未来的です。
+	#LOC_SSPX_sspx-logistics-5-1_tags = ベース 基地 キャビン ステーション 旅客 カーゴ 収納 運搬 リト 深宇宙探査用 貯蔵タンク
+
+	//展開式パーツ（5ｍ）
+	#LOC_SSPX_sspx-extensible-centrifuge-5-1_title = SDV-X 'クロノス' 遠心装置
+	#LOC_SSPX_sspx-extensible-centrifuge-5-1_description = 近未来的です。
+	#LOC_SSPX_sspx-extensible-centrifuge-5-1_tags = 基地 ベース ステーション チューブ 展開 輪っか 回転 回る 遠心 遠心式 重力発生装置 重力 クロノス
+
+	//固定型パーツ（3.75m）
+	#LOC_SSPX_sspx-cupola-375-1_title = PXL-9 'ビスタ' 観測モジュール
+	#LOC_SSPX_sspx-cupola-375-1_description = ビスタは、惑星の観測、新しい星の発見、そして窓が増えることで機体の見晴らしをよくするのに役立ちます。観測センターとコントロールセンターとしての両方の機能を持ち合わせています。
+	#LOC_SSPX_sspx-cupola-375-1_tags = ベース 基地 キャビン ステーション 旅客 観測 モジュール ビスタ
+	#LOC_SSPX_sspx-cupola-375-1_tags = ベース 基地 カプセル コマンド 操縦 操作 キューポラ  パイロット ポッド ロケット 宇宙 深宇宙 制御 ステーション トルク 眺望 ビスタ 観測モジュール
+
+	#LOC_SSPX_sspx-habitation-375-1_title = PXL-1 'ホステル' 深宇宙探査用乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-375-1_description = 大きくかつ強固な居住スペースのあるホステルには、最大12名のカーバルとそれぞれのプライベートを守る個室がついています。深宇宙用に設計されていて、適切な放射線防護処理が施されており、さらに衛生設備と運動器具があります。
+	#LOC_SSPX_sspx-habitation-375-1_tags = ベース 基地 キャビン  乗員 ステーション 旅客 ホステル 深宇宙探査用 乗員 収容 コンテナ
+
+	#LOC_SSPX_sspx-habitation-375-2_title = PXL-2 'シェルター' 深宇宙探査用乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-375-2_description = 6カーバル型モジュール"シェルター"には、6人用のスペースが備えられており、寝る部屋がやや狭かったとしても、普通に寝るよりははるかに快適なはずです。放射線から乗員の健康を守ります。
+	#LOC_SSPX_sspx-habitation-375-2_tags = ベース キャビン  乗員 ステーション 旅客 シェルター 深宇宙探査用 乗員収容コンテナ
+
+	#LOC_SSPX_sspx-habitation-375-3_title = PXL-3 'アザイル' 緊急時避難用乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-375-3_description = もし危険なフレアが発生した場合はどうしますか？そんな時に備えて、乗員が避難できる場所を用意してもいいかもしれません。放射状に配置された燃料タンクによって、厄介な状況から乗員を安全にお守りします。最大で6名のカーバルが窮屈とはいえここに避難でき、3つあるベッドのおかげで相当の期間滞在できるはずです。
+	#LOC_SSPX_sspx-habitation-375-3_tags = ベース 基地 キャビン  乗員 ステーション 旅客 アザイル 緊急時 フレア 避難 乗員収容コンテナ
+
+	#LOC_SSPX_sspx-lab-375-1_title = PXL-2 'フェイト' 深宇宙探査用研究室
+	#LOC_SSPX_sspx-lab-375-1_description = 深宇宙での研究は、もはや地上での研究と全く変わりありません！設備の整っているこの研究室は、最近さらなる改良が加えられ―開発者は実験用エアロックを追加して、近代的な設備をつけ足しました。
+	#LOC_SSPX_sspx-lab-375-1_tags = 実験 実験室 ラボ 研究  化学 科学  フェイト 深宇宙探査用
+
+	#LOC_SSPX_sspx-greenhouse-375-1_title = PXL-R4NCH-3R 水耕栽培室
+	#LOC_SSPX_sspx-greenhouse-375-1_description = この広々とした温室は、数名のカーバルにケールを栽培してもらい、これ以上ケールはごめんだというような気分にさせます。
+	#LOC_SSPX_sspx-greenhouse-375-1_tags = ベース 基地  育成 農園 水耕 栽培 グリーンハウス ケール 野菜 食料
+
+	#LOC_SSPX_sspx-aquaculture-375-1_title = PXL-F15H 水産養殖室
+	#LOC_SSPX_sspx-aquaculture-375-1_description = 食料生産と放射線防護にもっと多様性を持たせるために、カーバルマックス社はかなり重めの水産物養殖モジュールを設計しました。様々な水槽のおかげで、ワカサギやらフグやらエビやら、その他さまざま、今日も深宇宙でおいしい一口を提供しています。下手をすると、そうした水産物の成長の促進を目的に放射線シールドとして使用しても、副作用はみられません。
+	#LOC_SSPX_sspx-aquaculture-375-1_tags = ベース 基地  育成 魚 魚介類 エビ  タンパク質 肉 魚肉 養殖
+
+	#LOC_SSPX_sspx-attach-375-1_title = PXL-AR 加圧式ラジアル型アタッチメントポイント
+	#LOC_SSPX_sspx-attach-375-1_description = 大きなチューブを大きなチューブに接続する必要がある場合に必須です。おっと、空気も必須です。
+	#LOC_SSPX_sspx-attach-375-1_tags = 接続 アタッチメントポイント ラジアル アンカー マウント 安全 加圧 構造
+
+	#LOC_SSPX_sspx-core-375-1_title = PXL-10 'ハーバー' ステーション管制センター
+	#LOC_SSPX_sspx-core-375-1_description = 大型ステーション、または特大の宇宙船用のコントロールセンターです。最大5名のカーバルが搭乗でき、探査機の完璧なコントロールポイントとしても機能します。深宇宙での使用を想定して、丈夫なシールドが張られています。惑星に近づきすぎると保証が無効になります。
+	#LOC_SSPX_sspx-core-375-1_tags = ベース 基地 建設 中核 セントラル 中央 接続 コア 居住  ステーション ハーバー 管制センター
+
+	#LOC_SSPX_sspx-cargo-container-375-1_title = PXL-CRG-1 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-375-1_description = 3.75mの長い倉庫で、様々なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-375-1_tags = カーゴ 収納 商品 運搬 貯蔵 物流 
+
+	#LOC_SSPX_sspx-cargo-container-375-2_title = PXL-CRG-2 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-375-2_description = 2.5mの倉庫です。様々なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-375-2_tags = カーゴ 収納 商品 運搬 貯蔵 物流 
+
+	#LOC_SSPX_sspx-cargo-container-375-3_title = PXL-CRG-3 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-375-3_description = 3.75mのコンパクトサイズになった倉庫で、それでも様々なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-375-3_tags = カーゴ 収納 商品 運搬 貯蔵 物流 
+
+	#LOC_SSPX_sspx-tube-375-1_title = PXL-T1 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-375-1_description = PXL-Tシリーズは、大きくてとっても頑丈で、加圧式構造チューブの結論ともいえます。
+	#LOC_SSPX_sspx-tube-375-1_tags = ベース 基地 収納  ステーション 貯蔵 チューブ 加圧 構造
+	#LOC_SSPX_sspx-tube-375-2_title = PXL-T2 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-375-2_description = PXL-Tシリーズは、大きくてとっても頑丈で、加圧式構造チューブの結論ともいえます。このバージョンは中型のサイズです。
+	#LOC_SSPX_sspx-tube-375-2_tags = ベース 基地 収納  ステーション 貯蔵 チューブ 加圧 構造
+	#LOC_SSPX_sspx-tube-375-3_title = PXL-T3 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-375-3_description = PXL-Tシリーズは、大きくてとっても頑丈で、加圧式構造チューブの結論ともいえます。このバージョンは小型のサイズです。
+	#LOC_SSPX_sspx-tube-375-3_tags = ベース 基地 収納  ステーション 貯蔵 チューブ 加圧 構造
+
+	//展開式パーツ（3.75m）
+	#LOC_SSPX_sspx-extensible-centrifuge-375-1_title = PXL-E 'マーキュリー' 遠心装置付き乗員収容コンテナ
+	#LOC_SSPX_sspx-extensible-centrifuge-375-1_description = 完全に展開した場合、直径25mのすごく大きな遠心装置になります。最大14名の勇敢なカーバルのために、遅い回転速度で実現された0.6Gの重力と十分なスペースで、快適さを実現します。生活スペースを統合するための解決策として開発されたマーキュリーには、設備の整ったキッチン、運動器具、医療施設があります。部屋が10個もあるため、回転させるのは少々難しかったですが。
+	#LOC_SSPX_sspx-extensible-centrifuge-375-1_tags = ベース 基地 収納
+
+	#LOC_SSPX_sspx-extensible-centrifuge-375-2_title = PXL-F 'ピグリム' 遠心装置付き乗員収容コンテナ
+	#LOC_SSPX_sspx-extensible-centrifuge-375-2_description = 革新的な「多重力」設計を備えた、ややコンパクトな遠心装置です。デッキごとに重力の強さが異なるため、重力の強さにどれだけ耐えられるか乗員が挑戦する、という面白さがあります！すべての「腕」は同じ構造になっており、運動設備のある部屋、キッチンの部屋、寝る部屋があります。最大10名の滞在に対応しています。
+	#LOC_SSPX_sspx-extensible-centrifuge-375-2_tags = ベース 基地 収納
+
+	// 2.5m rigid partsPressurized Crew 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-25-1_title = PPD-A1 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-25-1_description = PPD-Aシリーズのチューブには固定具はありませんが、かなり大きいです。A1モデルには窓が2対あり、これもまたかなり大きいです。
+	#LOC_SSPX_sspx-tube-25-1_tags = ベース 基地 接続 ステーション 加圧式 構造 チューブ 
+	#LOC_SSPX_sspx-tube-25-2_title = PPD-A2 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-25-2_description = PPD-Aシリーズのチューブには固定具はありませんが、かなり大きいです。A2モデルには窓が1対だけあります。
+	#LOC_SSPX_sspx-tube-25-2_tags =ＳＰＸ ベース 基地 接続 ステーション 加圧式 構造 チューブ 
+	#LOC_SSPX_sspx-tube-25-3_title = PPD-A3 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-25-3_description = PPD-Aシリーズのチューブには固定具はありませんが、かなり大きいです。幅は広いですが、長くはないです。なんでこんなもの―いえ、何でもありません。
+	#LOC_SSPX_sspx-tube-25-3_tags = ベース 基地 接続 ステーション 加圧式 構造 チューブ 
+
+	#LOC_SSPX_sspx-airlock-25-1_title = PPD-EVAC-U-8 サービスエアロック
+	#LOC_SSPX_sspx-airlock-25-1_description = このエアロックは、EVA用の搭乗口とドッキングポートとしての両方の役割を果たします。シャトルカーゴベイの接続先として最適です。
+	#LOC_SSPX_sspx-airlock-25-1_tags = ベース 基地 ステーション エアロック 入り口 キャプチャ 把持 接続 カップリング ドッキング 係留 ポート ソケット
+
+	#LOC_SSPX_sspx-attach-25-1_title = PPD-AR 加圧式ラジアル型アタッチメントポイント
+	#LOC_SSPX_sspx-attach-25-1_description = 大きなチューブを大きなチューブに接続する必要がある場合に必須です。おっと、空気が必須です。
+	#LOC_SSPX_sspx-attach-25-1_tags = 接続 アタッチメント 側面取り付け 加圧式
+
+	#LOC_SSPX_sspx-core-25-1_title = PPD-8 'ホル' ステーションコア
+	#LOC_SSPX_sspx-core-25-1_description = ホルは、カーバルがステーションを管理するためだけに作られました。断熱性が高く広々としており、最大4名のカーバルが搭乗できます。また、探査機のコントロールポイントとしての完全な機能と、小さな生き物が快適に過ごせる設備を兼ね備えています。
+	#LOC_SSPX_sspx-core-25-1_tags = ベース 基地 建築 建設 建造 中心 中核 接続 構造 コア 居住 ステーション ホル
+
+	#LOC_SSPX_sspx-hub-25-1_title = PPD-MULT マルチポイント ステーションコネクター
+	#LOC_SSPX_sspx-hub-25-1_description = ステーションを建設しているとき、もう少しハブが必要な時がありますよね？このハブなら、6方向から3方向、90度から30度のマウントまで、様々なバリエーションをそろえており、あらゆる接続が可能です。今すぐご注文ください！
+	#LOC_SSPX_sspx-hub-25-1_tags = ベース 基地 建築 建設 建造 中心 中核 接続 構造 コア ステーション 角度変更 直角 ジョイント 
+
+	#LOC_SSPX_sspx-observation-25-1_title = PPD-24 'パノラマ' 観測研究センター
+	#LOC_SSPX_sspx-observation-25-1_description = PPD-24はステーションまたはベースに用いるものとしては優れており、中にいる4名のカーバルに素晴らしい見晴らしと放熱性をもたらします。この第2世代モデルは、出入りできるハッチが一つに減ったぶん、さらに見晴らしがよくなっています。
+	#LOC_SSPX_sspx-observation-25-1_tags = ベース 基地 キューポラ 宇宙 ステーション 景観 見晴らし パノラマ 観測研究センター
+
+	#LOC_SSPX_sspx-habitation-25-1_title = PPD-20 'シャンティ' 乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-25-1_description = 由緒あるHitchhiker Strage Container (HSC) はあらゆる宇宙飛行士に4名のカーバルを軌道上に留めておきますが、より大きなシャンティはさらにたくさんのカーバルを留めておけます。 シャンティには、6名のカーバルの滞在を補助するために必要なものが備わっています。ベッドよりも椅子が多めで、一液式推進剤と電力の予備さえあります。
+	#LOC_SSPX_sspx-habitation-25-1_tags = ベース 基地 キャビン 乗員 ステーション 旅客 一液式推進剤 燃料つき 電力 バッテリー 缶 シャンティ 乗員収容コンテナ
+
+	#LOC_SSPX_sspx-greenhouse-25-1_title = PPD-F412M 水耕栽培室
+	#LOC_SSPX_sspx-greenhouse-25-1_description = 長期にわたる宇宙探査では、軌道上で育てられた植物が乗員の生命維持をサポートするかもしれません。徹底的な実験の結果、育てることができる最高の、最もコンパクトで、最も栄養価の高い植物は、もちろんケールであることがわかりました。Kerbalnautsにとって残念なことが一つだけありまして、それは、野菜の味は標準以下であることです。
+	#LOC_SSPX_sspx-greenhouse-25-1_tags = ベース 基地 育成 農園 水耕 植物 グリーンハウス ケール 
+
+	#LOC_SSPX_sspx-cargo-25-1_title = PPD-TRUSS 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-25-1_description = 大型のPPDシリーズ貯蔵タンクなら、軌道上にたくさん収納できます。かっこよく加工されたドアは、こうした貯蔵タンクの内部に入ることを…可能にします。
+	#LOC_SSPX_sspx-cargo-25-1_tags = カーゴ 貯蔵 ステーション
+	#LOC_SSPX_sspx-cargo-25-2_title = PPD-TRUSS-S 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-25-2_description = 大型のPPDシリーズ貯蔵タンクなら、軌道上にたくさん収納できます。このモデルは短く、ドアが二つになっています。
+	#LOC_SSPX_sspx-cargo-25-2_tags = カーゴ 貯蔵 ステーション トラス
+
+	#LOC_SSPX_sspx-cargo-container-25-1_title = PPD-CRG-1 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-25-1_description =  2.5mの長めの貯蔵タンクで、多種多様なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-25-1_tags = カーゴ 接続 運搬 貯蔵 物流 
+
+	#LOC_SSPX_sspx-cargo-container-25-2_title = PPD-CRG-2 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-25-2_description =  2.5mの中くらいのサイズの貯蔵タンクで、多種多様なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-25-2_tags = カーゴ 接続 運搬 貯蔵 物流 
+
+	#LOC_SSPX_sspx-cargo-container-25-3_title = PPD-CRG-3 貯蔵タンク
+	#LOC_SSPX_sspx-cargo-container-25-3_description = 2.5mの短い貯蔵タンクで、多種多様なものを保管できます。
+	#LOC_SSPX_sspx-cargo-container-25-3_tags = カーゴ 接続 運搬 貯蔵 物流 
+
+	// 2.5m 膨張式パーツ
+	#LOC_SSPX_sspx-inflatable-hab-25-1_title =  PFD-A 'ディリジブル' 膨張式乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-25-1_description = 市場最大ともいえる膨張式乗員収容コンテナです。18名のカーバルが快適に滞在できます。ただし、睡眠スペースは限られており、一度に睡眠できるのは9人までですが、ほかの人は共用スペースでリラックスしたり、シャワーを浴びたり、病室を利用したり、運動器具を交代で利用したりできます。
+	#LOC_SSPX_sspx-inflatable-hab-25-1_tags = 基地 ベース 接続 ステーション 貯蔵 居住 膨張式 ディリジブル 
+	#LOC_SSPX_sspx-inflatable-hab-25-2_title = PFD-B 'ブリンプ' 膨張式乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-25-2_description = 少々小さいながらも、れっきとした膨張式乗員収容コンテナです。とはいえ、圧縮時と比べたら9名のカーバルが暮らすには十分だといわれています。ベッドは6つあり、移動にも十分なスペースがあります。 また、フルシャワー設備、トイレ設備も完備されています。
+	#LOC_SSPX_sspx-inflatable-hab-25-2_tags = 基地 ベース 接続 ステーション 貯蔵 居住 膨張式 ブリンプ
+	#LOC_SSPX_sspx-inflatable-centrifuge-25-1_title = PFD-C 'コリオリ' 膨張式・遠心装置付き・乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-centrifuge-25-1_description = 利用可能なもののうち最大の、遠心装置がついた膨張式乗員収容コンテナであるコリオリは、快適な生活空間を提供します。直径15mまで展開したのちに回転をはじめ、0.5Gまでの重力を発生させることで、あらゆる種類の健康上の問題を解決します！いくつかの運動器具、病室、共用エリアが含まれています！いい仕事したなぁ！
+	#LOC_SSPX_sspx-inflatable-centrifuge-25-1_tags = 基地 ベース 接続 ステーション 貯蔵 居住 膨張式 ディリジブル 輪っか わっか 回る 遠心装置付き 重力
+
+	// アダプター
+	#LOC_SSPX_sspx-adapter-375-5-1_title = SDV-4 アダプター
+	#LOC_SSPX_sspx-adapter-375-5-1_description = 近未来的です。
+	#LOC_SSPX_sspx-adapter-375-5-1_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+	#LOC_SSPX_sspx-adapter-375-5-2_title = 近未来的なパーツ
+	#LOC_SSPX_sspx-adapter-375-5-2_description = まだ実装されていません。
+	#LOC_SSPX_sspx-adapter-375-5-2_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+	#LOC_SSPX_sspx-adapter-25-375-1_title = PXL-2A 円錐型アダプター
+	#LOC_SSPX_sspx-adapter-25-375-1_description = このbuklyアダプターは、顧客のニーズに応じて異なる断面形状のものを提供することができます。EVAケーブルについては、目の肥えたKerbonautsの船外活動を支援します。
+	#LOC_SSPX_sspx-adapter-25-375-1_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+	#LOC_SSPX_sspx-adapter-25-375-2_title = PXL-PPD フラットアダプター
+	#LOC_SSPX_sspx-adapter-25-375-2_description = PPDシリーズとPXDシリーズを滑らかに接合する技術により、ステーションの外観が…再び一新されます。
+	#LOC_SSPX_sspx-adapter-25-375-2_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+
+	#LOC_SSPX_sspx-adapter-125-25-2_title = PPD-PTD アダプター
+	#LOC_SSPX_sspx-adapter-125-25-2_description = PTDシリーズをPPDシリーズに接続できるようにすることで得られる利益を、カーバルマックスの株主が見逃すことはありませんでした。窓が何のためにあるのかなんて、どうでもよくなりました。
+	#LOC_SSPX_sspx-adapter-125-25-2_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+	#LOC_SSPX_sspx-adapter-125-25-1_title = PPD-PTD フラットアダプター
+	#LOC_SSPX_sspx-adapter-125-25-1_description = 便利な飾りともいえるこのアダプターは、金色をした醜い構造を隠すのには最適です。ところで、誰がこれを必要としていたのでしょうか？
+	#LOC_SSPX_sspx-adapter-125-25-1_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+
+	#LOC_SSPX_sspx-adapter-0625-125-1_title = PTD-C フラットアダプター
+	#LOC_SSPX_sspx-adapter-0625-125-1_description = PTDシリーズのチューブの先端は丸まらせておく必要がありました。カーバルがドアを閉めるかどうか信用ならない場合に備えてつくられた部品です。 小さいサイズへのアダプターとしても使われることがあります。
+	#LOC_SSPX_sspx-adapter-0625-125-1_tags = 基地 ベース 接続 ステーション チューブ アダプター 
+
+	// 1.25m 固定型パーツ
+	#LOC_SSPX_sspx-tube-125-1_title = PTD-1 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-125-1_description = 製造メーカーがこの構造チューブの新たな加圧技術を広く公表することを選択したことには多少の不安がありますが、十分に堅固に見えます。
+	#LOC_SSPX_sspx-tube-125-1_tags = 基地 ベース 接続 ステーション チューブ 加圧式
+	#LOC_SSPX_sspx-tube-125-2_title = PTD-2 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-125-2_description = PTD-1は大いなる人気を博したため、カーバルマックスは長さがちょうど半分のPTD-2を作成し、より多くの部品の要求を満たしました。 しかし中途半端な部分が露見しており、雑な仕事をされているのが少々残念です。
+	#LOC_SSPX_sspx-tube-125-2_tags = 基地 ベース 接続 ステーション チューブ 加圧式
+	#LOC_SSPX_sspx-tube-125-3_title = PTD-3 加圧式構造チューブ
+	#LOC_SSPX_sspx-tube-125-3_description = PTD-3はPTD-1の4分の1サイズであり、余計なものは極力省いてあります。放りっぱなしの先端部分を保護する際の接続に役立ちます。
+	#LOC_SSPX_sspx-tube-125-3_tags = 基地 ベース 接続 ステーション チューブ 加圧式
+
+	#LOC_SSPX_sspx-core-125-1_title = PTD-8R 'ピア' ステーションコア
+	#LOC_SSPX_sspx-core-125-1_description = ローテク時代に作られたピアは、今でも小型のステーションの管理に使われ、ちょっとした探査機を制御するのにつかわれます。快適とは言えませんが、カーバル2名くらいなら滞在できます。
+	#LOC_SSPX_sspx-core-125-1_tags = 基地 ベース 建築 中央 中核 接続 構造 居住 ステーション ピア pier
+	#LOC_SSPX_sspx-habitation-125-1_title = PTD-5 'サンライズ' 乗員収容コンテナ
+	#LOC_SSPX_sspx-habitation-125-1_description = この小さな乗員収容コンテナには、1組のカーバルのための十分な居住スペースがあります。一見すると地味に見えますが、確実に役立ちます！
+	#LOC_SSPX_sspx-habitation-125-1_tags = 基地 ベース 接続 ステーション チューブ 缶 居住 寝る サンライズ
+	#LOC_SSPX_sspx-utility-125-1_title = PTD-6 'スター' 補助モジュール
+	#LOC_SSPX_sspx-utility-125-1_description = この搭乗可能な補助モジュールには、ステーション滞在のエンジニアが時々頭を突っ込むのであれば十分なスペースを備えています。
+	#LOC_SSPX_sspx-utility-125-1_tags = 基地 ベース 接続 ステーション チューブ 燃料 電力 電気 バッテリー スター
+
+	#LOC_SSPX_sspx-airlock-125-1_title = SCATTER-1 サービスエアロック
+	#LOC_SSPX_sspx-airlock-125-1_description = 無防備なKerbonautsが乗員収容コンテナ全体を意図せずに真空にしたいくつかの事件の後、カーバルマックスのエンジニアはちょっとした外出用の自給式空輸チューブを考案しました。わかりやすく言うと、乗員と宇宙空間との間に2つ目のドアを配置することで問題を解決しました。これにより、間抜けすぎるカーバルが一人でやってこない限り、空気の損失はごく限られたものになりました。
+	#LOC_SSPX_sspx-airlock-125-1_tags = 基地 ベース ステーション チューブ 空気 ドア 出入り口
+	#LOC_SSPX_sspx-attach-125-1_title = BZ-15 加圧式ラジアル型アタッチメントポイント
+	#LOC_SSPX_sspx-attach-125-1_description = 船内のなるべく多いところにハッチが必要ですが、ハッチがあってほしいところにハッチがありません。 BZ-15はこのちょっとした要求を満たします。
+	#LOC_SSPX_sspx-attach-125-1_tags = 接続 アタッチメント 側面取り付け
+	#LOC_SSPX_sspx-cupola-125-1_title = PTD-C 'ポートホール' 観測用小窓付きポッド
+	#LOC_SSPX_sspx-cupola-125-1_description = この小さな缶詰は、星を注意深く観測するのには優れたもので、機体のほぼどこにでも取り付けることができます！
+	#LOC_SSPX_sspx-cupola-125-1_tags = 基地 ベース 宇宙 ステーション 眺望 景色 眺め キューポラ ポートホール
+
+	#LOC_SSPX_sspx-docking-125-1_title = 伸縮式 クランプオートロン ドッキングポート
+	#LOC_SSPX_sspx-docking-125-1_description = このドッキングコネクタには、拡張可能なギア付きハウジングが組み込まれています。 標準的なクランプオートロンとと完全に互換性があります。
+	#LOC_SSPX_sspx-docking-125-1_tags = 基地 ベース 建築 ステーション 停泊 berth キャプチャ capture 接続 couple ドッキングポート dock 係留 fasten join moor ポート port ソケット socket 伸縮式 クランプオートロン
+
+	#LOC_SSPX_sspx-hub-125-1_title = PTD-MULT マルチポイントステーションコネクター
+	#LOC_SSPX_sspx-hub-125-1_description = 白く塗装された6ウェイステーションハブは、ほかのカーバルマックス製パーツと同じ外装デザインになっています。基本的な6方向型から30度型まで、様々なバリエーションを用意しています。現在、信頼できる部品販売店でのみ入手可能となっています。
+	#LOC_SSPX_sspx-hub-125-1_tags = 基地 ベース 建築 中央 中核 接続 構造 ステーション 角度変更 直角
+
+	#LOC_SSPX_sspx-cargo-125-1_title = PTD-C ストレージモジュール
+	#LOC_SSPX_sspx-cargo-125-1_description = ステーションの外で何かを保管するのには、アイスクリームをおいしく保つなど、いくつか用途があります。尚、このモジュールには扉と十分な収納スペースが必要です。
+	#LOC_SSPX_sspx-cargo-125-1_tags = カーゴ 貯蔵
+
+	// 1.25m 膨張式パーツ
+	#LOC_SSPX_sspx-inflatable-hab-125-1_title = PTD-E-2 'エクレア' 膨張式乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-125-1_description = 大型モデルのPTDシリーズ膨張式乗員収容コンテナは、窮屈なコンテナと同じ容積でより多くの居住空間を可能にします。拡張すると、最大6名のカーバルが比較的快適に滞在できます。
+	#LOC_SSPX_sspx-inflatable-hab-125-1_tags = 基地 ベース 接続 ステーション チューブ 膨張式 居住 エクレア 乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-125-2_title = PTD-E-1A 'バレーボール' 膨張式乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-125-2_description = 最小の膨張式乗員収容コンテナは一見するとバレーボールに似ていて、窓はありません。これは乗員の士気の低下につながるかもしれませんが、節約には勝ります！"膨張"させると窮屈なところに最大3名の乗員を収容できます。
+	#LOC_SSPX_sspx-inflatable-hab-125-2_tags = 基地 ベース 接続 ステーション チューブ 膨張式 居住 バレーボール
+	  #LOC_SSPX_sspx-inflatable-hab-125-3_title = PTD-E-1B 'ウィンストン' 膨張式乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-hab-125-3_description = ウィンストンのバリエーションを増やそうとして、モジュールを垂直方向にも水平方向にも拡張できるようにしたら、いくつか構造を削るしかありませんでした。残念ながら、これにより居住性はやや低下し、構造コンポーネントほど効果的に使用できなくなってしまいました。
+	#LOC_SSPX_sspx-inflatable-hab-125-3_tags = 基地 ベース 接続 ステーション チューブ 膨張式 居住 ボール ウィンストン
+
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-1_title = CTD-10 'ベーグル' 遠心装置付き乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-1_description = この奇妙な形のコンテナに注目してください！使用に適しているとは思えません！しかし、直径8mに拡大すると、その内部に重力を発生させることができます。発生させられる最大の重力は0.25Gです。6名のカーバルまでなら滞在できます。
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-1_tags = 基地 ベース 接続 ステーション チューブ 居住 膨張式 輪っか わっか 回転 遠心装置 重力 ベーグル
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-2_title = CTD-5 'ドーナツ' 膨張式・遠心装置付き・小型乗員収容コンテナ
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-2_description = コンパクトなこのモデルは、明らかに窮屈で不快です。ただし、小さなスペースに収まるため、初期の宇宙船には最適でした。膨張させると直径5mに膨らみ、0.1Gの重力が発生します。最大4名のカーバルが滞在できます。
+	#LOC_SSPX_sspx-inflatable-centrifuge-125-2_tags = 基地 ベース 接続 ステーション チューブ 居住 膨張式 輪っか わっか 回転 遠心装置 重力 ドーナツ doughnut donut
+
+	// 側面取り付けコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-small-1_title = KRDA-O800 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-small-1_description = カーボル系の遠くまで輸送するのに適した8つの小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-small-1_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+	#LOC_SSPX_sspx-cargo-container-radial-small-2_title = KRDA-O400 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-small-2_description = カーボル系の遠くまで輸送するのに適した8つの小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-small-2_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+	#LOC_SSPX_sspx-cargo-container-radial-small-3_title = KRDA-O200 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-small-3_description = カーボル系の遠くまで輸送するのに適した8つの小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-small-3_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+
+	#LOC_SSPX_sspx-cargo-container-radial-medium-1_title = KRDA-T1600 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-medium-1_description = カーボル系の遠くまで輸送するのに適した16個の小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-medium-1_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+	#LOC_SSPX_sspx-cargo-container-radial-medium-2_title = KRDA-T800 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-medium-2_description = カーボル系の遠くまで輸送するのに適した16個の小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-medium-2_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+	#LOC_SSPX_sspx-cargo-container-radial-medium-3_title = KRDA-T400 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-medium-3_description =カーボル陽系の遠くまで輸送するのに適した16個の小さな貨物コンテナです。多種多様な荷物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-medium-3_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+
+	#LOC_SSPX_sspx-cargo-container-radial-huge-1_title = KRDA-XL8000 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-huge-1_description = 系内の任意の場所に大量の貨物を輸送するように委託された時に役立つ巨大な輸送コンテナです。 多種多様な貨物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-huge-1_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+	#LOC_SSPX_sspx-cargo-container-radial-huge-2_title = KRDA-XL4000 カーゴコンテナ
+	#LOC_SSPX_sspx-cargo-container-radial-huge-2_description = 系内の任意の場所に大量の貨物を輸送するように委託された時に役立つちょっと小さめの輸送コンテナです。 多種多様な貨物を保管できます。
+	#LOC_SSPX_sspx-cargo-container-radial-huge-2_tags = カーゴ 接続 商品 運搬 貯蔵  物流
+
+	// ベース建設
+	#LOC_SSPX_sspx-adjusting-base-375-1_title = BZ-3 ベースフレーム
+	#LOC_SSPX_sspx-adjusting-base-375-1_description = これらの特殊な3.75mのフレームには地上ベースに6つの着陸パイロンを取り付けます。パイロン自体は衝撃吸収機能がなく、間違ってもハードランディングしてはいけません！高度なコンピュータ制御により、調整可能な個々のパイロンはベースをいとも簡単に水平にします。
+	#LOC_SSPX_sspx-adjusting-base-375-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+	#LOC_SSPX_sspx-adjusting-base-25-1_title = BZ-2 ベースフレーム
+	#LOC_SSPX_sspx-adjusting-base-25-1_description = これらの特殊な2.5mのフレームには地上ベースに6つの着陸パイロンを取り付けます。パイロン自体は衝撃吸収機能がなく、間違ってもハードランディングしてはいけません！高度なコンピュータ制御により、調整可能な個々のパイロンはベースをいとも簡単に水平にします。
+	#LOC_SSPX_sspx-adjusting-base-25-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+	#LOC_SSPX_sspx-adjusting-base-125-1_title = BZ-1 ベースフレーム
+	#LOC_SSPX_sspx-adjusting-base-125-1_description = これらの特殊な1.25mのフレームには地上ベースに6つの着陸パイロンを取り付けます。パイロン自体は衝撃吸収機能がなく、間違ってもハードランディングしてはいけません！高度なコンピュータ制御により、調整可能な個々のパイロンはベースをいとも簡単に水平にします。
+	#LOC_SSPX_sspx-adjusting-base-125-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+
+	#LOC_SSPX_sspx-adjusting-base-cradle-375-1_title = BR-3 ベースクレードル
+	#LOC_SSPX_sspx-adjusting-base-cradle-375-1_description = 広い間隔（3.75m）で1組のパイロンを取り付けるこのマウントは、大きなモジュールを支え、各パイロンの長さを個別に調整して簡単に水平にすることができます。
+	#LOC_SSPX_sspx-adjusting-base-cradle-375-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+	#LOC_SSPX_sspx-adjusting-base-cradle-25-1_title = BR-2 ベースクレードル
+	#LOC_SSPX_sspx-adjusting-base-cradle-25-1_description = 2.5m間隔で1組のパイロンを取り付けるこのマウントは、大きなモジュールを支え、各パイロンの長さを個別に調整して簡単に水平にすることができます。
+	#LOC_SSPX_sspx-adjusting-base-cradle-25-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+	#LOC_SSPX_sspx-adjusting-base-cradle-125-1_title = BR-1 ベースクレードル
+	#LOC_SSPX_sspx-adjusting-base-cradle-125-1_description = 狭い間隔（1.25m）で1組のパイロンを取り付けるこのマウントは、大きなモジュールを支え、各パイロンの長さを個別に調整して簡単に水平にすることができます。
+	#LOC_SSPX_sspx-adjusting-base-cradle-125-1_tags = フレーム 基地 ベース 着地 脚 拡張 着陸
+
+	#LOC_SSPX_sspx-expandable-tube-125-1_title = B-EX-1 展開式クルーチューブ
+	#LOC_SSPX_sspx-expandable-tube-125-1_description = 強力な吸着装置を備えた、ほぼすべてのパーツに拡張目的で取り付けることができる、特殊なクルーチューブです。破裂した燃料またはそれに類似したものを吸着させようとした際は保証が無効になります。
+	#LOC_SSPX_sspx-expandable-tube-125-1_tags = 基地 ベース 接続 ステーション チューブ 展開式
+
+	#LOC_SSPX_sspx-expandable-tube-25-1_title = B-EX-2 展開式クルーチューブ
+	#LOC_SSPX_sspx-expandable-tube-25-1_description = より大きくなった、姉妹パーツと同じ保証内容の、より大きく快適なクルーチューブです。
+	#LOC_SSPX_sspx-expandable-tube-25-1_tags = 基地 ベース 接続 ステーション チューブ 展開式
+
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegA = パイロンA
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegB = パイロンB
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegC = パイロンC
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegD = パイロンD
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegE = パイロンE
+	#LOC_SSPX_ModuleAdjustableLeg_Name_LegF = パイロンF
+
+	// そのほか
+	#LOC_SSPX_light-area-01_title = イルミネーター Mk2
+	#LOC_SSPX_light-area-01_description = 広い領域をぼんやりと照らすための照明器具です。それ以外の目的に使用するのは推奨しません。
+	#LOC_SSPX_light-area-01_tags = ろうそく 暗い フラッシュ ランプ イルミネーター ライト 広い ぼんやり
+
+	// EPLパーツ
+	#LOC_SSPX_sspx-workshop-375-1_title = PXL-4GE 製錬工場
+	#LOC_SSPX_sspx-workshop-375-1_description =
+	#LOC_SSPX_sspx-workshop-375-1_tags =
+	#LOC_SSPX_sspx-recycler-375-1_title = PXL-LOOP
+	#LOC_SSPX_sspx-recycler-375-1_description =
+	#LOC_SSPX_sspx-recycler-375-1_tags =
+	#LOC_SSPX_sspx-launchpad-375-1_title = PXL-LC-1
+	#LOC_SSPX_sspx-launchpad-375-1_description =
+	#LOC_SSPX_sspx-launchpad-375-1_tags =
+	#LOC_SSPX_sspx-launchpad-375-2_title = PXL-LC-2
+	#LOC_SSPX_sspx-launchpad-375-2_description =
+	#LOC_SSPX_sspx-launchpad-375-2_tags =
+	#LOC_SSPX_sspx-smelter-375-1_title = PXL-4GE 製錬工場
+	#LOC_SSPX_sspx-smelter-375-1_description =
+	#LOC_SSPX_sspx-smelter-375-1_tags =
+	#LOC_SSPX_sspx-drill-large-1_title =
+	#LOC_SSPX_sspx-drill-large-1_description =
+	#LOC_SSPX_sspx-drill-large-1_tags =
+
+	// スイッチ
+	#LOC_SSPX_Switcher_Surface_Name = 外装
+	#LOC_SSPX_Switcher_Surface_Insulated = サーマルブランケット
+	#LOC_SSPX_Switcher_Surface_Insulated_summary = 白色のサーマルブランケット
+	#LOC_SSPX_Switcher_Surface_Insulated_detail = ステーションモジュールを白いサーマルブランケットで保護します
+
+	#LOC_SSPX_Switcher_Surface_White = 白
+	#LOC_SSPX_Switcher_Surface_White_summary = 白色の外装
+	#LOC_SSPX_Switcher_Surface_White_detail = ステーションモジュール用の、航空宇宙由来の白
+	#LOC_SSPX_Switcher_Surface_Metal = メタル
+	#LOC_SSPX_Switcher_Surface_Metal_summary = ベア
+	#LOC_SSPX_Switcher_Surface_Metal_detail = ステーションモジュールにもむき出しの金属を
+
+	#LOC_SSPX_Switcher_Endcaps_Name = マウント
+	#LOC_SSPX_Switcher_EndcapsUpper_Name = マウント上部
+	#LOC_SSPX_Switcher_EndcapsLower_Name = マウント下部
+
+	#LOC_SSPX_Switcher_Endcaps_Black = クラシック（ベア）
+	#LOC_SSPX_Switcher_Endcaps_Black_summary = 黒色のエンドキャップ
+	#LOC_SSPX_Switcher_Endcaps_Black_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_White = サーマルブランケット（ベア）
+	#LOC_SSPX_Switcher_Endcaps_White_summary = 白色のサーマルブランケット
+	#LOC_SSPX_Switcher_Endcaps_White_detail  =
+
+	#LOC_SSPX_Switcher_Endcaps_Black_Handles = クラシック
+	#LOC_SSPX_Switcher_Endcaps_Black_Handles_summary = 黒色のエンドキャップ、ハンドレール付き
+	#LOC_SSPX_Switcher_Endcaps_Black_Handles_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_White_Handles = サーマルブランケット
+	#LOC_SSPX_Switcher_Endcaps_White_Handles_summary = 白色のサーマルブランケット、ハンドレール付き
+	#LOC_SSPX_Switcher_Endcaps_White_Handles_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_Metal = メタル（ベア）
+	#LOC_SSPX_Switcher_Endcaps_Metal_summary = メタルっぽいエンドキャップ
+	#LOC_SSPX_Switcher_Endcaps_Metal_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_MetalHandles = メタル
+	#LOC_SSPX_Switcher_Endcaps_MetalHandles_summary = メタルっぽいエンドキャップ、ハンドレール付き
+	#LOC_SSPX_Switcher_Endcaps_MetalHandles_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_White2 = 白（ベア）
+	#LOC_SSPX_Switcher_Endcaps_White2_summary = 白色のエンドキャップ
+	#LOC_SSPX_Switcher_Endcaps_White2_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_White2_Handles = 白
+	#LOC_SSPX_Switcher_Endcaps_White2_Handles_summary = 白色のエンドキャップ、ハンドレール付き
+	#LOC_SSPX_Switcher_Endcaps_White2_Handles_detail =
+
+	#LOC_SSPX_Switcher_Endcaps_White_Ladders = 白（EVAマウント）
+	#LOC_SSPX_Switcher_Endcaps_White_Ladders_summary = 白色のエンドキャップ、EVAマウント付き
+	#LOC_SSPX_Switcher_Endcaps_White_Ladders_detail = すべてのエンドキャップがEVAマウントを使用している場合、EVAレールが取り付けられます
+	#LOC_SSPX_Switcher_Endcaps_Black_Ladders  = クラシック（EVAマウント）
+	#LOC_SSPX_Switcher_Endcaps_Black_Ladders_summary = 黒色のエンドキャップ、EVAマウント付き
+	#LOC_SSPX_Switcher_Endcaps_Black_Ladders_detail = すべてのエンドキャップがEVAマウントを使用している場合、EVAレールが取り付けられます
+	#LOC_SSPX_Switcher_Endcaps_Metal_Ladders  = メタル（EVAマウント）
+	#LOC_SSPX_Switcher_Endcaps_Metal_Ladders_summary = メタルっぽいエンドキャップ、EVAマウント付き
+	#LOC_SSPX_Switcher_Endcaps_Metal_Ladders_detail = すべてのエンドキャップがEVAマウントを使用している場合、EVAレールが取り付けられます
+
+	#LOC_SSPX_Switcher_Hub_Name = 接合方式
+	#LOC_SSPX_Switcher_Hub_6Way = 6方向
+	#LOC_SSPX_Switcher_Hub_6Way = 6方向につながる形状
+	#LOC_SSPX_Switcher_Hub_6Way = 基本方向へのノードすべてへつながる接合方式です。
+	#LOC_SSPX_Switcher_Hub_5Way = 5方向
+	#LOC_SSPX_Switcher_Hub_5Way = 5方向につながる形状
+	#LOC_SSPX_Switcher_Hub_5Way = 5方向につながる接合方式です。
+	#LOC_SSPX_Switcher_Hub_4Way = 4方向
+	#LOC_SSPX_Switcher_Hub_4Way = 4方向につながる形状
+	#LOC_SSPX_Switcher_Hub_4Way = 4方向につながる接合方式です。
+	#LOC_SSPX_Switcher_Hub_4WayPlanar = 4方向（平面）
+	#LOC_SSPX_Switcher_Hub_4WayPlanar = 2次元的に4方向へつながる形状
+	#LOC_SSPX_Switcher_Hub_4WayPlanar = 2次元的に4方向へつながる接合方式です。
+	#LOC_SSPX_Switcher_Hub_3Way = 3方向
+	#LOC_SSPX_Switcher_Hub_3Way = 3方向につながる形状
+	#LOC_SSPX_Switcher_Hub_3Way = 3方向につながる接合方式。
+	#LOC_SSPX_Switcher_Hub_Elbow = 直角
+	#LOC_SSPX_Switcher_Hub_Elbow = 直角につながる形状
+	#LOC_SSPX_Switcher_Hub_Elbow = 直角につながる接合方式。
+	#LOC_SSPX_Switcher_Hub_45 = 45°
+	#LOC_SSPX_Switcher_Hub_45 = 45度の形状
+	#LOC_SSPX_Switcher_Hub_45 = 45度方向につながる接合方式。
+	#LOC_SSPX_Switcher_Hub_30 = 30°
+	#LOC_SSPX_Switcher_Hub_30 = 30度の形状
+	#LOC_SSPX_Switcher_Hub_30 = 30度方向につながる接合方式。
+
+	#LOC_SSPX_Switcher_Cargo_Name = カーゴ
+	#LOC_SSPX_Switcher_Cargo_Ore = 鉱石
+	#LOC_SSPX_Switcher_Cargo_MetallicOre = メタル鉱石
+	#LOC_SSPX_Switcher_Cargo_Uraninite = ウラニナイト
+	#LOC_SSPX_Switcher_Cargo_Substrate = 基盤
+	#LOC_SSPX_Switcher_Cargo_Minerals = ミネラル
+	#LOC_SSPX_Switcher_Cargo_Karbonite = カーボナイト
+	#LOC_SSPX_Switcher_Cargo_Commodities = 農産物
+	#LOC_SSPX_Switcher_Cargo_ExoticMinerals = 高級ミネラル
+	#LOC_SSPX_Switcher_Cargo_RareMetals = レアメタル
+	#LOC_SSPX_Switcher_Cargo_MaterialKits = マテリアルキット
+	#LOC_SSPX_Switcher_Cargo_Metals = メタル
+	#LOC_SSPX_Switcher_Cargo_Polymers = ポリマー
+	#LOC_SSPX_Switcher_Cargo_Supplies = サプリ
+	#LOC_SSPX_Switcher_Cargo_Machinery = 機械
+	#LOC_SSPX_Switcher_Cargo_Recyclables = リサイクル可能
+	#LOC_SSPX_Switcher_Cargo_SpecializedParts = 専用パーツ
+	#LOC_SSPX_Switcher_Cargo_Fertilizer = 肥料
+	#LOC_SSPX_Switcher_Cargo_Hydrates = 水化物
+	#LOC_SSPX_Switcher_Cargo_Gypsum = 石膏
+	#LOC_SSPX_Switcher_Cargo_Dirt = 泥
+	#LOC_SSPX_Switcher_Cargo_Silicates = ケイ酸塩
+	#LOC_SSPX_Switcher_Cargo_Silicon = ケイ素
+	#LOC_SSPX_Switcher_Cargo_RefinedExotics = リファインドエギゾチック
+	#LOC_SSPX_Switcher_Cargo_ColonySupplies = コロニーサプリ
+	#LOC_SSPX_Switcher_Cargo_Organics = オーガニック
+	#LOC_SSPX_Switcher_Cargo_Rock = 石
+	#LOC_SSPX_Switcher_Cargo_Food = 食料
+	#LOC_SSPX_Switcher_Cargo_Water = 水
+	#LOC_SSPX_Switcher_Cargo_Oxygen = 酸素
+	#LOC_SSPX_Switcher_Cargo_Lead = 鉛
+	#LOC_SSPX_Switcher_Cargo_Snacks = おやつ
+	#LOC_SSPX_Switcher_Cargo_Soil = 包装
+	#LOC_SSPX_Switcher_Cargo_RocketParts = ロケットパーツ
+	#LOC_SSPX_Switcher_Cargo_MetalOre = 金属鉱石
+	#LOC_SSPX_Switcher_Cargo_ScrapMetal = 廃棄された金属
+	#LOC_SSPX_Switcher_Cargo_Metal = 金属
+	#LOC_SSPX_Switcher_Cargo_LifeSupport = ライフサポートセット
+	#LOC_SSPX_Switcher_Cargo_Karborundum = カーバルランダム
+
+	#LOC_SSPX_Switcher_Variant_Name = バリエーション
+	#LOC_SSPX_Switcher_Variant_Classic = クラシック
+	#LOC_SSPX_Switcher_Variant_Classic_summary = 注意テープ付きのクラシックな外装
+	#LOC_SSPX_Switcher_Variant_Metal = メタル
+	#LOC_SSPX_Switcher_Variant_Metal_summary = むき出しな金属の外装
+	#LOC_SSPX_Switcher_Variant_Insulated = サーマルブランケット
+	#LOC_SSPX_Switcher_Variant_Insulated_summary = サーマルブランケット
+
+	#LOC_SSPXR_Switcher_SnackProcessor_ConverterName = おやつ生成装置
+	#LOC_SSPXR_Switcher_SnackProcessor_StartActionName = 生成を開始
+	#LOC_SSPXR_Switcher_SnackProcessor_StopActionName = 生成を停止
+	#LOC_SSPXR_Switcher_SoilRecycler_ConverterName = 包装リサイクラー
+	#LOC_SSPXR_Switcher_SoilRecycler_StartActionName = リサイクル開始
+	#LOC_SSPXR_Switcher_SoilRecycler_StopActionName = リサイクル停止
+
+	#LOC_SSPXR_Switcher_TacGenericConverter1_ConverterName = 反応を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter1_StartActionName = 反応を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter1_StopActionName = 反応を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter2_ConverterName = 炭素-酸素分離を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter2_StartActionName = 分離を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter2_StopActionName = 分離を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter3_ConverterName = 生成を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter3_StartActionName = 生成を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter3_StopActionName = 生成を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter4_ConverterName = 電気分解を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter4_StartActionName = 分解を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter4_StopActionName = 分解を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter5_ConverterName = 酸素の抽出を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter5_StartActionName = 抽出を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter5_StopActionName = 抽出を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter6_ConverterName = 光合成を切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter6_StartActionName = 光合成を開始
+	#LOC_SSPXR_Switcher_TacGenericConverter6_StopActionName = 光合成を停止
+	#LOC_SSPXR_Switcher_TacGenericConverter7_ConverterName = サイフォンを切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter7_StartActionName = サイフォンを開始
+	#LOC_SSPXR_Switcher_TacGenericConverter7_StopActionName = サイフォンを停止
+	#LOC_SSPXR_Switcher_TacGenericConverter8_ConverterName = グリーンハウス稼働切り替え
+	#LOC_SSPXR_Switcher_TacGenericConverter8_StartActionName = グリーンハウス始動
+	#LOC_SSPXR_Switcher_TacGenericConverter8_StopActionName = グリーンハウス中止
+	#LOC_SSPXR_Switcher_TacGenericConverter9_ConverterName = K&K グリーンハウス
+	#LOC_SSPXR_Switcher_TacGenericConverter_tag = ライフサポート
+
+	#LOC_SSPXR_Switcher_ModuleHabitation_ConverterName = 居住装置を切り替え
+	#LOC_SSPXR_Switcher_ModuleHabitation_StartActionName = 精製を開始
+	#LOC_SSPXR_Switcher_ModuleHabitation_StopActionName = 精製を切り替え
+	#LOC_SSPXR_Switcher_ModuleLifeSupportRecycler_ConverterName = ライフサポートを切り替え
+	#LOC_SSPXR_Switcher_ModuleLifeSupportRecycler_StartActionName = ライフサポートを開始
+	#LOC_SSPXR_Switcher_ModuleLifeSupportRecycler_StopActionName = ライフサポートを停止
+	#LOC_SSPXR_Switcher_ModuleResourceConverter_USI_ConverterName = 農業を切り替え
+	#LOC_SSPXR_Switcher_ModuleResourceConverter_USI_StartActionName = 農業を開始
+	#LOC_SSPXR_Switcher_ModuleResourceConverter_USI_StopActionName = 農業を停止
+
+	// General Actions
+
+	#LOC_SSPX_DockingPortExtendAction_title = ドッキングポート
+
+	#LOC_SSPX_Science_VisualScan_Action_Name = 窓の外を目視観察
+	#LOC_SSPX_Science_VisualScan_Action_Reset = レポートを破棄
+	#LOC_SSPX_Science_VisualScan_Action_Review = レポートを見る
+
+	#LOC_SSPX_Science_PlantGrowth_Action_Name = 植物を観察する
+	#LOC_SSPX_Science_PlantGrowth_Action_Reset = レポートを破棄
+	#LOC_SSPX_Science_PlantGrowth_Action_Collect = データを収集
+
+	#LOC_SSPX_Science_FishStudy_Action_Name = 種を観察する
+	#LOC_SSPX_Science_FishStudy_Action_Reset = レポートを破棄
+	#LOC_SSPX_Science_FishStudy_Action_Collect = データを収集
+
+	// PLUGIN
+	// ModuleDeployableHabitat/Centrifuge
+	#LOC_SSPX_Inflatable_Action_Inflate_Start_Title = 膨張
+	#LOC_SSPX_Inflatable_Action_Inflate_Stop_Title = 収縮
+	#LOC_SSPX_Inflatable_Action_Inflate_Toggle_Title = 膨張を切り替え
+
+	#LOC_SSPX_Inflatable_Action_Deploy_Start_Title = 展開
+	#LOC_SSPX_Inflatable_Action_Deploy_Stop_Title = 収納
+	#LOC_SSPX_Inflatable_Action_Deploy_Toggle_Title = 展開を切り替え
+
+	#LOC_SSPX_ModuleDeployableHabitat_ModuleTitle = 展開
+	#LOC_SSPX_ModuleDeployableHabitat_PartInfo = 展開後に乗員を収容できます\n\n<b>定員:</b> <<1>>
+	#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NoRetract = <b>展開できません！</b>
+	#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrew = \n<b>展開に必要な人数:</b> <<1>> <<2>>(人)
+	#LOC_SSPX_ModuleDeployableHabitat_PartInfo_NeedsCrewUnskilled = \n<b>展開に必要な人数:</b> <<1>>
+	#LOC_SSPX_ModuleDeployableHabitat_PartInfo_Resources = 以下の資源が必要:\n-<<1>>: <<2>>
+	#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployResources = 展開できません <<1>>, 以下が必要 <<2>> <<3>>
+	#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrew = 展開できません <<1>>, <<2>> <<3>>(人) が必要
+	#LOC_SSPX_ModuleDeployableHabitat_Message_CantDeployCrewUnskilled = 展開できません <<1>>, <<2>> 乗組員が必要です
+
+	#LOC_SSPX_ModuleDeployableHabitat_Message_CantRetractCrew = 展開できません <<1>> クルーがいる間にしてください
+
+	#LOC_SSPX_ModuleDeployableCentrifuge_ModuleTitle = 拡張可能な遠心装置
+	#LOC_SSPX_ModuleDeployableCentrifuge_PartInfo = 展開時に乗員を収容でき、重力を発生させることができます\n\n<b>定員:</b> <<1>>\n<b>最大重力:</b> <<2>> G
+	#LOC_SSPX_ModuleDeployableCentrifuge_PartInfo_SpinResources = \n<b>回転が必要</b>: <<1>> <<2>>/sec
+	#LOC_SSPX_ModuleDeployableCentrifuge_Field_GravityStatus_Name = 回転時の重力
+	#LOC_SSPX_ModuleDeployableCentrifuge_Field_GravityStatus_Normal = <<1>> G
+	#LOC_SSPX_ModuleDeployableCentrifuge_Message_CantSpinResources = <<1>> が不十分 <<2>>、 回転がストップしました。
+	#LOC_SSPX_Deployable_Action_Spin_Start_Title = 回転をスタート
+	#LOC_SSPX_Deployable_Action_Spin_Stop_Title = 回転をストップ
+	#LOC_SSPX_Deployable_Action_Spin_Toggle_Title = 回転を切り替え
+
+	 // ModuleAdjustableLeg
+	 #LOC_SSPX_ModuleAdjustableLeg_BaseName = <<1>> 展開
+	 // ModuleLevelingBase
+	 #LOC_SSPX_ModuleLevelingBase_Event_Auto-Level = 自動
+	 #LOC_SSPX_ModuleLevelingBase_Event_TweakLevel = 最小自動レベル
+	 #LOC_SSPX_ModuleLevelingBase_Event_Deploy = すべて展開
+	 #LOC_SSPX_ModuleLevelingBase_Event_Retract = すべて収納
+
+	 #LOC_SSPX_ModuleLevelingBase_Action_Auto-Level = 自動
+	 #LOC_SSPX_ModuleLevelingBase_Action_Deploy = すべて展開
+	 #LOC_SSPX_ModuleLevelingBase_Action_Retract = すべて収納
+	 #LOC_SSPX_ModuleLevelingBase_Action_Toggle = すべて切り替え
+
+	 #LOC_SSPX_ModuleLevelingBase_Field_AbsoluteAngle = 角度レベル
+	 #LOC_SSPX_ModuleLevelingBase_Field_AbsoluteAngle_Normal = <<1>>度
+	 #LOC_SSPX_ModuleLevelingBase_Field_AbsoluteAngle_None = N/A
+
+	 #LOC_SSPX_ModuleLevelingBase_Field_LevelingMode = 角度レベル
+	 #LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Manual = 手動
+	 #LOC_SSPX_ModuleLevelingBase_Field_LevelingMode_Linked = 連携オート
+	 #LOC_SSPX_ModuleLevelingBase_Field_LinkedExtension = パイロン展開
+
+	 // SCIENCE
+	 // Growth
+	 // Credit JadeOfMaarr
+	#LOC_SSPX_ScienceDef_PlantGrowth_Title = 植物の生長状況を観察
+		#LOC_SSPX_ScienceDef_PlantGrowth_default = 植物はできる限り穏やかに優しく育てている。収穫はまだまだ先になりそうだなぁ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_SunInSpaceLow = 外部温度センサーの針が赤にすごく傾いている。これを食べる人たちのために、早くシャッターを閉じてくれ！
+  	#LOC_SSPX_ScienceDef_PlantGrowth_SunInSpaceHigh = シャッターを開き、植物にどのような影響があるか観察をする。この状態で、カービン近傍での太陽光の影響を超えていて、…あー、直ちに保護を…この操作で植物は目に見えて揺れ方が大きくなります。2度としないように注意してください。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_KerbinInSpaceLow = たとえ植物があったとしても、成長が非常に遅い。注目に値する結果が表示されるにはまだ早そうだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_KerbinInSpaceHigh = シャッターを開き、植物への影響を観察する。すぐには何も起こらないが、ある程度時間がたつと、カーボルを向いているほうの植物が縮み、つまり、これはその植物が燃えたことを示している。あまり良い兆候ではない。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_KerbinSrfLanded = 植物は光り輝いているように見える。この子たちは、今ものすごく幸せなはずだ！
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MunInSpaceLow = 背の高い植物はムンに向かって引き寄せられているように見える。　ん？持っていかれる？引き寄せられる？　え～…
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MunInSpaceHigh = 植物の研究をしているとき、ムン地表での農業の可能性について考えている。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MunSrfLanded = ムンの土を鍋にすくって、そこに種まきをしたくなってくる。でもこの夢を実現するには、赤いテープを少し切る必要があると思った。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MunSrfLanded = ムンから土壌をすこし取り出して、マークしたポットに入れて、経過を観察する。成長率は変化していないように見えるが、果物の生長に関して言えば、純粋なカービン土壌のほうが成長が早い気がする。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_Minmus_InSpaceLow = 葉っぱのうちのいくつかは色が変わり始めた。ミンマスと何らかの形でつながろうとしているのかもしれない。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_Minmus_InSpaceHigh = 植物はミンマスに向かって引き寄せられている。こんな微弱な重力の星でどうして？
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MinmusSrfLanded = ミンマスはアイスクリームで出来ていますか？そして、植物はアイスクリームで成長するものですか？この研究に対するR&Dの許可を求めます。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MinmusSrfLanded = ミンマスの土壌を取り出し、マークしたポットに入れると、たちまち枯れ始めた…　ミンマスの土壌は湿りすぎていて、栄養素が高すぎる部分と低すぎる部分が混在しているためだが、R&Dの職員は信じないだろう。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MohoInSpaceLow = 植物は少し気分が沈んだたいだけど、相変わらず元気そうだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MohoInSpaceHigh = サンプル植物があったはずの場所には大きな穴が開いていた…クラーケン、って…なにもの？
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MohoSrfLanded = 実験のためにこの星の土壌をサンプリングするという考えが、ものすごく心配されている。どうしようかな…
+  	#LOC_SSPX_ScienceDef_PlantGrowth_MohoSrfLanded = ここではかなり極端な状況を想定し、モーホー土壌のマークをしたポッドを二つ用意した。一方は枯れ、もう一方は高く成長したが、そののちに実を結ぶことはなかった。後で分析したら、植物化学はモーホーに対して非常にうるさいことが分かった。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_EveInSpaceLow = 今、植物がイブに引き寄せられ始めて、植物たちは心変わりしたのか、それとも引っ張っているのが本物の重力なのか、疑問に思っている。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_EveInSpaceHigh = 植物はイブの周辺に来て、…離れたがっている。ここにいるのは嫌そうだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_EveSrfLanded = 植物はより厚く、より短く成長して、ある一定以上の高さになると衰退して成長しなくなっている。イブの大きすぎる重力のせいに違いない。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_EveSrfLanded = 植物のサンプルは、高温多湿の紫色の土壌に近づくと枯れてしまう。イブの土壌はいやなやつに違いない。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_EveSrfLanded = イブの土を少し取り出して、マークしたポット2つに入れて、経過を観察した。一方は、おそらく中毒が原因で枯れてしまった。もう一方は手違いで蘭を植えてしまったのだが、乱暴に成長して、しまいにはクラーケンの触手のようにポットを包み込んでしまった。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_GillyInSpaceLow = あっ、若い実がなっている。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_GillyInSpaceHigh = まじまじと観察したが、特に留意すべき点はなかった。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_GillySrfLanded = 実験のためだけに土壌サンプルを採取するのは気が引ける。ギリーがもう少し大きければよかったのに。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_GillySrfLanded = 意を決して、ギリーから土壌を採取した。マークしたポットに入れて、成長の仕方を観察してみた。植物は良くも悪しくも反応がないので、ギリーはちょうどいい土壌に違いない。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_IkeInSpaceLow = 植物はアイクに引き寄せられた。アイクは植物のことが愛くるしくてたまらないようだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_IkeInSpaceHigh = 植物にとってアイクは適切なようだ。季節通りに植物が開花している。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_IkeSrfLanded = アイクの土を少しとって、マークしたポットに入れた。植物は普段よりいくらか早く成長するようだ。これを見ていると、カーボル系の衛星同士で競い合いがあるような気がする。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_IkeSrfLanded = アイクの土を少しとって、マークしたポットに入れた。植物に特段新しい動きはみられず、アイクも植物に適切なことが証明された。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DunaInSpaceLow = 植物は、今まさに満開の時期を迎えている。今こそ、ドゥナを植民地化するのにぴったりの時期だ、という事だろう。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DunaInSpaceLow = 植物はムンについては興味を持っていたが、この赤い惑星を前にしたら、どんな反応をするのだろう？
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DunaInSpaceHigh = 果物と花が穏やかに赤みがかり始めているのに注意しながら観察をしている。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DunaSrfLanded = ドゥナの土壌を取り出して、マークしたポットに入れた。すると、植物は飢餓の兆候を示す。おそらく、なんらかの中毒になってしまったのだろう。考察の結果、ドゥナの土壌の金属含有量が高すぎると判断した！
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DresInSpaceLow = 特に何もない。いつもと変わらず、植物はいつものペースで成長している。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DresInSpaceHigh = 植物は水滴を放出して、水滴はふわふわするか、ゆっくりと土に戻る。\n何か感情を表しているのかな？泣いてるの？
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DresSrfLanded = ドレスの土壌をいくらか取り出し、マークしたポットに入れた。植物はやせて、枯れてしまった。まるで植物が土壌が存在しないと思い込んだか、そもそもドレスの土壌を土壌として認めなかったかのようだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_DresSrfLanded = ドレスの土壌をいくらか取り出し、マークしたポットに入れた。特に新しい特徴を示さなかった、つまりドレスは農業に適しているに違いないっ。
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_JoolInSpaceLow = 植物は再び輝き始めた。ジュールの何かが植物にアピールをしたのだろうか。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_JoolInSpaceHigh = 植物はジュールに向かって引き寄せられます。推測にすぎませんが、この緑色をした体に何かが隠されているはずです。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_JoolSrfLanded = この温室に外部環境を導入する前に、あなたが何か変なものを導入しなかったか、よく考える必要があります
+  	#LOC_SSPX_ScienceDef_PlantGrowth_JoolSrfLanded = ...ハーーーッハッハー！
+
+  	#LOC_SSPX_ScienceDef_PlantGrowth_LaytheInSpaceLow = 植物は予想より早く開花した。レイスは、こんなに離れていても、植物に何か有益な効果をもたらしているはずだ。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_LaytheInSpaceHigh = 植物は非常に明るく、健康に見えます。 彼らはまるでカ()ｹﾞﾌﾝｹﾞﾌﾝ
+  	#LOC_SSPX_ScienceDef_PlantGrowth_LaytheSrfLanded = レイスの土壌を取り出し、マークされたポットに入れてみた。湿気が多すぎるがゆえに植物が枯れ、違う意味で栄養素の極端な不均衡が生じている可能性があると判断した。
+  	#LOC_SSPX_ScienceDef_PlantGrowth_LaytheSrfLanded = レイスの土壌を取り出し、マークされたポットに入れてみた。健康的に成長し、カービンで植物を育てるよりもわずかに速く育ち、そしてたくさんの実ができた。
+
+		#LOC_SSPX_ScienceDef_PlantGrowth_VallInSpaceLow = 異常なことは何もない。しかし、果実を選び出す時が来たようにも思える。
+	#LOC_SSPX_ScienceDef_PlantGrowth_VallInSpaceHigh = 今回、植物は興奮の兆しすら見せなかった。わずかしか変化していない。
+	#LOC_SSPX_ScienceDef_PlantGrowth_VallSrfLanded = ヴァルの土壌を取り出し、マークしたポットに入れた。土壌は水分と栄養素に大きな不均衡が起きているようだが、最終的に植物が死ぬことはなかったので、許容範囲内と思っておく。
+
+	#LOC_SSPX_ScienceDef_PlantGrowth_TyloInSpaceLow = 植物はより強く引き付けられた。今自分が乗っているこの機体の機体がどれだけ低い軌道を周回しているかを穏やかに思い出させてくれる。
+	#LOC_SSPX_ScienceDef_PlantGrowth_TyloInSpaceHigh = 葉っぱのうちのいくつかは、典型的な強重力問題によってわずかに曲がるが、今回は非常にかすかな影響になっている。
+	#LOC_SSPX_ScienceDef_PlantGrowth_TyloSrfLanded = タイローから土壌を取り、マークしたポットに入れてみた。植物は飢えて枯れてしまう。ここの土壌はさらに乾燥させる必要があった。
+
+	#LOC_SSPX_ScienceDef_PlantGrowth_BopInSpaceLow = ゆるい花びらが浮かんでいる。そしてそれに気づいたとたん、いくつもの花びらが跳ね上がった。これを「ボッピング」と名付けることにする。
+	#LOC_SSPX_ScienceDef_PlantGrowth_BopInSpaceHigh = この実験をするとき、船が実際に対象の月の影響の範囲にあるのかどうかを気にかける。…また、植物がボップの影響を認識しているかどうかについても気にかけている。
+	#LOC_SSPX_ScienceDef_PlantGrowth_BopSrfLanded = ボップの土壌を取り出して、マークしてあるポットに入れる。植物は徐々に枯れていくが、まあこれはある程度予想できていた。主星からも主惑星からもこんなにも離れていると、必須微生物が存在する可能性は低いからだ。
+
+	#LOC_SSPX_ScienceDef_PlantGrowth_PolInSpaceLow = いくつかの植物で黄色くなる傾向がみられる…これは、綿密な調査が必要だ。
+	#LOC_SSPX_ScienceDef_PlantGrowth_PolInSpaceHigh = 植物はもう咲いているようだ。開花シーズンがずいぶん早い気がする。
+	#LOC_SSPX_ScienceDef_PlantGrowth_PolSrfLanded = ポルの土壌を取り出して、マークしたポットに入れる。植物は徐々に枯れていくが、まあこれはある程度予想できていた。主星からも主惑星からもこんなにも離れていると、必須微生物が存在する可能性はほとんどないからだ。
+
+	#LOC_SSPX_ScienceDef_PlantGrowth_EelooInSpaceLow = 機体がカーボルの方向を向いているときに、ランプが点灯していない状態で、待機中にゲームの一番長いラウンドをプレイし終わったのちに、成長を確認し…重要な発見は、何もなかった。
+	#LOC_SSPX_ScienceDef_PlantGrowth_EelooInSpaceHigh = 特定のプラントを照らすランプと全体を照らす太陽灯の2つを、電力節約のためにオフにするが、主にイーローの初期環境テストとして実行したものである。
+	#LOC_SSPX_ScienceDef_PlantGrowth_EelooSrfLanded = イーローの土壌を取り出して、マークしてあったポッドに入れた。植物はゆっくりと枯れるが、私自身は1キロと少し離れたところにいる。氷が多すぎるのと必須微生物がいないのとで、テスト結果は不愉快なものに終わってしまった。
+
+	 // Visual Obs
+	 //Credit Rock3tman
+	 #LOC_SSPX_ScienceDef_VisualObservation_Title = 外の様子の目視観察
+	 #LOC_SSPX_ScienceDef_VisualObservation_default = 窓から外を見渡している。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_SunInSpaceLow = 太陽光を直接見ると確実に目がやられるので、ほんの一瞬の間だけ、目を凝らして観察をしている。
+	 #LOC_SSPX_ScienceDef_VisualObservation_SunInSpaceHigh = 宇宙空間は不毛で、何万キロ、何億キロも見るものはない。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_KerbinInSpaceLow = まるで絵を見ているみたいだ。鮮やかな緑、青に黄褐色が下を通り過ぎていき、その美しさに息をのむ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_KerbinInSpaceHigh = カーバルの歴史はここから見ると、ちっぽけで取るに足らないように思える。淡い青色の点で囲まれた中のちょっとした何か、という表現が正しそうだ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_KerbinSrfLanded = うん、窓。ちょっと高級な窓だな。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_MunInSpaceLow = 荘厳な灰色が通り過ぎ、荒涼とした異国のように見える山と谷が広がっている。
+	 #LOC_SSPX_ScienceDef_VisualObservation_MunInSpaceHigh = ムンとカービンはここから見ていると、対等なパートナーとして空を支配しているように見えた。
+	 #LOC_SSPX_ScienceDef_VisualObservation_MunSrfLanded = 親指を立てて、カービンを消し去った。なぜか、突然、とても、とても謙虚になった。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_Minmus_InSpaceLow = なだらかな内陸と印象的な高原を見ていると、いつの間にか傾斜地と平原に目が移ってしまう。あの平原は着陸地点の候補の中では非常に可能性が高い。
+	 #LOC_SSPX_ScienceDef_VisualObservation_Minmus_InSpaceHigh = ミンムスは非常に小さく、目立った特徴はまだ見つからない。
+	 #LOC_SSPX_ScienceDef_VisualObservation_MinmusSrfLanded = 見渡す限りにミントグリーンが広がり、突然、あるデザートが欲しくなった。持ってきたらよかったなぁ。ああ、考えれば考えるほど欲しくなる。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_MohoInSpaceLow = この惑星は何十億年もの間カーボルの近くにいすぎたせいで、核までも焼け焦げたようです。
+	 #LOC_SSPX_ScienceDef_VisualObservation_MohoInSpaceHigh = モーホーの暗い茶色の表面を見つめていると、どれだけ日焼けしたか気になってしょうがなくなった。
+	 #LOC_SSPX_ScienceDef_VisualObservation_MohoSrfLanded = 窓の近くはとても暑くて、周りの岩を見るのもひと苦労だ。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_EveInSpaceLow = イブの不吉な銀色の海と紫色の土が下で待っている気がする。
+	 #LOC_SSPX_ScienceDef_VisualObservation_EveInSpaceHigh = この遠さにもかかわらず、イブのサイズと色は宇宙に映える。
+	 #LOC_SSPX_ScienceDef_VisualObservation_EveSrfLanded = 有毒な紫色の風が窓に吹き付けてきて、ゆっくりとガラスを侵食している。気分が悪いや。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_IkeInSpaceLow = 少なくとも私にはムンに見えます。
+	 #LOC_SSPX_ScienceDef_VisualObservation_IkeInSpaceHigh = 偶然か故意か、アイクは見た目があまりよくない。ドゥナを見て目の保養にしよう。
+	 #LOC_SSPX_ScienceDef_VisualObservation_IkeSrfLanded = よく見ると、アイクの濃い灰色の岩はかなり興味深い。厳しい評価していなければもっとよかったのに。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_DunaInSpaceLow = 古くからある赤い谷、川底、湖の跡が見える。何かあったんじゃないか？
+	 #LOC_SSPX_ScienceDef_VisualObservation_DunaInSpaceHigh = ドゥナの明るい赤と白が宇宙を背景に際立っている。威嚇してなんかいない。居心地が良さそう！
+	 #LOC_SSPX_ScienceDef_VisualObservation_DunaSrfLanded = 土と空のさびた赤は不思議な感じがする。…だんだん違和感が無くなってきた。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_DresInSpaceLow = 退屈だろうと思ったけど、明るい灰色の部分、深い峡谷、穴のあいたクレーターなどが見つかり、意外と見どころがあって面白い。
+	 #LOC_SSPX_ScienceDef_VisualObservation_DresInSpaceHigh = えっ？ここに惑星が？何も見えないぞ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_DresSrfLanded = 地形は思ったより面白かったけど、それ以上に行程が長すぎて価値を感じられなかった。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_JoolInSpaceLow = ジュールの緑の雲の帯が景色いっぱいに広がり、繊細なガスのダンスに包まれているようだ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_JoolInSpaceHigh = 遠くにあるジュールの惑星系が物凄く面白そうだ。近いようで遠く離れている。
+	 #LOC_SSPX_ScienceDef_VisualObservation_JoolSrfLanded = ジュールの地表に降り立ったとたんにマジの機器がショートして&/F***13e5rse4t8st######
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_LaytheInSpaceLow = レイスの浅い海、人里離れた島々、そして美しい青い大気のおかげで、これまでの苦労が吹っ飛ぶかのようだ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_LaytheInSpaceHigh = 小さな島の鎖は、探検されるのを待っていたかのように、手つかずの楽園について語っているように見える。
+	 #LOC_SSPX_ScienceDef_VisualObservation_LaytheSrfLanded = 海岸線の眺望に癒されて、周囲はさざ波の音がする。ふとした瞬間、これがエイリアンの空であるかもしれないという妄想を抱いたが、すぐにその考えは振り払った。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_VallInSpaceLow = 興味深い配色っぽいけど、ヴァルには特徴が少ない。少なくとも、ジュールに比べれば。
+	 #LOC_SSPX_ScienceDef_VisualObservation_VallInSpaceHigh =この青いボールはレイスとは著しく異なって見える。あの氷を海に変えるには、何が必要かな。
+	 #LOC_SSPX_ScienceDef_VisualObservation_VallSrfLanded = 色覚異常の場合、ヴァルとミンマスを区別する方法はない。見上げたら目に入ってくる巨大な緑色のボールを除いてね。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_TyloInSpaceLow = この月に近づくことは終わりを意味しているだろう。
+	 #LOC_SSPX_ScienceDef_VisualObservation_TyloInSpaceHigh = タイローはこの見晴らしの良い場所からジュールと同じくらい宇宙に映える。いろんな星が決闘しているみたいだなぁ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_TyloSrfLanded = タイローの表面は岩が多く鈍いけど、どことなく圧力を感じる。こんなところにいて大丈夫なのだろうか。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_BopInSpaceLow = ボップ自体は控えめだけど、船内の異様にリズミカルなノイズが、歓迎されていない感じがする。
+	 #LOC_SSPX_ScienceDef_VisualObservation_BopInSpaceHigh = この月は、ジュールの壮大なほかの月の間にある単なる茶色の斑点みたいだ。
+	 #LOC_SSPX_ScienceDef_VisualObservation_BopSrfLanded = 月は、ただの茶色の斑点でしかない。表面は不毛で荒涼としているのに、いくつかの強い力に見張られている気がして、悪寒がする。ああ、他の月の壮大さといったら…
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_PolInSpaceLow = ポルのでこぼこの表面は、たくさんある谷に深くて長い影を落としている。
+	 #LOC_SSPX_ScienceDef_VisualObservation_PolInSpaceHigh = 単なる斑点のはずなのに、ポルのユニークな色は、ジュール惑星系に謎の空気感をもたらしている。
+	 #LOC_SSPX_ScienceDef_VisualObservation_PolSrfLanded = 洞窟のような谷とそびえ立つ丘の中で、面白い、岩だらけの形が表面から突き出ている。探検するにはもってこいの星だ。
+
+	 #LOC_SSPX_ScienceDef_VisualObservation_EelooInSpaceLow = 下を見ると、氷のような気分が少し溶けた。でもあんな黄色の雪に着陸する気はないな。
+	 #LOC_SSPX_ScienceDef_VisualObservation_EelooInSpaceHigh = これまでのところ、イーローという星は新しいレベルに成長している。カーボルでは役に立たないな。
+	 #LOC_SSPX_ScienceDef_VisualObservation_EelooSrfLanded = こんな遠いところにも関わらず、ここはまるで家のようだ―カービンの冬みたいだ。
+
+	 // Study
+	#LOC_SSPX_ScienceDef_FishStudy_Title = 水生生物の観察
+		#LOC_SSPX_ScienceDef_FishStudy_default = ポンプの装置がうなり声を上げると、魚は水槽を泳ぎ回る。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_SunInSpaceLow = 魚にとってはアンラッキーで、エビなんかはもう調理されているも同じ。まあ、食事の準備中の時間を節約できるし、いっか！
+  	#LOC_SSPX_ScienceDef_FishStudy_SunInSpaceHigh = 水槽の生物がゆっくりと旋回することによって発生する水流は、太陽コロナの観測結果とと一致している。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_KerbinInSpaceLow = 魚は少し気持ちが我々と違うみたいだ。おそらく、窓から見える広い海を切望しているのだろう。
+  	#LOC_SSPX_ScienceDef_FishStudy_KerbinInSpaceHigh = 魚の生物物理学的特性について報告します。カルシウム欠乏症が頭をもたげているようです。
+  	#LOC_SSPX_ScienceDef_FishStudy_KerbinSrfLanded = あらゆる種類の水生生物が水槽で楽しく泳いでいるようです。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_MunInSpaceLow = ムナ表層の荒廃っぷりからするに、水は一滴も存在しない。魚が水槽の側面から離れているので、魚がこれを理解しているように感じた。
+  	#LOC_SSPX_ScienceDef_FishStudy_MunInSpaceHigh = 地球を回りまわるとき、水槽熱交換器で魚を焼く可能性について考えなければ。
+  	#LOC_SSPX_ScienceDef_FishStudy_MunSrfLanded = 低重力は魚を少し投げ出す感じになって―不規則に上下に揺れます。エビだけが幸せそうです。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_Minmus_InSpaceLow = 魚とミントのアイスクリームはとてもよく合い―あっ、すみません、光学分析しているはずだったのに...
+  	#LOC_SSPX_ScienceDef_FishStudy_Minmus_InSpaceHigh = ポンプの装置がうなり声を上げると、魚は水槽を泳ぎ回る。
+  	#LOC_SSPX_ScienceDef_FishStudy_MinmusSrfLanded = ミンマスの低重力環境は魚も感じ取ってないようだ。魚用の小型ジェットパックを作ってもいい気がするぞ。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_MohoInSpaceLow = 一定の温度に保たれるようにポンプが一生懸命働いているので、魚は水槽を輪になって泳いでいる。
+  	#LOC_SSPX_ScienceDef_FishStudy_MohoInSpaceHigh = 旅行に連れてきたのが熱帯魚だったのなら最適な状況。タンク熱交換器はフルパワーで稼働中だ！
+  	#LOC_SSPX_ScienceDef_FishStudy_MohoSrfLanded = まあ、重力は弱め。外の熱い岩の上で魚を調理できるに違いない。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_EveInSpaceLow = イブの紫の海が手招きしている気がする！興味深い色の水に対する魚の反応をテストするのが待ちきれない。
+  	#LOC_SSPX_ScienceDef_FishStudy_EveInSpaceHigh = カービンのほうを向いて素早くさばき、魚の美味しさ、健康状態を測定する。
+  	#LOC_SSPX_ScienceDef_FishStudy_EveSrfLanded = 神聖でク○×△＆な溶液で魚をあっさりだめにした！イブの水サンプルが入っているタンクを罪悪感にさいなまれながら捨てた。タンクの放射線カウンターの音が気になる。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_GillyInSpaceLow = 直感的に、魚を観察する意味がないとはわかっている。でも、水に何か入れてみることにしよう...
+  	#LOC_SSPX_ScienceDef_FishStudy_GillyInSpaceHigh = 直感的に、ギリーに着陸したところで影響はないことはわかった。
+  	#LOC_SSPX_ScienceDef_FishStudy_GillySrfLanded = 水槽内部に置いた新しい岩の装飾に気付かないといいけど。魚たちはただそこに浮かんでいた！
+
+  	#LOC_SSPX_ScienceDef_FishStudy_IkeInSpaceLow = 魚にもアイクを愛してほしいけど、そんな気がなさそうに見える。
+  	#LOC_SSPX_ScienceDef_FishStudy_IkeInSpaceHigh = ここは魚を飼うのに最適な場所です。
+  	#LOC_SSPX_ScienceDef_FishStudy_IkeSrfLanded = アイクに着陸した。遠くにそびえる雄大なドゥナを眺めながら、窓に向かって群がる魚を見つめる。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_DunaInSpaceLow = きれいな氷冠とダスト！魚がドゥナを気に入ってくれるといいな。
+  	#LOC_SSPX_ScienceDef_FishStudy_DunaInSpaceHigh = ドゥナに向かって進むと、これまで魚を育ててきたことに達成感を覚える。
+  	#LOC_SSPX_ScienceDef_FishStudy_DunaSrfLanded = 誰かが惑星の塵で水槽を汚染しました！ 赤い色が少し気になります！
+
+  	#LOC_SSPX_ScienceDef_FishStudy_DresInSpaceLow = ドレスの近くにいると寂しいけど、フグが友達になってくれた。
+  	#LOC_SSPX_ScienceDef_FishStudy_DresInSpaceHigh = ここで、缶に浮かんでいる間に、缶詰の魚製品について考える。
+  	#LOC_SSPX_ScienceDef_FishStudy_DresSrfLanded = エビを除いて、誰もこの星を好きにはなれない。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_JoolInSpaceLow = 惑星のカラフルな嵐を観察していたら、いつの間にか温度計が水槽に入れられている。急いで戻さないと。
+  	#LOC_SSPX_ScienceDef_FishStudy_JoolInSpaceHigh = 緑の惑星は、昨夜魚にやった餌の再水化物のエンドウ豆を思い出す。
+  	#LOC_SSPX_ScienceDef_FishStudy_JoolSrfLanded = 魚はあなたの狂気に笑うでしょう。いや、笑いました。笑いすぎて全滅です。
+  	#LOC_SSPX_ScienceDef_FishStudy_LaytheInSpaceLow = なんて美しいんだ！収集に値する水生生物がいるといいな。
+  	#LOC_SSPX_ScienceDef_FishStudy_LaytheInSpaceHigh = レイスは魚に優しいようです。 これを魚に話すと、無関心であると感じます。
+  	#LOC_SSPX_ScienceDef_FishStudy_LaytheSrfLanded = 魚のうち数匹がどこかに行ってしまった。クルーの1人がレイスの海に放流したため、今後数年間はレイスの世話にならねばなるまい。
+
+	#LOC_SSPX_ScienceDef_FishStudy_VallInSpaceLow = 寒い！水槽のヒーターもつけてあげよう。魚は、幸せそう。
+  	#LOC_SSPX_ScienceDef_FishStudy_VallInSpaceHigh = 今のうちに魚用の生体観察装置を組み立てておいてくれ！いや、笑うなよ。からかってなんかないぞ。
+  	#LOC_SSPX_ScienceDef_FishStudy_VallSrfLanded = 寒帯魚をもっとたくさん連れてきたらよかった。水槽に入れたヴァル地表の氷の塊のせいで、一気に水槽の温度が下がってしまった。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_TyloInSpaceLow = 魚がこっちを見つめてくる。着陸はやめておこうかな？
+  	#LOC_SSPX_ScienceDef_FishStudy_TyloInSpaceHigh = タイローの重力の強さはカービンとよく似ているから、魚は喜ぶと思った。けど、そうでもない。まあ、まだ軌道上にいるけど。
+  	#LOC_SSPX_ScienceDef_FishStudy_TyloSrfLanded = 魚は水槽の底に沈みこみ、旅に出る前の重力に戻って幸せそうに見えたが、外側を向いた魚から順番に憂鬱になっている。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_BopInSpaceLow = 魚は混乱して、何度も繰り返し、ホッピング、ホッピング、全然落ち着かない。
+  	#LOC_SSPX_ScienceDef_FishStudy_BopInSpaceHigh = 魚はまた重力に興奮して、水槽の上部にぶつかる。
+  	#LOC_SSPX_ScienceDef_FishStudy_BopSrfLanded = 観察記録、補足。魚はすごくおいしそうだけど、船長が部屋の入り口をロックしているおかげで眺めることしかできません。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_PolInSpaceLow = 一部の魚は窓の外の月に似た色をしている。ファンシー！
+  	#LOC_SSPX_ScienceDef_FishStudy_PolInSpaceHigh = 生体スペクトル分析は、魚の骨量減少を示している。この月にいる間は調理の手順に骨抜きを入れておく必要はないかもしれない。
+  	#LOC_SSPX_ScienceDef_FishStudy_PolSrfLanded = 新しい魚を持ってこなければいけないかもしれない。ポルでは素晴らしい食用魚を作れないようで、死んだ魚が安全に食べられるかどうか、怪しい。
+
+  	#LOC_SSPX_ScienceDef_FishStudy_EelooInSpaceLow = 惑星の周回軌道に着いたので、アクアポニックスを観察する。前回とほぼ同じように見える。
+  	#LOC_SSPX_ScienceDef_FishStudy_EelooInSpaceHigh = 魚たちは、何もない孤独さから気を散らすために群がっている。ここの仲間に入れたらいいのに。
+  	#LOC_SSPX_ScienceDef_FishStudy_EelooSrfLanded = 家から遠く離れたこの星で、食べる魚の量を減らしたら食料消費量がどのように改善されるのか、そしてそれが科学の結果にどのように影響するのかについて調べている。
+
+	// CONTRACTS
+	//
+	#LOC_SSPX_Contract_Centrifuge_Article = a
+	#LOC_SSPX_Contract_Centrifuge_PartDescription = 回転型重力発生装置
+	#LOC_SSPX_Contract_Greenhouse_Article = a
+	#LOC_SSPX_Contract_Greenhouse_PartDescription = 水耕栽培室
+	#LOC_SSPX_Contract_Habitat_Article = a
+	#LOC_SSPX_Contract_Habitat_PartDescription = 乗員収容コンテナ
+	#LOC_SSPX_Contract_Fish_Article = a
+	#LOC_SSPX_Contract_Fish_PartDescription = 養殖漁業ラボ
+}
+}
