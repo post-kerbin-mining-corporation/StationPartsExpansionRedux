@@ -1,3 +1,12 @@
+v1.3.6
+------
+- KSP 1.10.x
+- Updated ModuleManager to 4.1.4
+- Updated B9PartSwitch to 2.17.0
+- Updated NearFutureProps to 0.6.3
+- Improvements to Snacks compatibility from Wyzard256
+- Added a scaling factor to auto-leveling base frames which reduces their extension speed in proportion with the Celestial Body's gravity
+
 v1.3.5
 ------
 - Fixed an issue where EPL being installed without CRP would cause the game to complain

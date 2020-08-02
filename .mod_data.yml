@@ -8,13 +8,13 @@ package:
     - changelog.txt
 dependencies:  # Configure dependencies
   ModuleManager:
-    version: 4.1.3
+    version: 4.1.4
     location: s3
   B9PartSwitch:
-    version: 2.16.0
+    version: 2.17.0
     location: s3
   NearFutureProps:
-    tag: 0.6.2
+    tag: 0.6.3
     location: github
     repository: ChrisAdderley/NearFutureProps
 deploy:
