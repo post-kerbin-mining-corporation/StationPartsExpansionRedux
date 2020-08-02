@@ -193,9 +193,14 @@ namespace HabUtils
     // Does the actual leg movement
     protected void HandleLegMovement()
     {
-
+      float rateScale = 1.0f;
+      if (HighLogic.LoadedSceneIsFlight)
+      {
+        CelestialBody b = this.vessel.mainBody;
+        rateScale = Mathf.Clamp01((float)(b.GeeASL / PhysicsGlobals.GravitationalAcceleration));
+      }
       extenderTransform.localPosition = Vector3.MoveTowards(extenderTransform.localPosition,
-        legZeroPosition - Vector3.forward * legExtensionGoal,
+        legZeroPosition - Vector3.forward * legExtensionGoal, rateScale*
         ExtensionRate * TimeWarp.fixedDeltaTime);
 
 

@@ -10,9 +10,9 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (4.1.3)
-- B9PartSwitch (2.16.0)
-- NearFutureProps (0.6.2)
+- ModuleManager (4.1.4)
+- B9PartSwitch (2.17.0)
+- NearFutureProps (0.6.3)
 
 Optional
 - RescuePodValidator
