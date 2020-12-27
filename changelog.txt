@@ -1,3 +1,10 @@
+v1.4.0
+------
+- KSP 1.11
+- Updated NearFutureProps to 0.6.4
+- Added inventories and cargo stuff
+
+
 v1.3.6
 ------
 - KSP 1.10.x
