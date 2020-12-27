@@ -1,19 +1,19 @@
 {
     "NAME":"StationPartsExpansionRedux",
-    "URL":"https://raw.githubusercontent.com/ChrisAdderley/StationPartsExpansionRedux/master/GameData/StationPartsExpansionRedux/Versioning/StationPartsExpansionRedux.version",
+    "URL":"https://raw.githubusercontent.com/post-kerbin-mining-corporation/StationPartsExpansionRedux/master/GameData/StationPartsExpansionRedux/Versioning/StationPartsExpansionRedux.version",
     "DOWNLOAD":"https://spacedock.info/mod/1682/Stockalike%20Station%20Parts%20Expansion%20Redux",
     "VERSION":
     {
         "MAJOR":1,
-        "MINOR":3,
-        "PATCH":6,
+        "MINOR":4,
+        "PATCH":0,
         "BUILD":0
     },
     "KSP_VERSION":
     {
         "MAJOR":1,
-        "MINOR":10,
-        "PATCH":1
+        "MINOR":11,
+        "PATCH":0
     },
     "KSP_VERSION_MIN":{
         "MAJOR":1,
@@ -22,7 +22,7 @@
     },
     "KSP_VERSION_MAX":{
         "MAJOR":1,
-        "MINOR":10,
+        "MINOR":11,
         "PATCH":99
     }
 }
