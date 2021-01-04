@@ -1,3 +1,33 @@
+v1.4.0
+------
+- KSP 1.11
+- Updated NearFutureProps to 0.6.4
+- Added inventories and cargo stuff
+
+
+v1.3.6
+------
+- KSP 1.10.x
+- Updated ModuleManager to 4.1.4
+- Updated B9PartSwitch to 2.17.0
+- Updated NearFutureProps to 0.6.3
+- Improvements to Snacks compatibility from Wyzard256
+- Added a scaling factor to auto-leveling base frames which reduces their extension speed in proportion with the Celestial Body's gravity
+
+v1.3.5
+------
+- Fixed an issue where EPL being installed without CRP would cause the game to complain
+- Adjusted some manufacturer names. 
+
+v1.3.4
+------
+- Updated B9PartSwitch to 2.16.0
+- Fuel tanks in the Asylum radiation shelter can now switch between various liquid options (LouisB)
+- Increased 1.25m cupola mass to 0.45
+- Improvements to SSPXMetal extras
+ - New B9PS material switcher allows better fidelity on metallic textures
+ - Fixed a few small bugs
+
 v1.3.3
 ------
 - KSP 1.9
