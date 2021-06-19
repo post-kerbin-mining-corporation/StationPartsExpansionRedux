@@ -3,22 +3,48 @@ v2.0.0
 - New 1.875m part set
  - Middle ground between 1.25m and 2.5m
  - White, Insulated, Metal surface variants
- - Full set of endcap variants
+ - Full set of endcap variants (White, Metal, Black, Insulated in both handles/bare versions)
+ - PMA-1 Pressurized Crew Tube: basic crew tube
+ - PMA-2 Pressurized Crew Tube: basic medium crew tube
+ - PMA-3 Pressurized Crew Tube: basic short crew tube
+ - PMA-1A Angled Pressurized Crew Tube: angle crew tube with 30, 45 and 90 degree variants
+ - PMA-AR Radial Attachemnt Module: basic attach module
+ - PMA-MULT Multi-Point Station Connector: multi-hub with 6-way, 5-way, 4-way, planar 4-way, 3-way, elbow variants
+ - PMA-C 'Panoptes' Observation Module: cupola with 1 crew member capacity
+ - PMA-2 'Quay' Station Core: station core with 3 crew member capacity
+ - PMA-3 'Spectra' Utility Module: multipurpose utility module with 2 crew member capacity
+ - PMA-3 '' Habitation Module: large crew module with 5 crew member capacity
+ - PMA-3 '' Habitation Module: small crew module with 3 crew member capacity
+ - PMA-3 '' Science Module: science module with 2 crew member capacity
+- New limited 5m part set
+ - Really big parts
+ - Only comes in White, with minimal endcap variants (white, black, handles/bare handles)
+ - SDV-2 'Atlas' Deep Space Habitation Module: really large crew module 
+ - SDV-2B 'Titan' Compact Deep Space Habitation Module: really large crew module 
+ - SDV-3 'Minerva' Deep Space Control Module: Large station control module, with a number of interesting features.
+ - SDV-1 'Leto' Deep Space Logistics Module: Big cargo module
+ - SDV-1X 'Atriedes' Deep Space Logistics Module: Big cargo module, half size
+ - SDV-4 'Demeter' Cultivation Module: very large greenhouse/aquaculture facility
+ - SDV-6 'Delphi' Science Module: Large science module with intergrated exposed facility and telescope
+ - SDV-G1 'Tholos' Geodesic Dome: Basic geodesic dome with nothing in it.
+
+ - SDV-X 'Cronus' Extensible Centrifuge: ...
+ - SDV-4 Adapter: basic adapter
+ - SDV-6 Flat Adapter: flat adapter
 - 1.25m parts
  - Added White, Metal surface variants
- - Reworked basic surface variant into insulated version
- - Remove angled pieces from multi-hub adapter
- - Added new angled adapter
- - Reworked all endcaps
+ - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
+ - Remove angled variants from multi-hub adapter
+ - Added new angled crew tube part
 - 2.5m parts
  - Added White, Metal surface variants
- - Reworked basic surface variant into insulated version
- - Remove angled pieces from multi-hub adapter
- - Added new angled adapter
- - Reworked all endcaps
-- Reworked 1.25 and 2.5m endcaps completely
-- Deprecated StationPartsExpansionMetal Extra
+ - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
+ - Remove angled variants from multi-hub adapter
+ - Added new angled crew tube part
+- Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
+- Deprecated StationPartsExpansionMetal Extra. Don't use it anymore
 - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
+- Added USI Recycle bin to containers when USI Tools is installed
 
 v1.4.0
 ------
