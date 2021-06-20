@@ -17,7 +17,8 @@
         { "name": "NearFutureProps" }
     ],
     "suggests" : [
-        { "name" : "CommunityTechTree" }
+        { "name" : "CommunityTechTree" },
+        { "name" : "StationPartsExpansionRedux-IVAs" }
     ],
     "supports" : [
         { "name" : "RasterPropMonitor-Core" },
