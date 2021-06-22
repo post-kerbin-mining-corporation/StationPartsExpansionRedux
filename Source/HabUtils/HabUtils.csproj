@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModuleAdjustableLeg.cs" />
+    <Compile Include="ModuleHologramField.cs" />
     <Compile Include="ModuleScalarLinkedLight.cs" />
     <Compile Include="ModuleDependantAnimation.cs" />
     <Compile Include="ModuleDeployableCentrifuge.cs" />
