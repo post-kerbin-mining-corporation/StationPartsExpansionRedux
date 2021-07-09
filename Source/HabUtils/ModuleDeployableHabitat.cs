@@ -117,9 +117,9 @@ namespace HabUtils
     protected float vabSpeedScale = 10f;
     protected DeployState deployState;
     protected AnimationState deployAnimation;
-    protected List<SkinnedMeshRenderer> smrs;
-    protected List<Mesh> meshes;
-
+    protected List<BaseConverter> converters;
+    
+    
     public override string GetInfo()
     {
       string baseInfo = Localizer.Format("#LOC_SSPX_ModuleDeployableHabitat_PartInfo", DeployedCrewCapacity.ToString("F0"));
@@ -196,7 +196,10 @@ namespace HabUtils
       if (HighLogic.LoadedSceneIsFlight || HighLogic.LoadedSceneIsEditor)
       {
         if (DeployAnimationName != "")
+        {
           HandleAnimation();
+          HandleConverters();
+        }
         EvaluateAnimation();
       }
     }
@@ -211,17 +214,7 @@ namespace HabUtils
           Utils.LogError("[ModuleDeployableHabitat]: Could not find animation");
         else
         {
-          smrs = this.part.GetComponentsInChildren<SkinnedMeshRenderer>(true).ToList().Where(x => x.gameObject.layer == 0).ToList();
-          //meshes = new List<Mesh>();
-          //foreach (SkinnedMeshRenderer s in smrs)
-          //{
-          //  Mesh m = new Mesh();
-          //  MeshFilter mf = s.gameObject.AddComponent<MeshFilter>();
-          //  mf.mesh = m;
-          //  meshes.Add(m);
-          //  s.gameObject.layer = 8;
-          //}
-          Utils.Log($"[ModuleDeployableHabitat]: Set up skinned renderers {String.Join(" ",smrs.Select(x => $"{x.name}"))}");
+          
           
         }
       }
@@ -240,6 +233,7 @@ namespace HabUtils
     /// Sets up the first load of the module
     protected void SetupState()
     {
+      GetConverters();
       SetCrewCapacity(Deployed);
       if (Deployed)
       {
@@ -254,23 +248,22 @@ namespace HabUtils
         if (DeployAnimationName != "")
           deployAnimation.normalizedTime = 1.0f;
         DestroyIVA();
+        DisableConverters();
       }
-      RecalculateNormals();
       RefreshPartData();
     }
-    protected void RecalculateNormals()
-    {
-      if (smrs != null)
-      {
-        //Utils.Log($"[ModuleDeployableHabitat]: Recalculating normals");
-        //for (int i=0; i< smrs.Count; i++)
-        //{
-        //  smrs[i].BakeMesh(meshes[i]);
-        //  meshes[i].RecalculateNormals();
-            
-          
 
-        //}
+    protected void GetConverters()
+    {
+      converters =  part.GetComponents<BaseConverter>().ToList();
+    }
+   
+    protected virtual void HandleConverters()
+    {
+      if (converters != null)
+      {
+        if (deployState != DeployState.Deployed)
+          DisableConverters();
       }
     }
     /// Handle updating the UI
@@ -391,6 +384,7 @@ namespace HabUtils
       Utils.Log("[ModuleDeployableHabitat]: Retract Started");
       deployState = DeployState.Retracting;
       SetCrewCapacity(false);
+      DisableConverters();
       DestroyIVA();
       RefreshPartData();
 
@@ -412,9 +406,9 @@ namespace HabUtils
       Utils.Log("[ModuleDeployableHabitat]: Retract Finished");
       deployState = DeployState.Retracted;
       SetDragCubeState(1.0f);
+      DisableConverters();
       Deployed = false;
       RefreshPartData();
-      RecalculateNormals();
     }
 
     /// Execute actions on deploy completion
@@ -429,7 +423,6 @@ namespace HabUtils
       SetCrewCapacity(Deployed);
       CreateIVA();
       RefreshPartData();
-      RecalculateNormals();
     }
 
     protected void RefreshPartData()
@@ -609,5 +602,18 @@ namespace HabUtils
         part.DragCubes.ForceUpdate(true, true);
       }
     }
+
+    protected void DisableConverters()
+    {
+      foreach (BaseConverter conv in converters)
+      {
+        if (conv.IsActivated)
+        {
+          conv.DisableModule();
+        }
+      }
+    }
+
+
   }
 }
