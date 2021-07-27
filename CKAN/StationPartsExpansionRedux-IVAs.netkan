@@ -4,7 +4,7 @@
     "name":         "Stockalike Station Parts Expansion Redux - Internal Spaces",
     "$kref":        "#/ckan/spacedock/1682",
     "$vref"               : "#/ckan/ksp-avc/StationPartsExpansionRedux.version",
-    "abstract": "Adds IVA spaces to Stockalike Station Parts Expansion Redux.",
+    "abstract": "Adds IVA spaces to Stockalike Station Parts Expansion Redux. Without this, IVA spaces will appear as blank voids",
     "author": "Nertea (Chris Adderley)",
     "license":      "restricted",
     "resources": {
