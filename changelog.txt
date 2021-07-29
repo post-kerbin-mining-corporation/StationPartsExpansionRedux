@@ -16,6 +16,8 @@ v2.0.0
  - PMA-5A 'Dawn' Habitation Module: large crew module with 5 crew member capacity
  - PMA-5B 'Evening' Habitation Module: small crew module with 3 crew member capacity
  - PMA-4 'Nature' Science Module: science module with 2 crew member capacity
+ - BR-1B Adjustable Base Cradle: 1.875m leveling ground base cradle
+ - BZ-1B Adjustable Base Frame: 1.875m leveling ground base frame
 - New limited 5m part set
  - Really big parts
  - Only comes in White, with minimal endcap variants (white, black, handles/bare handles)
@@ -27,12 +29,13 @@ v2.0.0
  - SDV-4 'Demeter' Cultivation Module: very large greenhouse/aquaculture facility with 4 kerbal capacity
  - SDV-6 'Delphi' Science Module: Large science module with intergrated exposed facility and telescope
  - SDV-G1 'Tholos' Geodesic Dome: Basic geodesic dome with nothing in it. Toggleable colliders for customization
- - SDV-G2 'Villa' Cultivation Dome: Dome with greenhouse functions and 2 kerbal capacity. 
- - SDV-G3 'Domus' Habitation Dome: Dome with habitation functions and 6 Kerbal capacity
+ - SDV-G2 'Villa' Cultivation Dome: Dome with greenhouse functions and 3 kerbal capacity. 
  - SDV-G4 'Astrolabe' Observation Dome: Dome with cupola functions and 2 kerbal capacity
  - SDV-X 'Cronus' Extensible Centrifuge: Immense centrifuge with 
  - SDV-4 Adapter: basic adapter
  - SDV-6 Flat Adapter: flat adapter
+ - BR-4B Adjustable Base Cradle: 5m leveling ground base cradle
+ - BZ-4B Adjustable Base Frame: 5m leveling ground base frame
 - 1.25m parts
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
@@ -46,7 +49,9 @@ v2.0.0
 - Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
 - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
 - Added USI Recycle bin to containers when USI Tools is installed
+- Adjusted mass, cost and entry cost of base frame cradles which used to be completely nonsensical
 - Deprecated StationPartsExpansionMetal Extra. Don't use it anymore
+- Replacement 1.25 port, extending 1.25m port upgraded with rotation functions from KSP 1.12
 - Added StationPartsExpansionIVAs Extra. This now contains the IVAs. By default, all IVAs now use the 'blank' internal space
 
 v1.4.0
