@@ -34,18 +34,19 @@ v2.0.0
  - SDV-X 'Cronus' Extensible Centrifuge: Immense centrifuge with 
  - SDV-4 Adapter: basic adapter
  - SDV-6 Flat Adapter: flat adapter
- - BR-4B Adjustable Base Cradle: 5m leveling ground base cradle
- - BZ-4B Adjustable Base Frame: 5m leveling ground base frame
+ - BR-4 Adjustable Base Cradle: 5m leveling ground base cradle
+ - BZ-4 Adjustable Base Frame: 5m leveling ground base frame
+- New general use parts:
+ - SD-1x1 Structural Panel: radial white truss panel similar to the Delphi external facility panels
+ - SD-2x2 Structural Panel:  radial white truss panel similar to the Delphi external facility panels, but a bigger version
+ - PAS-T 'Oculus' Remote Telescope: Small radially attachable telescope dome
+ - PAS-G 'G4RD3N' Hydroponics Cupola: Small radially attachable cupola dome with plants inside it
 - 1.25m parts
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
- - Remove angled variants from multi-hub adapter
- - Added new angled crew tube part
 - 2.5m parts
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
- - Remove angled variants from multi-hub adapter
- - Added new angled crew tube part
 - Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
 - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
 - Added USI Recycle bin to containers when USI Tools is installed
