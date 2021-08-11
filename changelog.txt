@@ -1,5 +1,11 @@
 v2.0.0
 ------
+- KSP 1.12
+- Updated ModuleManger to 4.2.1
+- Updated NearFutureProps to 0.7.1
+- Updated B9PartSwitch to 2.18.0
+- Deprecated StationPartsExpansionMetal Extra. Don't use it anymore, uninstall it if you have it
+- Added StationPartsExpansionIVAs Extra. This now contains the IVAs. By default, all IVAs now use the 'blank' internal space
 - New 1.875m part set
  - Middle ground between 1.25m and 2.5m
  - White, Insulated, Metal surface variants
@@ -19,7 +25,6 @@ v2.0.0
  - BR-1B Adjustable Base Cradle: 1.875m leveling ground base cradle
  - BZ-1B Adjustable Base Frame: 1.875m leveling ground base frame
 - New limited 5m part set
- - Really big parts
  - Only comes in White, with minimal endcap variants (white, black, handles/bare handles)
  - SDV-2 'Atlas' Deep Space Habitation Module: really large crew module. 14 Kerbal capacity
  - SDV-2B 'Titan' Compact Deep Space Habitation Module: really large crew module but flat. 6 Kerbals.
@@ -37,24 +42,25 @@ v2.0.0
  - SDV-6 Flat Adapter: flat adapter
  - BR-4 Adjustable Base Cradle: 5m leveling ground base cradle
  - BZ-4 Adjustable Base Frame: 5m leveling ground base frame
-- New general use parts:
+- New non-specific size parts:
  - SD-1x1 Structural Panel: radial white truss panel similar to the Delphi external facility panels
  - SD-2x2 Structural Panel:  radial white truss panel similar to the Delphi external facility panels, but a bigger version
  - PAS-T 'Oculus' Remote Telescope: Small radially attachable telescope dome
  - PAS-G 'G4RD3N' Hydroponics Cupola: Small radially attachable cupola dome with plants inside it
-- 1.25m parts
+- 1.25m part updates
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
-- 2.5m parts
+- 2.5m part updates
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
-- Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
-- Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
-- Added USI Recycle bin to containers when USI Tools is installed
-- Adjusted mass, cost and entry cost of base frame cradles which used to be completely nonsensical
-- Deprecated StationPartsExpansionMetal Extra. Don't use it anymore
-- Replacement 1.25 port, extending 1.25m port upgraded with rotation functions from KSP 1.12
-- Added StationPartsExpansionIVAs Extra. This now contains the IVAs. By default, all IVAs now use the 'blank' internal space
+- General fixes and updates
+ - Adjusted mass, cost and entry cost of base frame cradles which used to be completely nonsensical
+ - Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
+ - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
+ - Replacement 1.25 port, extending 1.25m port, extending 2.5m port upgraded with rotation functions from KSP 1.12
+Compatibility
+ - Added USI Recycle bin to containers when USI Tools is installed
+
 
 v1.4.0
 ------
