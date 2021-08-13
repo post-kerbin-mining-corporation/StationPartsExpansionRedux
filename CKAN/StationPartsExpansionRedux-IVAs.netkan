@@ -12,7 +12,11 @@
         "repository": "https://github.com/post-kerbin-mining-corporation/StationPartsExpansionRedux"
     },
     "depends": [
-        { "name": "StationPartsExpansionRedux"   }
+        { "name": "StationPartsExpansionRedux"   },
+        { "name": "NearFutureProps" }
+    ],
+    "supports" : [
+        { "name" : "RasterPropMonitor-Core" }
     ],
     "install": [ {
         "find":       "StationPartsExpansionReduxIVAs",

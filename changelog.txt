@@ -47,6 +47,7 @@ v2.0.0
  - SD-2x2 Structural Panel:  radial white truss panel similar to the Delphi external facility panels, but a bigger version
  - PAS-T 'Oculus' Remote Telescope: Small radially attachable telescope dome
  - PAS-G 'G4RD3N' Hydroponics Cupola: Small radially attachable cupola dome with plants inside it
+ - B-ST41R Extensible Stairway: Small staircase with adjustable lengths
 - 1.25m part updates
  - Added White, Metal surface variants
  - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
@@ -58,7 +59,7 @@ v2.0.0
  - Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
  - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
  - Replacement 1.25 port, extending 1.25m port, extending 2.5m port upgraded with rotation functions from KSP 1.12
-Compatibility
+- Compatibility
  - Added USI Recycle bin to containers when USI Tools is installed
 
 
