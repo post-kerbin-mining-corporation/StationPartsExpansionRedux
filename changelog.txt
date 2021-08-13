@@ -1,3 +1,68 @@
+v2.0.0
+------
+- KSP 1.12
+- Updated ModuleManger to 4.2.1
+- Updated NearFutureProps to 0.7.1
+- Updated B9PartSwitch to 2.18.0
+- Deprecated StationPartsExpansionMetal Extra. Don't use it anymore, uninstall it if you have it
+- Added StationPartsExpansionIVAs Extra. This now contains the IVAs. By default, all IVAs now use the 'blank' internal space
+- New 1.875m part set
+ - Middle ground between 1.25m and 2.5m
+ - White, Insulated, Metal surface variants
+ - Full set of endcap variants (White, Metal, Black, Insulated in both handles/bare versions)
+ - PMA-T1 Pressurized Crew Tube: basic crew tube
+ - PMA-T2 Pressurized Crew Tube: basic medium crew tube
+ - PMA-T3 Pressurized Crew Tube: basic short crew tube
+ - PMA-1A Angled Pressurized Crew Tube: angle crew tube with 30, 45 and 90 degree variants
+ - PMA-AR Radial Attachemnt Module: basic attach module
+ - PMA-MULT Multi-Point Station Connector: multi-hub with 6-way, 5-way, 4-way, planar 4-way, 3-way, elbow variants
+ - PMA-C 'Panoptes' Observation Module: cupola with 1 crew member capacity
+ - PMA-2 'Quay' Station Core: station core with 3 crew member capacity
+ - PMA-3 'Spectra' Utility Module: multipurpose utility module with 2 crew member capacity
+ - PMA-5A 'Dawn' Habitation Module: large crew module with 5 crew member capacity
+ - PMA-5B 'Evening' Habitation Module: small crew module with 3 crew member capacity
+ - PMA-4 'Nature' Science Module: science module with 2 crew member capacity
+ - BR-1B Adjustable Base Cradle: 1.875m leveling ground base cradle
+ - BZ-1B Adjustable Base Frame: 1.875m leveling ground base frame
+- New limited 5m part set
+ - Only comes in White, with minimal endcap variants (white, black, handles/bare handles)
+ - SDV-2 'Atlas' Deep Space Habitation Module: really large crew module. 14 Kerbal capacity
+ - SDV-2B 'Titan' Compact Deep Space Habitation Module: really large crew module but flat. 6 Kerbals.
+ - SDV-3 'Minerva' Deep Space Control Module: Large station control module, with a number of interesting features. 5 Kerbal capacity
+ - SDV-1 'Leto' Deep Space Logistics Module: Big cargo module
+ - SDV-1X 'Atriedes' Deep Space Logistics Module: Big cargo module, half size
+ - SDV-4 'Demeter' Cultivation Module: very large greenhouse/aquaculture facility with 4 kerbal capacity
+ - SDV-6 'Delphi' Science Module: Large science module with intergrated exposed facility and telescope
+ - SDV-G1 'Tholos' Geodesic Dome: Basic geodesic dome with nothing in it. Toggleable colliders for customization
+ - SDV-G2 'Villa' Cultivation Dome: Dome with greenhouse functions and 2 kerbal capacity. 
+ - SDV-G3 'Domus' Habitation Dome: Dome with habitation functions and 6 kerbal capacity. 
+ - SDV-G4 'Astrolabe' Observation Dome: Dome with cupola functions and 2 kerbal capacity
+ - SDV-X 'Cronus' Extensible Centrifuge: Immense centrifuge with 16 kerbal capacity and integrated lab facility
+ - SDV-4 Adapter: basic adapter
+ - SDV-6 Flat Adapter: flat adapter
+ - BR-4 Adjustable Base Cradle: 5m leveling ground base cradle
+ - BZ-4 Adjustable Base Frame: 5m leveling ground base frame
+- New non-specific size parts:
+ - SD-1x1 Structural Panel: radial white truss panel similar to the Delphi external facility panels
+ - SD-2x2 Structural Panel:  radial white truss panel similar to the Delphi external facility panels, but a bigger version
+ - PAS-T 'Oculus' Remote Telescope: Small radially attachable telescope dome
+ - PAS-G 'G4RD3N' Hydroponics Cupola: Small radially attachable cupola dome with plants inside it
+ - B-ST41R Extensible Stairway: Small staircase with adjustable lengths
+- 1.25m part updates
+ - Added White, Metal surface variants
+ - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
+- 2.5m part updates
+ - Added White, Metal surface variants
+ - Repainted old surface variant into insulated thermal blanket variant matching new 1.875m parts
+- General fixes and updates
+ - Adjusted mass, cost and entry cost of base frame cradles which used to be completely nonsensical
+ - Reworked 1.25 and 2.5m endcaps completely to match new work on 1.875m endcaps
+ - Renamed PTD/PFD (1.25m) part series to PAS/PAF to help with default VAB sorting
+ - Replacement 1.25 port, extending 1.25m port, extending 2.5m port upgraded with rotation functions from KSP 1.12
+- Compatibility
+ - Added USI Recycle bin to containers when USI Tools is installed
+
+
 v1.4.0
 ------
 - KSP 1.11

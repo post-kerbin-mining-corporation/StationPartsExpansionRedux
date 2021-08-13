@@ -8,13 +8,13 @@ package:
     - changelog.txt
 dependencies:  # Configure dependencies
   ModuleManager:
-    version: 4.1.4
+    version: 4.2.1
     location: s3
   B9PartSwitch:
-    version: 2.17.0
+    version: 2.18.0
     location: s3
   NearFutureProps:
-    tag: 0.6.4
+    tag: 0.7.1
     location: github
     repository: post-kerbin-mining-corporation/NearFutureProps
 deploy:

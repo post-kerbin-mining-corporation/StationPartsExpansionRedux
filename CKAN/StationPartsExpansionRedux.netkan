@@ -13,14 +13,13 @@
     },
     "depends": [
         { "name": "ModuleManager"   },
-        { "name": "B9PartSwitch"    },
-        { "name": "NearFutureProps" }
+        { "name": "B9PartSwitch"    }
     ],
     "suggests" : [
-        { "name" : "CommunityTechTree" }
+        { "name" : "CommunityTechTree" },
+        { "name" : "StationPartsExpansionRedux-IVAs" }
     ],
     "supports" : [
-        { "name" : "RasterPropMonitor-Core" },
         { "name" : "ConnectedLivingSpace" }
     ],
     "install": [ {

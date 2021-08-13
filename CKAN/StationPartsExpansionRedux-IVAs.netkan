@@ -1,0 +1,25 @@
+{
+    "spec_version": "v1.4",
+    "identifier":   "StationPartsExpansionRedux-IVAs",
+    "name":         "Stockalike Station Parts Expansion Redux - Internal Spaces",
+    "$kref":        "#/ckan/spacedock/1682",
+    "$vref"               : "#/ckan/ksp-avc/StationPartsExpansionRedux.version",
+    "abstract": "Adds IVA spaces to Stockalike Station Parts Expansion Redux. Without this, IVA spaces will appear as blank voids",
+    "author": "Nertea (Chris Adderley)",
+    "license":      "restricted",
+    "resources": {
+        "homepage":   "https://forum.kerbalspaceprogram.com/index.php?/topic/170211-*",
+        "repository": "https://github.com/post-kerbin-mining-corporation/StationPartsExpansionRedux"
+    },
+    "depends": [
+        { "name": "StationPartsExpansionRedux"   },
+        { "name": "NearFutureProps" }
+    ],
+    "supports" : [
+        { "name" : "RasterPropMonitor-Core" }
+    ],
+    "install": [ {
+        "find":       "StationPartsExpansionReduxIVAs",
+        "install_to": "GameData"
+    } ]
+}
