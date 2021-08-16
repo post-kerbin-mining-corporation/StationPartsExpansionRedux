@@ -1,3 +1,12 @@
+v2.0.1
+------
+- Fixed metal variant hatch of 1.875m utility module
+- Fixed missing description on 5m adapters
+- Fixed localization of 1.25m docking port white variant
+- Fixed swapped attach node locations for dome connection nodes
+- Moved Domus dome to Utility tab
+- Fixed mesh gaps on Panoptes and Evening modules
+
 v2.0.0
 ------
 - KSP 1.12
