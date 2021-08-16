@@ -19,6 +19,9 @@
         { "name" : "CommunityTechTree" },
         { "name" : "StationPartsExpansionRedux-IVAs" }
     ],
+    "conflicts" : [
+        { "name" : "StationPartsExpansionRedux-Metal" }
+    ],
     "supports" : [
         { "name" : "ConnectedLivingSpace" }
     ],
