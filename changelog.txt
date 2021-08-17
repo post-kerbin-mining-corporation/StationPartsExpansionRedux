@@ -2,6 +2,9 @@ v2.0.2
 ------
 - Fixed 1.875 attachement module seam
 - Fixed missing surface switch for 1.25m adapter
+- Fixed 2.5m cupola/science lab emissive texture
+- Fixed direction of all dome attach nodes
+- Fixed missing insulated variant for 1.25m hub
 
 v2.0.1
 ------
