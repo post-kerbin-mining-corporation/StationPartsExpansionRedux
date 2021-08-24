@@ -49,7 +49,7 @@ namespace HabUtils
 
     // Extension Rate
     [KSPField(isPersistant = false)]
-    public float FootRotationRate = 10.0f;
+    public float FootRotationRate = 30.0f;
 
     [KSPField(isPersistant = false)]
     public float PhysicsBounce = 0.0f;
@@ -172,17 +172,17 @@ namespace HabUtils
     // Sets up the model extension from startup
     protected void SetupDebug()
     {
-      D_extenderXform = new DebugAxisTripod(1f);
+      D_extenderXform = new DebugAxisTripod(0.2f);
       D_extenderXform.AssignTransform(extenderTransform);
 
 
-      D_footXform = new DebugAxisTripod(0.05f);
+      D_footXform = new DebugAxisTripod(1f);
       D_footXform.AssignTransform(footTransform);
 
-      D_baseXform = new DebugAxisTripod(0.2f);
+      D_baseXform = new DebugAxisTripod(0.5f);
       D_baseXform.AssignTransform(baseTransform);
 
-      D_autoXform = new DebugAxisTripod(1f);
+      D_autoXform = new DebugAxisTripod(0.2f);
       D_autoXform.AssignTransform(baseTransform);
     }
 

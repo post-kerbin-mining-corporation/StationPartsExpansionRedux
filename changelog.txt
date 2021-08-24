@@ -1,3 +1,14 @@
+v2.0.3
+------
+- Added science defs for telescope experiment, previously they used the Visual Observation experiment (thanks GregoxMun!)
+- Fixed tiny seam on 1.875m medium crew tube
+- Removed Restock light module on docking port replacement
+- Increased rotation rate of base leg foots
+- Corrected some base leg foot orientations
+- Adjusted contract generation: domes may now be requested for surface bases but typically not stations
+- Added new parts to KeepFit patch
+- Added new parts to Snacks! patch
+
 v2.0.2
 ------
 - Fixed 1.875 attachement module seam
