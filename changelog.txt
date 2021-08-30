@@ -1,3 +1,10 @@
+v2.0.4
+------
+- Fixed extra top node on greenhouse/telescope cupolas
+- Fixed offest endcap on greenhouse/telescope cupolas
+- Fixed integrated ladder switches on 3.75m lab and tall adapter
+- Fixed some harmless loading exceptions on 3.75m attach point
+
 v2.0.3
 ------
 - Added science defs for telescope experiment, previously they used the Visual Observation experiment (thanks GregoxMun!)
