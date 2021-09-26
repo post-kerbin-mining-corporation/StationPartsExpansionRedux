@@ -4,6 +4,12 @@ v2.0.4
 - Fixed offest endcap on greenhouse/telescope cupolas
 - Fixed integrated ladder switches on 3.75m lab and tall adapter
 - Fixed some harmless loading exceptions on 3.75m attach point
+- Fixed missing CTT assignment for 5m centrifuge
+- Updated USI-LS patch (danfarsey)
+- UPdated TAC-LS patch (JadeofMaar) 
+- Tweaked smoothing on observation module
+- Updates to Chinese localization
+- Telescope experiement is now transmittable and resettable in a fashion similar to other data experiments
 
 v2.0.3
 ------
