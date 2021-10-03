@@ -1,3 +1,8 @@
+v2.0.5
+------
+- Fixed usage mask of observatory experiment so it requires a kerbal in the vessel, not in the part
+- More improvements to bad triangulation/smoothing on the observation module
+
 v2.0.4
 ------
 - Fixed extra top node on greenhouse/telescope cupolas
