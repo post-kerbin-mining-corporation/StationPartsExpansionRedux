@@ -1,3 +1,9 @@
+v2.0.6
+------
+- Fixed functioning of 5m lab's airlock
+- Fixed missing backside of 1.25m docking port replacement
+- Fixed skinning error on Doughnut centrifuge
+
 v2.0.5
 ------
 - Fixed usage mask of observatory experiment so it requires a kerbal in the vessel, not in the part
