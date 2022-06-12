@@ -1,3 +1,11 @@
+v2.0.7
+------
+- Fixed description string for 1.875m attach tube
+- Fixed string for non-specific Kerbin Landed telescope experiment
+- Fixed tech location for 5m greenhouse without tech trees installed
+- Fixed tech entry cost for 2.5m inflatable habs
+- Fixed some seams on some parts
+
 v2.0.6
 ------
 - Fixed functioning of 5m lab's airlock
