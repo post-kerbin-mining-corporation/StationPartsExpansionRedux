@@ -1,3 +1,7 @@
+v2.0.8
+------
+- Fixed cupola collider fix
+
 v2.0.7
 ------
 - Fixed description string for 1.875m attach tube

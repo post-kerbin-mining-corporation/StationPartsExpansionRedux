@@ -1,9 +1,12 @@
 ====================================
-STATION PARTS EXPANSION REDUX v2.0.7
+STATION PARTS EXPANSION REDUX v2.0.8
 ====================================
 
 This pack provides a set of new space and ground station parts. New parts exist in all size classes from 1.25m to 5.0m. Rigid station parts are provided as well as expandable centrifuges and habitats. Ground bases are served with auto-leveling bases and extendable docking crew tubes.
+
 In addition this pack reskins the Hitchiker, Cupola and Mobile Lab to improve their quality and match the new parts.
+
+PLEASE NOTE that due to their memory footprint, IVAs are not included by default, you have to install the Extra (see below)
 
 ============
 DEPENDENCIES
@@ -33,6 +36,14 @@ INSTALLATION
 ============
 
 To install, place the GameData folder inside your Kerbal Space Program folder. If asked to overwrite files, do so.
+
+====================
+INSTALLATION OF IVAS
+====================
+
+Some extra patches are bundled that you can use to tweak your installation
+
+StationPartsExpansionReduxIVAs: adds IVAs to parts.
 
 =============
 COMPATIBILITY
