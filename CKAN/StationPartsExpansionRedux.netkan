@@ -1,32 +1,21 @@
-{
-    "spec_version": "v1.4",
-    "identifier":   "StationPartsExpansionRedux",
-    "name":         "Stockalike Station Parts Expansion Redux",
-    "$kref":        "#/ckan/spacedock/1682",
-    "$vref"               : "#/ckan/ksp-avc/StationPartsExpansionRedux.version",
-    "abstract": "A plethora of new station parts in several size classes.",
-    "author": "Nertea (Chris Adderley)",
-    "license":      "restricted",
-    "resources": {
-        "homepage":   "https://forum.kerbalspaceprogram.com/index.php?/topic/170211-*",
-        "repository": "https://github.com/ChrisAdderley/StationPartsExpansionRedux"
-    },
-    "depends": [
-        { "name": "ModuleManager"   },
-        { "name": "B9PartSwitch"    }
-    ],
-    "suggests" : [
-        { "name" : "CommunityTechTree" },
-        { "name" : "StationPartsExpansionRedux-IVAs" }
-    ],
-    "conflicts" : [
-        { "name" : "StationPartsExpansionRedux-Metal" }
-    ],
-    "supports" : [
-        { "name" : "ConnectedLivingSpace" }
-    ],
-    "install": [ {
-        "find":       "StationPartsExpansionRedux",
-        "install_to": "GameData"
-    } ]
-}
+identifier: StationPartsExpansionRedux
+$kref: '#/ckan/github/post-kerbin-mining-corporation/StationPartsExpansionRedux'
+$vref: '#/ckan/ksp-avc/StationPartsExpansionRedux.version'
+---
+identifier: StationPartsExpansionRedux
+name: Stockalike Station Parts Expansion Redux
+$kref: '#/ckan/spacedock/1682'
+$vref: '#/ckan/ksp-avc/StationPartsExpansionRedux.version'
+abstract: A plethora of new station parts in several size classes.
+author: Nertea (Chris Adderley)
+license: restricted
+depends:
+  - name: ModuleManager
+  - name: B9PartSwitch
+suggests:
+  - name: CommunityTechTree
+  - name: StationPartsExpansionRedux-IVAs
+conflicts:
+  - name: StationPartsExpansionRedux-Metal
+supports:
+  - name: ConnectedLivingSpace
